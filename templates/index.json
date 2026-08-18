@@ -11,16 +11,42 @@
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
-        "text_YLPk4p": {
+        "text_headline": {
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p>Browse our latest products</p>",
+            "text": "<p>Testado em mais de 5.000 bolas reais.</p>",
             "text_color": "{{ settings.color_palette.background }}",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
-            "type_preset": "h2",
+            "type_preset": "h1",
+            "font": "var(--font-heading--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_support": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>Sua bola furou e parece que o jogo acabou? A fórmula própria do Conserta Bola foi criada para recuperar bolas esportivas furadas ou com vazamento e colocar você de volta em campo.</p>",
+            "text_color": "{{ settings.color_palette.background }}",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
             "line_height": "normal",
@@ -37,17 +63,29 @@
           },
           "blocks": {}
         },
-        "button_H9gpTf": {
+        "button_primary": {
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "Shop all",
-            "link": "shopify://collections/all",
+            "label": "Conhecer o Conserta Bola",
+            "link": "#produto-em-preparacao",
             "open_in_new_tab": false,
-            "style_class": "button-custom",
-            "custom_button_background": "rgba(0,0,0,0)",
-            "custom_button_text": "{{ settings.color_palette.background }}",
-            "custom_button_border": "{{ settings.color_palette.background }}",
+            "style_class": "button",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        },
+        "button_secondary": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "Como funciona",
+            "link": "#como-funciona",
+            "open_in_new_tab": false,
+            "style_class": "button-secondary",
             "width": "fit-content",
             "custom_width": 100,
             "width_mobile": "fit-content",
@@ -57,8 +95,10 @@
         }
       },
       "block_order": [
-        "text_YLPk4p",
-        "button_H9gpTf"
+        "text_headline",
+        "text_support",
+        "button_primary",
+        "button_secondary"
       ],
       "name": "t:names.hero",
       "settings": {
@@ -74,12 +114,12 @@
         "horizontal_alignment": "space-between",
         "vertical_alignment": "flex-end",
         "align_baseline": true,
-        "horizontal_alignment_flex_direction_column": "center",
+        "horizontal_alignment_flex_direction_column": "flex-start",
         "vertical_alignment_flex_direction_column": "flex-end",
-        "gap": 24,
+        "gap": 20,
         "section_width": "page-width",
         "section_height": "medium",
-        "section_height_custom": 50,
+        "section_height_custom": 60,
         "background_color": "rgba(0,0,0,0)",
         "toggle_overlay": true,
         "overlay_color": "#12121266",
@@ -91,22 +131,18 @@
         "padding-block-end": 72
       }
     },
-    "product_list_fa6P9H": {
-      "type": "product-list",
+    "section_benefits": {
+      "type": "section",
+      "name": "Faixa de benefícios",
       "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "name": "t:names.header",
-          "static": true,
+        "benefit_1": {
+          "type": "group",
+          "name": "t:names.group",
           "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "flex-end",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
+            "content_direction": "column",
+            "horizontal_alignment_flex_direction_column": "center",
             "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
+            "gap": 8,
             "width": "fill",
             "custom_width": 100,
             "width_mobile": "fill",
@@ -114,68 +150,283 @@
             "height": "fit",
             "custom_height": 100,
             "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
             "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "padding-block-start": 12,
+            "padding-block-end": 12,
+            "padding-inline-start": 12,
+            "padding-inline-end": 12
           },
           "blocks": {
-            "product_list_text_YFtzcL": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
+            "icon_1": {
+              "type": "icon",
+              "name": "t:names.icon",
               "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "icon": "check_box",
+                "width": 32
               },
               "blocks": {}
             },
-            "product_list_button_MWeP9V": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
+            "text_1": {
+              "type": "text",
+              "name": "t:names.text",
               "settings": {
-                "label": "View all",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
+                "text": "<p>Testado em mais de 5.000 bolas reais</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "paragraph",
+                "wrap": "pretty"
               },
               "blocks": {}
             }
           },
-          "block_order": [
-            "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
-          ]
+          "block_order": ["icon_1", "text_1"]
         },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
+        "benefit_2": {
+          "type": "group",
+          "name": "t:names.group",
+          "settings": {
+            "content_direction": "column",
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 8,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 12,
+            "padding-block-end": 12,
+            "padding-inline-start": 12,
+            "padding-inline-end": 12
+          },
+          "blocks": {
+            "icon_2": {
+              "type": "icon",
+              "name": "t:names.icon",
+              "settings": {
+                "icon": "clipboard",
+                "width": 32
+              },
+              "blocks": {}
+            },
+            "text_2": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>Aplicação simples, com orientação passo a passo</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "paragraph",
+                "wrap": "pretty"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": ["icon_2", "text_2"]
+        },
+        "benefit_3": {
+          "type": "group",
+          "name": "t:names.group",
+          "settings": {
+            "content_direction": "column",
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 8,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 12,
+            "padding-block-end": 12,
+            "padding-inline-start": 12,
+            "padding-inline-end": 12
+          },
+          "blocks": {
+            "icon_3": {
+              "type": "icon",
+              "name": "t:names.icon",
+              "settings": {
+                "icon": "heart",
+                "width": 32
+              },
+              "blocks": {}
+            },
+            "text_3": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>Feito por quem vive de reparo de bolas há anos</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "paragraph",
+                "wrap": "pretty"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": ["icon_3", "text_3"]
+        }
+      },
+      "block_order": ["benefit_1", "benefit_2", "benefit_3"],
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "space-between",
+        "vertical_alignment": "center",
+        "gap": 24,
+        "section_width": "page-width",
+        "padding-block-start": 48,
+        "padding-block-end": 48,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
+      }
+    },
+    "section_authority": {
+      "type": "media-with-content",
+      "name": "Autoridade / Clínica da Bola",
+      "settings": {
+        "media_position": "left",
+        "media_width": "medium",
+        "media_height": "60svh",
+        "section_width": "page-width",
+        "extend_media": true,
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      },
+      "blocks": {
+        "media": {
+          "type": "_media-without-appearance",
           "static": true,
           "settings": {
-            "product_card_gap": 4,
+            "placeholder": "[PLACEHOLDER: foto real da Clínica da Bola / processo de reparo]"
+          }
+        },
+        "content": {
+          "type": "_content-without-appearance",
+          "static": true,
+          "settings": {
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center"
+          },
+          "blocks": {
+            "heading": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h2>Clínica da Bola</h2>",
+                "type_preset": "h3"
+              },
+              "blocks": {}
+            },
+            "text": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>Desenvolvido e ajustado à mão, reparo após reparo, por quem vive disso há anos. A fórmula própria do Conserta Bola nasceu na prática, cuidando de bolas de verdade, uma a uma.</p>",
+                "max_width": "narrow",
+                "type_preset": "rte"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": ["heading", "text"]
+        }
+      },
+      "block_order": ["media", "content"]
+    },
+    "section_before_after": {
+      "type": "section",
+      "name": "Antes e depois",
+      "blocks": {
+        "heading": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>Antes e depois</h2>",
+            "width": "100%",
+            "alignment": "center",
+            "type_preset": "h3"
+          },
+          "blocks": {}
+        },
+        "comparison": {
+          "type": "comparison-slider",
+          "name": "t:names.comparison_slider",
+          "settings": {
+            "slider_style": "horizontal",
+            "show_text": true,
+            "before_text": "[PLACEHOLDER: foto antes real]",
+            "after_text": "[PLACEHOLDER: foto depois real]",
+            "text_preset": "paragraph",
+            "image_ratio": "landscape",
+            "width": "fill"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": ["heading", "comparison"],
+      "settings": {
+        "content_direction": "column",
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 24,
+        "section_width": "page-width",
+        "padding-block-start": 48,
+        "padding-block-end": 48,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
+      }
+    },
+    "section_how_it_works": {
+      "type": "section",
+      "name": "Como funciona",
+      "blocks": {
+        "heading": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>Como funciona</h2>",
+            "width": "100%",
+            "alignment": "center",
+            "type_preset": "h3"
+          },
+          "blocks": {}
+        },
+        "steps_row": {
+          "type": "group",
+          "name": "t:names.group",
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-start",
+            "gap": 24,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
@@ -186,100 +437,520 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_card_gallery_677WP3": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
+            "step_1": {
+              "type": "group",
+              "name": "t:names.group",
               "settings": {
-                "image_ratio": "adapt",
+                "content_direction": "column",
+                "horizontal_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 8,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
                 "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-block-start": 12,
+                "padding-block-end": 12,
+                "padding-inline-start": 12,
+                "padding-inline-end": 12
+              },
+              "blocks": {
+                "num_1": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>1. Identifique o furo</p>",
+                    "width": "100%",
+                    "alignment": "center",
+                    "type_preset": "h5"
+                  },
+                  "blocks": {}
+                },
+                "desc_1": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Localize o ponto de vazamento na bola furada.</p>",
+                    "width": "100%",
+                    "alignment": "center",
+                    "type_preset": "paragraph"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": ["num_1", "desc_1"]
+            },
+            "step_2": {
+              "type": "group",
+              "name": "t:names.group",
+              "settings": {
+                "content_direction": "column",
+                "horizontal_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 8,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 12,
+                "padding-block-end": 12,
+                "padding-inline-start": 12,
+                "padding-inline-end": 12
+              },
+              "blocks": {
+                "num_2": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>2. Aplique a fórmula</p>",
+                    "width": "100%",
+                    "alignment": "center",
+                    "type_preset": "h5"
+                  },
+                  "blocks": {}
+                },
+                "desc_2": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Siga a orientação de aplicação do Conserta Bola.</p>",
+                    "width": "100%",
+                    "alignment": "center",
+                    "type_preset": "paragraph"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": ["num_2", "desc_2"]
+            },
+            "step_3": {
+              "type": "group",
+              "name": "t:names.group",
+              "settings": {
+                "content_direction": "column",
+                "horizontal_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 8,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 12,
+                "padding-block-end": 12,
+                "padding-inline-start": 12,
+                "padding-inline-end": 12
+              },
+              "blocks": {
+                "num_3": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>3. Volte para o jogo</p>",
+                    "width": "100%",
+                    "alignment": "center",
+                    "type_preset": "h5"
+                  },
+                  "blocks": {}
+                },
+                "desc_3": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Aguarde o tempo de cura e sua bola está pronta de novo.</p>",
+                    "width": "100%",
+                    "alignment": "center",
+                    "type_preset": "paragraph"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": ["num_3", "desc_3"]
+            }
+          },
+          "block_order": ["step_1", "step_2", "step_3"]
+        }
+      },
+      "block_order": ["heading", "steps_row"],
+      "settings": {
+        "content_direction": "column",
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 32,
+        "section_width": "page-width",
+        "padding-block-start": 48,
+        "padding-block-end": 48,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
+      }
+    },
+    "section_featured_product": {
+      "type": "media-with-content",
+      "name": "Produto em preparação",
+      "settings": {
+        "media_position": "right",
+        "media_width": "medium",
+        "media_height": "60svh",
+        "section_width": "page-width",
+        "extend_media": true,
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      },
+      "blocks": {
+        "media": {
+          "type": "_media-without-appearance",
+          "static": true,
+          "settings": {
+            "placeholder": "[PLACEHOLDER: foto real do produto]"
+          }
+        },
+        "content": {
+          "type": "_content-without-appearance",
+          "static": true,
+          "settings": {
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center"
+          },
+          "blocks": {
+            "heading": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h2>Conserta Bola — produto em preparação</h2>",
+                "type_preset": "h3"
               },
               "blocks": {}
             },
-            "product_title_YXxMTj": {
-              "type": "product-title",
-              "name": "t:names.product_title",
+            "text": {
+              "type": "text",
+              "name": "t:names.text",
               "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "text": "<p>Em breve.</p>",
+                "max_width": "narrow",
+                "type_preset": "rte"
               },
               "blocks": {}
             },
-            "price_JQzVV4": {
-              "type": "price",
-              "name": "t:names.product_price",
+            "button": {
+              "type": "button",
+              "name": "t:names.button",
               "settings": {
-                "show_sale_price_first": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "label": "Quero ser avisado quando estiver disponível",
+                "link": "#",
+                "open_in_new_tab": false,
+                "style_class": "button"
               },
               "blocks": {}
             }
           },
-          "block_order": [
-            "product_card_gallery_677WP3",
-            "product_title_YXxMTj",
-            "price_JQzVV4"
-          ]
+          "block_order": ["heading", "text", "button"]
         }
       },
-      "name": "t:names.product_list",
+      "block_order": ["media", "content"]
+    },
+    "section_social_proof": {
+      "type": "section",
+      "name": "Prova social",
+      "blocks": {
+        "heading": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>Quem já recuperou a bola</h2>",
+            "width": "100%",
+            "alignment": "center",
+            "type_preset": "h3"
+          },
+          "blocks": {}
+        },
+        "testimonials_row": {
+          "type": "group",
+          "name": "t:names.group",
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-start",
+            "gap": 24,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "testimonial_1": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>[Depoimento real — conteúdo pendente]</p>",
+                "width": "100%",
+                "alignment": "center",
+                "type_preset": "paragraph",
+                "border": "solid",
+                "border_width": 1,
+                "border_radius": 8,
+                "padding-block-start": 16,
+                "padding-block-end": 16,
+                "padding-inline-start": 16,
+                "padding-inline-end": 16
+              },
+              "blocks": {}
+            },
+            "testimonial_2": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>[Depoimento real — conteúdo pendente]</p>",
+                "width": "100%",
+                "alignment": "center",
+                "type_preset": "paragraph",
+                "border": "solid",
+                "border_width": 1,
+                "border_radius": 8,
+                "padding-block-start": 16,
+                "padding-block-end": 16,
+                "padding-inline-start": 16,
+                "padding-inline-end": 16
+              },
+              "blocks": {}
+            },
+            "testimonial_3": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>[Depoimento real — conteúdo pendente]</p>",
+                "width": "100%",
+                "alignment": "center",
+                "type_preset": "paragraph",
+                "border": "solid",
+                "border_width": 1,
+                "border_radius": 8,
+                "padding-block-start": 16,
+                "padding-block-end": 16,
+                "padding-inline-start": 16,
+                "padding-inline-end": 16
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": ["testimonial_1", "testimonial_2", "testimonial_3"]
+        }
+      },
+      "block_order": ["heading", "testimonials_row"],
       "settings": {
-        "collection": "all",
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 8,
-        "columns": 4,
-        "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 8,
-        "rows_gap": 24,
-        "icons_style": "arrow",
-        "icons_shape": "none",
+        "content_direction": "column",
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 32,
         "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 28,
-        "background_color": "{{ settings.color_palette.background }}",
         "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-end": 48,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
+      }
+    },
+    "section_faq": {
+      "type": "section",
+      "name": "FAQ",
+      "blocks": {
+        "heading": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>Perguntas frequentes</h2>",
+            "width": "100%",
+            "alignment": "center",
+            "type_preset": "h3"
+          },
+          "blocks": {}
+        },
+        "accordion_faq": {
+          "type": "accordion",
+          "name": "t:names.accordion",
+          "settings": {
+            "icon": "plus",
+            "dividers": true,
+            "type_preset": "h6"
+          },
+          "blocks": {
+            "faq_1": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "O Conserta Bola funciona em qualquer tipo de bola?",
+                "open_by_default": true
+              },
+              "blocks": {
+                "faq_1_text": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>O Conserta Bola foi desenvolvido para bolas esportivas furadas ou com vazamento. A eficácia pode variar conforme o material e o tamanho do dano.</p>",
+                    "width": "100%"
+                  }
+                }
+              },
+              "block_order": ["faq_1_text"]
+            },
+            "faq_2": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "Quanto tempo leva o reparo?"
+              },
+              "blocks": {
+                "faq_2_text": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>O tempo varia conforme o tipo de dano e a orientação de aplicação enviada junto com o produto.</p>",
+                    "width": "100%"
+                  }
+                }
+              },
+              "block_order": ["faq_2_text"]
+            },
+            "faq_3": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "A fórmula é segura de aplicar em casa?"
+              },
+              "blocks": {
+                "faq_3_text": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Sim, seguindo o passo a passo de aplicação fornecido junto com o produto.</p>",
+                    "width": "100%"
+                  }
+                }
+              },
+              "block_order": ["faq_3_text"]
+            },
+            "faq_4": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "Como faço para comprar?"
+              },
+              "blocks": {
+                "faq_4_text": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>[PLACEHOLDER: informações de compra pendentes — produto ainda em preparação]</p>",
+                    "width": "100%"
+                  }
+                }
+              },
+              "block_order": ["faq_4_text"]
+            }
+          },
+          "block_order": ["faq_1", "faq_2", "faq_3", "faq_4"]
+        }
+      },
+      "block_order": ["heading", "accordion_faq"],
+      "settings": {
+        "content_direction": "column",
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 24,
+        "section_width": "page-width",
+        "padding-block-start": 48,
+        "padding-block-end": 48,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0
+      }
+    },
+    "section_final_cta": {
+      "type": "section",
+      "name": "CTA final",
+      "blocks": {
+        "heading": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>Sua bola furou? Volte para o jogo com o Conserta Bola.</h2>",
+            "width": "100%",
+            "alignment": "center",
+            "type_preset": "h3"
+          },
+          "blocks": {}
+        },
+        "button_final": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "Quero ser avisado quando estiver disponível",
+            "link": "#",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "width": "fit-content"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": ["heading", "button_final"],
+      "settings": {
+        "content_direction": "column",
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 20,
+        "section_width": "page-width",
+        "background_color": "{{ settings.color_palette.foreground }}",
+        "padding-block-start": 56,
+        "padding-block-end": 56,
+        "padding-inline-start": 24,
+        "padding-inline-end": 24
+      }
+    },
+    "whatsapp_float": {
+      "type": "whatsapp-float",
+      "name": "Botão flutuante WhatsApp",
+      "settings": {
+        "enabled": true,
+        "whatsapp_number": "",
+        "whatsapp_message": "Olá! Vim pelo site da Conserta Bola.",
+        "aria_label": "Falar no WhatsApp",
+        "button_color": "#25D366",
+        "position": "right"
       }
     }
   },
   "order": [
     "hero_jVaWmY",
-    "product_list_fa6P9H"
+    "section_benefits",
+    "section_authority",
+    "section_before_after",
+    "section_how_it_works",
+    "section_featured_product",
+    "section_social_proof",
+    "section_faq",
+    "section_final_cta",
+    "whatsapp_float"
   ]
 }
