@@ -368,14 +368,25 @@
           },
           "blocks": {}
         },
+        "notice": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>[PLACEHOLDER: fotos reais de antes/depois em breve — imagens abaixo são apenas ilustrativas]</p>",
+            "width": "100%",
+            "alignment": "center",
+            "type_preset": "paragraph"
+          },
+          "blocks": {}
+        },
         "comparison": {
           "type": "comparison-slider",
           "name": "t:names.comparison_slider",
           "settings": {
             "slider_style": "horizontal",
             "show_text": true,
-            "before_text": "[PLACEHOLDER: foto antes real]",
-            "after_text": "[PLACEHOLDER: foto depois real]",
+            "before_text": "Antes (ilustrativo)",
+            "after_text": "Depois (ilustrativo)",
             "text_preset": "paragraph",
             "image_ratio": "landscape",
             "width": "fill"
@@ -383,7 +394,7 @@
           "blocks": {}
         }
       },
-      "block_order": ["heading", "comparison"],
+      "block_order": ["heading", "notice", "comparison"],
       "settings": {
         "content_direction": "column",
         "horizontal_alignment_flex_direction_column": "center",
@@ -717,8 +728,11 @@
                 "width": "100%",
                 "alignment": "center",
                 "type_preset": "paragraph",
-                "border": "solid",
-                "border_width": 1,
+                "background": true,
+                "background_color": "#00000012",
+                "border": "dashed",
+                "border_width": 2,
+                "border_opacity": 60,
                 "border_radius": 8,
                 "padding-block-start": 16,
                 "padding-block-end": 16,
@@ -735,8 +749,11 @@
                 "width": "100%",
                 "alignment": "center",
                 "type_preset": "paragraph",
-                "border": "solid",
-                "border_width": 1,
+                "background": true,
+                "background_color": "#00000012",
+                "border": "dashed",
+                "border_width": 2,
+                "border_opacity": 60,
                 "border_radius": 8,
                 "padding-block-start": 16,
                 "padding-block-end": 16,
@@ -753,8 +770,11 @@
                 "width": "100%",
                 "alignment": "center",
                 "type_preset": "paragraph",
-                "border": "solid",
-                "border_width": 1,
+                "background": true,
+                "background_color": "#00000012",
+                "border": "dashed",
+                "border_width": 2,
+                "border_opacity": 60,
                 "border_radius": 8,
                 "padding-block-start": 16,
                 "padding-block-end": 16,

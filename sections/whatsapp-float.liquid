@@ -16,7 +16,7 @@
 
 {% if section.settings.enabled %}
   <div
-    class="whatsapp-float whatsapp-float--{{ section.settings.position }}"
+    class="whatsapp-float whatsapp-float--{{ section.settings.position }}{% unless has_number %} whatsapp-float--disabled{% endunless %}"
     style="--whatsapp-float-color: {{ section.settings.button_color }};"
   >
     <a
@@ -47,15 +47,15 @@
   .whatsapp-float {
     position: fixed;
     z-index: 40;
-    bottom: 20px;
+    bottom: max(20px, env(safe-area-inset-bottom));
   }
 
   .whatsapp-float--right {
-    right: 20px;
+    right: max(20px, env(safe-area-inset-right));
   }
 
   .whatsapp-float--left {
-    left: 20px;
+    left: max(20px, env(safe-area-inset-left));
   }
 
   .whatsapp-float__button {
@@ -75,6 +75,34 @@
     width: 28px;
     height: 28px;
     fill: currentColor;
+  }
+
+  @media screen and (max-width: 749px) {
+    .whatsapp-float {
+      bottom: max(14px, env(safe-area-inset-bottom));
+    }
+
+    .whatsapp-float--right {
+      right: max(14px, env(safe-area-inset-right));
+    }
+
+    .whatsapp-float--left {
+      left: max(14px, env(safe-area-inset-left));
+    }
+
+    .whatsapp-float__button {
+      width: 44px;
+      height: 44px;
+    }
+
+    .whatsapp-float__button svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  .whatsapp-float--disabled {
+    pointer-events: none;
   }
 
   .whatsapp-float__button--disabled {
