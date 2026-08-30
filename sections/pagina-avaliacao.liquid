@@ -39,14 +39,14 @@
         <li><a href="/#section_how_it_works">Ver como o Conserta Bola funciona</a></li>
         <li><a href="/#section_authority">Conhecer a Clínica da Bola</a></li>
         <li><a href="/#section_faq">Ver perguntas frequentes</a></li>
-        <li><a href="/">Voltar para a página inicial</a></li>
+        <li><a href="{{ routes.root_url }}">Voltar para a página inicial</a></li>
       </ul>
     </nav>
   </aside>
 
 </main>
 
-{{ 'pagina-avaliacao.js' | asset_url | script_tag }}
+<script src="{{ 'pagina-avaliacao.js' | asset_url }}" defer></script>
 
 {% stylesheet %}
   .visually-hidden {

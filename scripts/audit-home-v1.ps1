@@ -37,14 +37,23 @@ if ($LASTEXITCODE -ne 0) {
 
 $allowedFiles = @(
   "templates/index.json",
+  "templates/product.json",
+  "templates/page.avaliacao.json",
   "sections/whatsapp-float.liquid",
+  "sections/triagem.liquid",
+  "sections/pagina-avaliacao.liquid",
+  "sections/media-with-content.liquid",
+  "sections/header-group.json",
+  "sections/footer-group.json",
+  "blocks/comparison-slider.liquid",
+  "blocks/_product-trust-badges.liquid",
+  "blocks/_product-details.liquid",
+  "assets/pagina-avaliacao.js",
   "config/settings_data.json",
   "scripts/audit-home-v1.ps1"
 )
 
 $protectedFiles = @(
-  "sections/header-group.json",
-  "sections/footer-group.json",
   "layout/theme.liquid"
 )
 
@@ -100,6 +109,41 @@ foreach ($term in $prohibitedTerms) {
     ($null -eq $found) `
     "Termo proibido ausente: $term" `
     "Termo proibido encontrado no conteudo renderizavel adicionado: $term"
+}
+
+$commercialScanDirs = @("templates", "sections", "snippets", "blocks", "layout")
+$commercialScanFiles = @()
+foreach ($dir in $commercialScanDirs) {
+  if (Test-Path $dir) {
+    $commercialScanFiles += Get-ChildItem -Path $dir -Recurse -File -Include *.liquid, *.json | ForEach-Object { $_.FullName }
+  }
+}
+
+$hardFailPatterns = @(
+  @{ Name = 'Preco R$26,90 hardcoded';   Pattern = 'R\$\s*26,90' },
+  @{ Name = 'Preco R$27,90 hardcoded';   Pattern = 'R\$\s*27,90' },
+  @{ Name = 'Preco R$29,90 hardcoded';   Pattern = 'R\$\s*29,90' },
+  @{ Name = "CTA 'Comprar Conserta Bola' hardcoded"; Pattern = 'Comprar Conserta Bola' }
+)
+
+foreach ($rule in $hardFailPatterns) {
+  $matches = $commercialScanFiles | Select-String -Pattern $rule.Pattern -CaseSensitive:$false
+  Check `
+    ($null -eq $matches -or $matches.Count -eq 0) `
+    ("Sem ocorrencias hardcoded: " + $rule.Name) `
+    ("Encontrado hardcoded (" + $rule.Name + "): " + (($matches | ForEach-Object { $_.Path + ":" + $_.LineNumber }) -join "; "))
+}
+
+$softWarnPatterns = @(
+  @{ Name = "'Frete gratis' fora de config"; Pattern = 'Frete\s+gr[aá]tis' },
+  @{ Name = "'5.000 bolas' hardcoded";       Pattern = '5\.000\s+bolas' }
+)
+
+foreach ($rule in $softWarnPatterns) {
+  $matches = $commercialScanFiles | Select-String -Pattern $rule.Pattern -CaseSensitive:$false
+  if ($null -ne $matches -and $matches.Count -gt 0) {
+    $warnings += ("Copy comercial hardcoded (" + $rule.Name + "): " + (($matches | ForEach-Object { $_.Path + ":" + $_.LineNumber }) -join "; "))
+  }
 }
 
 $whatsappFile = "sections/whatsapp-float.liquid"

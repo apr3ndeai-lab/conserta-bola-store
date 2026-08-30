@@ -157,7 +157,7 @@
                   "type": "price",
                   "settings": {
                     "show_sale_price_first": true,
-                    "show_installments": false,
+                    "show_installments": true,
                     "show_tax_info": false,
                     "type_preset": "paragraph",
                     "width": "100%",
@@ -276,6 +276,18 @@
               },
               "block_order": []
             },
+            "trust_badges_cb": {
+              "type": "_product-trust-badges",
+              "settings": {
+                "show_shipping": true,
+                "shipping_label": "Envio em até 24h úteis",
+                "show_guarantee": true,
+                "guarantee_label": "Satisfação garantida",
+                "show_payment": true,
+                "payment_label": "Pix, cartão e boleto"
+              },
+              "blocks": {}
+            },
             "text_aEtTtq": {
               "type": "text",
               "name": "t:names.product_description",
@@ -308,6 +320,7 @@
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
+            "trust_badges_cb",
             "text_aEtTtq"
           ]
         }

@@ -15,7 +15,7 @@
   endif
 %}
 
-{% if section.settings.enabled %}
+{% if section.settings.enabled and template.name != 'product' %}
   <div
     class="whatsapp-float whatsapp-float--{{ section.settings.position }}{% unless has_number %} whatsapp-float--disabled{% endunless %}"
     style="--whatsapp-float-color: {{ section.settings.button_color }};"
