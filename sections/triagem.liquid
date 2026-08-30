@@ -1,0 +1,412 @@
+{% liquid
+  assign heading_text = section.settings.heading | default: 'Qual o problema da sua bola?'
+  assign lede_text = section.settings.lede
+%}
+
+<section class="triagem" aria-labelledby="triagem-title" style="--triagem-bg: {{ section.settings.bg_color }}; --triagem-card-bg: {{ section.settings.card_bg_color }};">
+  <div class="triagem__intro">
+    <h2 id="triagem-title">{{ heading_text }}</h2>
+    {% if lede_text != blank %}
+      <p class="triagem__lede">{{ lede_text }}</p>
+    {% endif %}
+  </div>
+
+  <ul class="triagem__list" role="list">
+    {% for block in section.blocks %}
+      {% if block.type == 'card' %}
+        {% liquid
+          assign has_secondary = false
+          if block.settings.href_secondary != blank and block.settings.label_secondary != blank
+            assign has_secondary = true
+          endif
+          assign primary_label = block.settings.label_primary | default: block.settings.next_label | default: 'Ver próximo passo'
+          assign card_title_id = 'triagem-card-title-' | append: block.id
+        %}
+        <li {{ block.shopify_attributes }}>
+          <article
+            class="triagem-card{% if block.settings.is_fallback %} triagem-card--fallback{% endif %}"
+            aria-labelledby="{{ card_title_id }}"
+          >
+            <h3 id="{{ card_title_id }}" class="triagem-card__title">{{ block.settings.title }}</h3>
+            <p class="triagem-card__desc">{{ block.settings.description }}</p>
+            <div class="triagem-card__ctas{% if has_secondary %} triagem-card__ctas--dual{% endif %}">
+              <a
+                class="cta cta--primary"
+                href="{{ block.settings.href }}"
+                {% if block.settings.href contains 'wa.me' or block.settings.href contains 'http' %}target="_blank" rel="noopener"{% endif %}
+                data-track="triagem_select"
+                data-triagem-opcao="{{ block.settings.opcao }}"
+                data-triagem-cta="{{ block.settings.cta_primary_kind | default: 'buy' }}"
+              >{{ primary_label }}</a>
+              {% if has_secondary %}
+                <a
+                  class="cta cta--secondary"
+                  href="{{ block.settings.href_secondary }}"
+                  {% if block.settings.href_secondary contains 'wa.me' or block.settings.href_secondary contains 'http' %}target="_blank" rel="noopener"{% endif %}
+                  {% if block.settings.aria_secondary != blank %}aria-label="{{ block.settings.aria_secondary | escape }}"{% endif %}
+                  data-track="triagem_select"
+                  data-triagem-opcao="{{ block.settings.opcao }}"
+                  data-triagem-cta="{{ block.settings.cta_secondary_kind | default: 'whatsapp' }}"
+                >{{ block.settings.label_secondary }}</a>
+              {% endif %}
+            </div>
+          </article>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  {% if section.settings.cta_href != blank %}
+    <div class="triagem__cta-wrap">
+      {% if section.settings.cta_lede != blank %}
+        <p class="triagem__cta-lede">{{ section.settings.cta_lede }}</p>
+      {% endif %}
+      <a class="button button--primary" href="{{ section.settings.cta_href }}" {% if section.settings.cta_href contains 'wa.me' or section.settings.cta_href contains 'http' %}target="_blank" rel="noopener"{% endif %} data-track="triagem_cta_avaliacao">
+        {{ section.settings.cta_label | default: 'Quero avaliar minha bola' }}
+      </a>
+    </div>
+  {% endif %}
+</section>
+
+{% stylesheet %}
+  .triagem {
+    background-color: var(--triagem-bg, transparent);
+    padding-block: 48px;
+    padding-inline: 24px;
+    max-width: var(--page-width, 1200px);
+    margin-inline: auto;
+    --triagem-gold: #E8B84B;
+    --triagem-gold-hover: #F1C766;
+    --triagem-gold-ink: #0D1526;
+    --triagem-focus-ring: #7CC4FF;
+    --triagem-radius: 8px;
+    --triagem-touch-min: 44px;
+  }
+
+  .triagem__intro {
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+    margin-block-end: 32px;
+  }
+
+  .triagem__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .triagem__list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+  }
+
+  .triagem-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 100%;
+    padding: 24px;
+    border: 1px solid rgba(248, 250, 252, 0.08);
+    border-radius: var(--triagem-radius);
+    background-color: var(--triagem-card-bg, transparent);
+    color: inherit;
+  }
+
+  .triagem-card__title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .triagem-card__desc {
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  .triagem-card__ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-block-start: 8px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .triagem-card__ctas--dual {
+      flex-direction: row;
+      align-items: stretch;
+    }
+    .triagem-card__ctas--dual .cta--primary {
+      flex: 2 1 0;
+    }
+    .triagem-card__ctas--dual .cta--secondary {
+      flex: 1 1 0;
+    }
+  }
+
+  .triagem .cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--triagem-touch-min);
+    padding: 12px 16px;
+    border-radius: var(--triagem-radius);
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 120ms ease, color 120ms ease, transform 80ms ease;
+  }
+
+  .triagem .cta--primary {
+    background: var(--triagem-gold);
+    color: var(--triagem-gold-ink);
+    border: 1px solid var(--triagem-gold);
+  }
+
+  .triagem .cta--primary:hover { background: var(--triagem-gold-hover); }
+  .triagem .cta--primary:active { transform: translateY(1px); }
+
+  .triagem .cta--secondary {
+    background: transparent;
+    color: var(--triagem-gold);
+    border: 1px solid var(--triagem-gold);
+  }
+
+  .triagem .cta--secondary:hover { background: rgba(232, 184, 75, 0.08); }
+  .triagem .cta--secondary:active { transform: translateY(1px); }
+
+  .triagem .cta:focus-visible {
+    outline: 2px solid var(--triagem-focus-ring);
+    outline-offset: 3px;
+  }
+
+  .triagem__cta-wrap {
+    text-align: center;
+    margin-block-start: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .triagem__cta-wrap .button {
+    margin-inline: auto !important;
+    width: fit-content !important;
+    align-self: center;
+    display: inline-flex;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Triagem",
+  "tag": "section",
+  "class": "section-triagem",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Qual o problema da sua bola?"
+    },
+    {
+      "type": "textarea",
+      "id": "lede",
+      "label": "Texto de apoio",
+      "default": "Escolha a opção mais parecida com o que você percebeu. Não precisa saber o nome técnico — se estiver em dúvida, tem uma opção pra isso também."
+    },
+    {
+      "type": "textarea",
+      "id": "cta_lede",
+      "label": "Texto acima do CTA",
+      "default": "Prefere falar direto com a gente?"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Texto do botão CTA",
+      "default": "Quero avaliar minha bola"
+    },
+    {
+      "type": "text",
+      "id": "cta_href",
+      "label": "Link do botão CTA",
+      "default": "/pages/avaliacao"
+    },
+    {
+      "type": "header",
+      "content": "Aparência"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Cor de fundo da seção"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Cor de fundo dos cards"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card de triagem",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título do card"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Descrição"
+        },
+        {
+          "type": "text",
+          "id": "opcao",
+          "label": "Identificador da opção (data-triagem-opcao)"
+        },
+        {
+          "type": "header",
+          "content": "CTA primário"
+        },
+        {
+          "type": "text",
+          "id": "label_primary",
+          "label": "Texto do CTA primário"
+        },
+        {
+          "type": "text",
+          "id": "href",
+          "label": "Link do CTA primário"
+        },
+        {
+          "type": "select",
+          "id": "cta_primary_kind",
+          "label": "Tipo do CTA primário (data-triagem-cta)",
+          "options": [
+            { "value": "buy", "label": "buy" },
+            { "value": "whatsapp", "label": "whatsapp" }
+          ],
+          "default": "buy"
+        },
+        {
+          "type": "header",
+          "content": "CTA secundário (opcional)"
+        },
+        {
+          "type": "text",
+          "id": "label_secondary",
+          "label": "Texto do CTA secundário"
+        },
+        {
+          "type": "text",
+          "id": "href_secondary",
+          "label": "Link do CTA secundário"
+        },
+        {
+          "type": "text",
+          "id": "aria_secondary",
+          "label": "aria-label do CTA secundário"
+        },
+        {
+          "type": "select",
+          "id": "cta_secondary_kind",
+          "label": "Tipo do CTA secundário (data-triagem-cta)",
+          "options": [
+            { "value": "buy", "label": "buy" },
+            { "value": "whatsapp", "label": "whatsapp" }
+          ],
+          "default": "whatsapp"
+        },
+        {
+          "type": "header",
+          "content": "Compatibilidade / legado"
+        },
+        {
+          "type": "text",
+          "id": "next_label",
+          "label": "Texto do CTA (legado — usado se 'Texto do CTA primário' vazio)",
+          "default": "Ver próximo passo"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_fallback",
+          "label": "É a opção 'não sei identificar'?",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Triagem",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "title": "Perde ar aos poucos",
+            "description": "Bola enche, mas amanhã já tá murcha.",
+            "opcao": "furo_pequeno",
+            "label_primary": "Comprar Conserta Bola — R$27,90",
+            "href": "/products/conserta-bola?utm_source=triagem&utm_content=furo_pequeno",
+            "cta_primary_kind": "buy",
+            "label_secondary": "Falar com especialista",
+            "href_secondary": "https://wa.me/5547992758506?text=Ol%C3%A1!%20Minha%20bola%20perde%20ar%20aos%20poucos%20e%20queria%20uma%20avalia%C3%A7%C3%A3o.",
+            "aria_secondary": "Falar com especialista sobre bola que perde ar aos poucos",
+            "cta_secondary_kind": "whatsapp"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "title": "Vaza perto da válvula",
+            "description": "Você sente o ar saindo perto da válvula.",
+            "opcao": "valvula",
+            "label_primary": "Comprar Conserta Bola — R$27,90",
+            "href": "/products/conserta-bola?utm_source=triagem&utm_content=valvula",
+            "cta_primary_kind": "buy",
+            "label_secondary": "Falar com especialista",
+            "href_secondary": "https://wa.me/5547992758506?text=Ol%C3%A1!%20Minha%20bola%20vaza%20perto%20da%20v%C3%A1lvula%20e%20queria%20uma%20avalia%C3%A7%C3%A3o.",
+            "aria_secondary": "Falar com especialista sobre bola que vaza perto da válvula",
+            "cta_secondary_kind": "whatsapp"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "title": "Tem rasgo ou corte visível",
+            "description": "Você consegue ver o dano.",
+            "opcao": "rasgo",
+            "label_primary": "Enviar foto para avaliar",
+            "href": "https://wa.me/5547992758506?text=Ol%C3%A1!%20Minha%20bola%20tem%20um%20rasgo%2Fcorte%20e%20queria%20uma%20avalia%C3%A7%C3%A3o.",
+            "cta_primary_kind": "whatsapp"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "title": "Não sei o que é",
+            "description": "Manda uma foto que a gente identifica.",
+            "opcao": "nao_sei",
+            "label_primary": "Enviar foto",
+            "href": "https://wa.me/5547992758506?text=Ol%C3%A1!%20N%C3%A3o%20sei%20o%20que%20minha%20bola%20tem%20%E2%80%94%20posso%20mandar%20uma%20foto%3F",
+            "cta_primary_kind": "whatsapp",
+            "is_fallback": true
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

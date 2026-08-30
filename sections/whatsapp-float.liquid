@@ -9,7 +9,8 @@
     assign wa_digits = section.settings.whatsapp_number | remove: '+' | remove: ' ' | remove: '-' | remove: '(' | remove: ')'
     assign wa_link = 'https://wa.me/' | append: wa_digits
     if section.settings.whatsapp_message != blank
-      assign wa_link = wa_link | append: '?text=' | append: section.settings.whatsapp_message | url_encode
+      assign wa_text = section.settings.whatsapp_message | url_encode
+      assign wa_link = wa_link | append: '?text=' | append: wa_text
     endif
   endif
 %}

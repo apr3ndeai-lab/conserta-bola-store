@@ -409,6 +409,15 @@
   [data-orientation='vertical'][data-text-position='end'] .comparison-slider__text {
     inset-inline-end: var(--padding-sm);
   }
+
+  /* Antes/depois da home: fotos sao quadradas (1:1), mas em largura total (desktop)
+     isso deixa o bloco alto demais. Forca um ratio mais wide so no desktop,
+     mantendo largura cheia. object-fit: cover ja cuida do enquadramento sem esticar. */
+  @media screen and (min-width: 750px) {
+    #shopify-section-section_before_after .comparison-slider {
+      aspect-ratio: 21 / 9;
+    }
+  }
 {% endstylesheet %}
 
 {% schema %}

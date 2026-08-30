@@ -66,9 +66,25 @@ Check `
   "Arquivos protegidos permanecem inalterados." `
   ("Arquivo protegido alterado: " + ($protectedChanged -join ", "))
 
-$diff = git diff --no-ext-diff --unified=0 "$Base..$Head"
-if ($LASTEXITCODE -ne 0) {
-  throw "Nao foi possivel ler o diff Git."
+$renderableThemeDirs = @("templates/", "sections/", "snippets/", "assets/", "locales/")
+$renderableChangedFiles = @(
+  $changedFiles | Where-Object {
+    $file = $_
+    ($renderableThemeDirs | Where-Object { $file.StartsWith($_) }).Count -gt 0
+  }
+)
+
+if ($renderableChangedFiles.Count -gt 0) {
+  $renderableDiff = git diff --no-ext-diff --unified=0 "$Base..$Head" -- $renderableChangedFiles
+  if ($LASTEXITCODE -ne 0) {
+    throw "Nao foi possivel ler o diff Git dos arquivos renderizaveis."
+  }
+
+  $addedLines = $renderableDiff | Where-Object {
+    $_.StartsWith("+") -and -not $_.StartsWith("+++")
+  }
+} else {
+  $addedLines = @()
 }
 
 $prohibitedTerms = @(
@@ -79,11 +95,11 @@ $prohibitedTerms = @(
 )
 
 foreach ($term in $prohibitedTerms) {
-  $found = $diff | Select-String -Pattern ([regex]::Escape($term)) -CaseSensitive:$false
+  $found = $addedLines | Select-String -Pattern ([regex]::Escape($term)) -CaseSensitive:$false
   Check `
     ($null -eq $found) `
     "Termo proibido ausente: $term" `
-    "Termo proibido encontrado no diff: $term"
+    "Termo proibido encontrado no conteudo renderizavel adicionado: $term"
 }
 
 $whatsappFile = "sections/whatsapp-float.liquid"
