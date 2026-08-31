@@ -1,0 +1,242 @@
+<main id="conteudo-principal" tabindex="-1" class="avaliacao">
+
+  <header class="avaliacao__header">
+    <h1>{{ section.settings.header_titulo }}</h1>
+    <p class="avaliacao__lede">{{ section.settings.header_lede }}</p>
+  </header>
+
+  <section class="avaliacao__lista" aria-labelledby="lista-titulo">
+    <h2 id="lista-titulo" class="visually-hidden">{{ section.settings.lista_titulo }}</h2>
+
+    {% for block in section.blocks %}
+      {% if block.type == 'problema' %}
+        <article
+          class="problema{% if block.settings.is_fallback %} problema--fallback{% endif %}"
+          id="problema-{{ block.settings.opcao }}"
+          data-problema="{{ block.settings.opcao }}"
+          aria-labelledby="titulo-{{ block.settings.opcao }}"
+          tabindex="-1"
+          {{ block.shopify_attributes }}
+        >
+          <h2 id="titulo-{{ block.settings.opcao }}">{{ block.settings.titulo }}</h2>
+          <p class="problema__sintoma">{{ block.settings.sintoma }}</p>
+          <div class="problema__explicacao">
+            {{ block.settings.explicacao }}
+          </div>
+          <div class="problema__proximo-passo">
+            {{ block.settings.proximo_passo }}
+          </div>
+        </article>
+      {% endif %}
+    {% endfor %}
+  </section>
+
+  <aside class="avaliacao__enquanto-espera" aria-labelledby="enquanto-espera-titulo">
+    <h2 id="enquanto-espera-titulo">{{ section.settings.aside_titulo }}</h2>
+    <p>{{ section.settings.aside_texto }}</p>
+    <nav aria-label="Continuar navegando">
+      <ul>
+        <li><a href="/#section_how_it_works">Ver como o Conserta Bola funciona</a></li>
+        <li><a href="/#section_authority">Conhecer a Clínica da Bola</a></li>
+        <li><a href="/#section_faq">Ver perguntas frequentes</a></li>
+        <li><a href="{{ routes.root_url }}">Voltar para a página inicial</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+</main>
+
+<script src="{{ 'pagina-avaliacao.js' | asset_url }}" defer></script>
+
+{% stylesheet %}
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .avaliacao {
+    max-width: var(--page-width, 1200px);
+    margin-inline: auto;
+    padding-block: 48px;
+    padding-inline: 24px;
+  }
+
+  .avaliacao__lede {
+    max-width: 640px;
+    margin-block-end: 32px;
+  }
+
+  .avaliacao__lista {
+    display: grid;
+    gap: 24px;
+  }
+
+  .problema {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    padding: 24px;
+    scroll-margin-block-start: 24px;
+  }
+
+  .problema:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  .problema--em-foco {
+    border-width: 2px;
+    border-color: currentColor;
+  }
+
+  .avaliacao__enquanto-espera {
+    margin-block-start: 48px;
+    padding-block-start: 24px;
+    border-block-start: 1px solid rgba(0, 0, 0, 0.12);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Página de avaliação",
+  "tag": "section",
+  "class": "section-pagina-avaliacao",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Cabeçalho da página"
+    },
+    {
+      "type": "text",
+      "id": "header_titulo",
+      "label": "Título principal (h1)",
+      "default": "Avaliação da sua bola"
+    },
+    {
+      "type": "textarea",
+      "id": "header_lede",
+      "label": "Texto de acolhimento",
+      "default": "Antes de qualquer aplicação, vale entender que caso é o seu. Aqui está o que a Clínica da Bola costuma encontrar em cada tipo de vazamento — e o que fazer em seguida. Para uma avaliação individual, chame no WhatsApp com uma foto da bola."
+    },
+    {
+      "type": "text",
+      "id": "lista_titulo",
+      "label": "Título acessível da lista (oculto)",
+      "default": "Casos que a Clínica da Bola avalia",
+      "info": "Não aparece visualmente, apenas para leitores de tela."
+    },
+    {
+      "type": "header",
+      "content": "Bloco 'Enquanto espera'"
+    },
+    {
+      "type": "text",
+      "id": "aside_titulo",
+      "label": "Título do bloco lateral",
+      "default": "Fale direto com quem repara"
+    },
+    {
+      "type": "textarea",
+      "id": "aside_texto",
+      "label": "Texto do bloco lateral",
+      "default": "Envie uma foto da bola e conte o que aconteceu. A Clínica da Bola responde com o próximo passo pro seu caso — se é reparável com o Conserta Bola, se precisa de outro tipo de intervenção, ou se é caso perdido. Sem enrolação."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "problema",
+      "name": "Caso avaliado",
+      "settings": [
+        {
+          "type": "text",
+          "id": "titulo",
+          "label": "Título do caso (h2)"
+        },
+        {
+          "type": "text",
+          "id": "opcao",
+          "label": "Identificador (data-problema)",
+          "info": "Deve bater com o valor da triagem: furo-pequeno, rasgo, valvula, nao-sei."
+        },
+        {
+          "type": "textarea",
+          "id": "sintoma",
+          "label": "Sintoma (descrição do que o visitante percebe)"
+        },
+        {
+          "type": "richtext",
+          "id": "explicacao",
+          "label": "Explicação (o que costuma acontecer, o que a Clínica faz)",
+          "info": "IMPORTANTE bloco válvula: não sugerir que o produto age pela válvula. Ver docs/brand-rules.md:49-51."
+        },
+        {
+          "type": "richtext",
+          "id": "proximo_passo",
+          "label": "Próximo passo (passivo, sem canal ativo)"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_fallback",
+          "label": "É o caso 'não sei identificar'?",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Página de avaliação",
+      "blocks": [
+        {
+          "type": "problema",
+          "settings": {
+            "titulo": "Furo pequeno ou vazamento lento",
+            "opcao": "furo-pequeno",
+            "sintoma": "A bola perde pressão depois de algumas horas ou de um dia pro outro, sem dano visível grande.",
+            "explicacao": "<p>Vazamentos pequenos são o caso mais comum e o mais reparável. O ponto onde aplicar a fórmula depende do tipo de bola: <strong>futsal e society</strong>, cuja câmara tem preenchimento interno, o Conserta Bola é aplicado direto no furo; <strong>campo, vôlei, basquete, handebol e beach</strong>, cuja câmara é oca, a aplicação é pela válvula. A cartilha que acompanha o produto orienta passo a passo pro seu caso.</p>",
+            "proximo_passo": "<p>Mande uma foto da bola no WhatsApp da Clínica da Bola e diga qual modalidade. Se for reparável, você recebe orientação específica pro seu caso antes da compra.</p>"
+          }
+        },
+        {
+          "type": "problema",
+          "settings": {
+            "titulo": "Rasgo ou corte no revestimento",
+            "opcao": "rasgo",
+            "sintoma": "Dá pra ver o dano na superfície da bola — um corte, um rasgo ou uma parte solta do revestimento.",
+            "explicacao": "<p>Rasgos e cortes visíveis são casos em que a viabilidade depende da profundidade e extensão do dano. Um risco superficial no revestimento costuma ser recuperável; um corte que atinge a câmara interna já exige avaliação individual antes de qualquer aplicação — em alguns casos o reparo é possível, em outros a bola já saiu do jogo.</p>",
+            "proximo_passo": "<p>Envie uma foto próxima do rasgo pelo WhatsApp. A Clínica avalia se o seu caso entra na faixa em que o Conserta Bola resolve.</p>"
+          }
+        },
+        {
+          "type": "problema",
+          "settings": {
+            "titulo": "Vazamento perto da válvula",
+            "opcao": "valvula",
+            "sintoma": "Depois de encher, o ar escapa em pouco tempo, e o vazamento parece vir da região onde entra a agulha.",
+            "explicacao": "<p>Vazamentos na região da válvula têm origem variável: pode ser a própria válvula desgastada (a agulha da bomba abriu um caminho ao longo do tempo), pode ser um furo perto da base, pode ser a câmara comprometida. Casos de válvula desgastada podem ser reparados, mas às vezes exigem reaplicação com o tempo, porque a agulha de calibragem pode reabrir o vazamento. Cada caso precisa ser visto antes de qualquer aplicação.</p>",
+            "proximo_passo": "<p>Mande foto próxima da válvula pelo WhatsApp e conte há quanto tempo o vazamento começou. A Clínica avalia se o seu caso é tratável com o Conserta Bola.</p>"
+          }
+        },
+        {
+          "type": "problema",
+          "settings": {
+            "titulo": "Não sei identificar o problema",
+            "opcao": "nao-sei",
+            "is_fallback": true,
+            "sintoma": "Sem problema — muita gente chega aqui sem saber nomear o que aconteceu. O reparo começa por reconhecer o sintoma; a Clínica da Bola faz esse trabalho de identificação antes de recomendar qualquer aplicação.",
+            "explicacao": "<p>Reconhecer o sintoma é o primeiro passo do reparo — e a maioria das bolas que chegam na Clínica chega assim. Não tem problema não saber nomear, tem problema tentar reparar sem identificar primeiro.</p>",
+            "proximo_passo": "<p>Mande duas fotos pelo WhatsApp: uma da bola inteira, outra do ponto que te chamou atenção. Conte qual modalidade e há quanto tempo perdeu pressão. A Clínica identifica o caso e responde com o próximo passo.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

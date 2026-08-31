@@ -1,0 +1,175 @@
+{% liquid
+  assign has_number = false
+  if section.settings.whatsapp_number != blank
+    assign has_number = true
+  endif
+
+  assign wa_link = '#'
+  if has_number
+    assign wa_digits = section.settings.whatsapp_number | remove: '+' | remove: ' ' | remove: '-' | remove: '(' | remove: ')'
+    assign wa_link = 'https://wa.me/' | append: wa_digits
+    if section.settings.whatsapp_message != blank
+      assign wa_text = section.settings.whatsapp_message | url_encode
+      assign wa_link = wa_link | append: '?text=' | append: wa_text
+    endif
+  endif
+%}
+
+{% if section.settings.enabled and template.name != 'product' %}
+  <div
+    class="whatsapp-float whatsapp-float--{{ section.settings.position }}{% unless has_number %} whatsapp-float--disabled{% endunless %}"
+    style="--whatsapp-float-color: {{ section.settings.button_color }};"
+  >
+    <a
+      href="{{ wa_link }}"
+      class="whatsapp-float__button{% if has_number == false %} whatsapp-float__button--disabled{% endif %}"
+      aria-label="{{ section.settings.aria_label | escape }}"
+      {% unless has_number %}
+        aria-disabled="true"
+        tabindex="-1"
+      {% else %}
+        target="_blank"
+        rel="noopener noreferrer"
+      {% endunless %}
+    >
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+      >
+        {%- render 'icon', icon: 'whatsapp' -%}
+      </svg>
+    </a>
+  </div>
+{% endif %}
+
+{% stylesheet %}
+  .whatsapp-float {
+    position: fixed;
+    z-index: 40;
+    bottom: max(20px, env(safe-area-inset-bottom));
+  }
+
+  .whatsapp-float--right {
+    right: max(20px, env(safe-area-inset-right));
+  }
+
+  .whatsapp-float--left {
+    left: max(20px, env(safe-area-inset-left));
+  }
+
+  .whatsapp-float__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--whatsapp-float-color, #25D366);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+  }
+
+  .whatsapp-float__button svg {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+  }
+
+  @media screen and (max-width: 749px) {
+    .whatsapp-float {
+      bottom: max(14px, env(safe-area-inset-bottom));
+    }
+
+    .whatsapp-float--right {
+      right: max(14px, env(safe-area-inset-right));
+    }
+
+    .whatsapp-float--left {
+      left: max(14px, env(safe-area-inset-left));
+    }
+
+    .whatsapp-float__button {
+      width: 44px;
+      height: 44px;
+    }
+
+    .whatsapp-float__button svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  .whatsapp-float--disabled {
+    pointer-events: none;
+  }
+
+  .whatsapp-float__button--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Botão flutuante WhatsApp",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Configure o número de WhatsApp antes de publicar. Sem número preenchido, o botão fica desabilitado e não abre o WhatsApp."
+    },
+    {
+      "type": "checkbox",
+      "id": "enabled",
+      "label": "Ativar botão flutuante",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_number",
+      "label": "Número de WhatsApp",
+      "info": "Formato internacional, apenas dígitos (ex.: 5511999999999). Deixe em branco para manter o botão desabilitado."
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_message",
+      "label": "Mensagem padrão",
+      "default": "Olá! Vim pelo site da Conserta Bola."
+    },
+    {
+      "type": "text",
+      "id": "aria_label",
+      "label": "Rótulo acessível (leitor de tela)",
+      "default": "Falar no WhatsApp"
+    },
+    {
+      "type": "header",
+      "content": "Aparência"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Cor do botão",
+      "default": "#25D366"
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "label": "Posição na tela",
+      "options": [
+        { "value": "right", "label": "Direita" },
+        { "value": "left", "label": "Esquerda" }
+      ],
+      "default": "right"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Botão flutuante WhatsApp"
+    }
+  ]
+}
+{% endschema %}
