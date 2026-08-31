@@ -1882,6 +1882,10 @@
         "button_color": "#25d366",
         "position": "right"
       }
+    },
+    "faq_schema_seo": {
+      "type": "faq-schema",
+      "settings": {}
     }
   },
   "order": [
@@ -1894,6 +1898,7 @@
     "section_featured_product",
     "section_social_proof",
     "section_faq",
+    "faq_schema_seo",
     "section_final_cta",
     "whatsapp_float"
   ]

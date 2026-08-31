@@ -1,0 +1,81 @@
+{%- comment -%}
+  Emite JSON-LD FAQPage para a home. Sem render visual — o accordion visual
+  fica a cargo da section 'section_faq' em index.json. Mantenha as perguntas
+  e respostas aqui em sincronia com o accordion visual (raro de mudar).
+{%- endcomment -%}
+
+{%- capture faq_json -%}
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O Conserta Bola funciona em bolas de qual tipo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Funciona em bolas esportivas com furos ou vazamentos pequenos — futebol de campo, society, futsal, vôlei, basquete, handebol, beach soccer e outras. O ponto de aplicação varia conforme a câmara da bola: em futsal e society, cuja câmara tem preenchimento interno, o produto é aplicado direto no furo; em campo, vôlei, basquete, handebol e beach, cuja câmara é oca, a aplicação é pela válvula. A cartilha que acompanha o produto orienta passo a passo pro seu caso. Rasgos profundos, cortes extensos ou dano no revestimento podem tornar o reparo inviável — nesses casos vale mandar foto no WhatsApp antes da compra pra avaliação gratuita."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo leva o reparo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A aplicação em si leva poucos minutos, seguindo a cartilha enviada com o produto. Depois da aplicação, a bola precisa de um período de estabilização antes de voltar ao jogo — o tempo exato varia por modalidade e tipo de dano e está descrito na cartilha."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A fórmula é segura de aplicar em casa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. O Conserta Bola é uma fórmula desenvolvida a partir de mais de 5.000 reparos reais na bancada da Clínica da Bola e foi pensada pra aplicação em casa, sem ferramenta especial. Basta seguir o passo a passo da cartilha que acompanha o frasco."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como faço para comprar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Adicione ao carrinho e finalize a compra pelo site. Formas de pagamento: cartão de crédito (parcelamento disponível), PIX e boleto — via Mercado Pago. Frete: R$ 22,00 fixo para todo o Brasil (3 a 5 dias úteis) ou cotação por CEP via Frenet no checkout. Frete grátis em compras acima de R$ 299,00."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "E se não funcionar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se o produto não resolver o vazamento, você pode solicitar troca ou devolução conforme nossa política de troca e devolução. Se estiver em dúvida antes de comprar, mande foto pelo WhatsApp para avaliação."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo dura o reparo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A durabilidade depende do tipo de câmara da bola, da qualidade da válvula e da intensidade do uso. Bolas com válvula em boas condições e uso recreativo tendem a manter o reparo por mais tempo. Válvulas já desgastadas podem reabrir o vazamento — nesses casos, uma nova aplicação costuma resolver."
+      }
+    }
+  ]
+}
+{%- endcapture -%}
+
+<script type="application/ld+json">{{ faq_json | strip_newlines }}</script>
+
+{% schema %}
+{
+  "name": "FAQ schema (SEO)",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Emite structured data JSON-LD (FAQPage) para o Google gerar rich snippets. Sem render visual. Edite o conteúdo no arquivo sections/faq-schema.liquid quando alterar perguntas do accordion."
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ schema (SEO)"
+    }
+  ]
+}
+{% endschema %}
