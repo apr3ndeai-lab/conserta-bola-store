@@ -1,12 +1,52 @@
-{% assign block_settings = block.settings %}
+{%- liquid
+  assign block_settings = block.settings
+  assign kit = all_products[block_settings.kit_handle]
+  assign current = closest.product
+  assign hide = false
+  if kit == blank or kit.available == false
+    assign hide = true
+  endif
+  if current != blank and current.handle == block_settings.kit_handle
+    assign hide = true
+  endif
 
-<div class="cb-leve2" {{ block.shopify_attributes }}>
-  <span class="cb-leve2__badge" aria-hidden="true">2×</span>
-  <div class="cb-leve2__body">
-    <p class="cb-leve2__title">{{ block_settings.title }}</p>
-    <p class="cb-leve2__subtitle">{{ block_settings.subtitle }}</p>
-  </div>
-</div>
+  assign unit_price = current.price | default: 0
+  assign kit_price = kit.price | default: 0
+  assign kit_qty = block_settings.kit_qty | default: 3
+  assign full_price = unit_price | times: kit_qty
+  assign savings = full_price | minus: kit_price
+  assign percent_off = 0
+  if full_price > 0 and savings > 0
+    assign percent_off = savings | times: 100 | divided_by: full_price
+  endif
+-%}
+
+{%- unless hide -%}
+  <a
+    class="cb-leve2"
+    href="{{ kit.url }}"
+    {{ block.shopify_attributes }}
+  >
+    <span class="cb-leve2__badge" aria-hidden="true">{{ kit_qty }}×</span>
+    <div class="cb-leve2__body">
+      <p class="cb-leve2__title">
+        {%- if percent_off > 0 -%}
+          Leve {{ kit_qty }} e economize {{ percent_off }}%
+        {%- else -%}
+          {{ block_settings.fallback_title }}
+        {%- endif -%}
+      </p>
+      <p class="cb-leve2__subtitle">
+        {%- if percent_off > 0 -%}
+          Kit com {{ kit_qty }} unidades por {{ kit.price | money }} · você economiza {{ savings | money }}
+        {%- else -%}
+          {{ block_settings.fallback_subtitle }}
+        {%- endif -%}
+      </p>
+    </div>
+    <span class="cb-leve2__arrow" aria-hidden="true">→</span>
+  </a>
+{%- endunless -%}
 
 {% stylesheet %}
   .cb-leve2 {
@@ -18,6 +58,14 @@
     background: rgb(var(--color-foreground-rgb) / 0.05);
     border: 1px solid rgb(var(--color-foreground-rgb) / 0.12);
     border-radius: 10px;
+    color: inherit;
+    text-decoration: none;
+    transition: background 150ms ease, border-color 150ms ease;
+  }
+  .cb-leve2:hover,
+  .cb-leve2:focus-visible {
+    background: rgb(var(--color-foreground-rgb) / 0.08);
+    border-color: rgb(var(--color-foreground-rgb) / 0.25);
   }
   .cb-leve2__badge {
     flex-shrink: 0;
@@ -33,7 +81,7 @@
     font-size: 1rem;
     line-height: 1;
   }
-  .cb-leve2__body { min-width: 0; }
+  .cb-leve2__body { min-width: 0; flex: 1; }
   .cb-leve2__title {
     margin: 0;
     font-weight: 600;
@@ -46,29 +94,46 @@
     line-height: 1.3;
     opacity: 0.8;
   }
+  .cb-leve2__arrow {
+    flex-shrink: 0;
+    font-size: 1.1rem;
+    opacity: 0.6;
+  }
 {% endstylesheet %}
 
 {% schema %}
 {
-  "name": "Upsell 2 unidades",
+  "name": "Upsell kit",
   "tag": null,
   "settings": [
     {
       "type": "text",
-      "id": "title",
-      "label": "Título",
-      "default": "Leve 2 e ganhe frete grátis"
+      "id": "kit_handle",
+      "label": "Handle do produto kit",
+      "default": "kit-recuperacao-3-conserta-bola"
+    },
+    {
+      "type": "number",
+      "id": "kit_qty",
+      "label": "Quantidade no kit",
+      "default": 3
     },
     {
       "type": "text",
-      "id": "subtitle",
-      "label": "Subtítulo",
+      "id": "fallback_title",
+      "label": "Título (se não houver economia calculável)",
+      "default": "Leve o kit e economize"
+    },
+    {
+      "type": "text",
+      "id": "fallback_subtitle",
+      "label": "Subtítulo (se não houver economia calculável)",
       "default": "Perfeito para ter uma bola sempre pronta pra jogar."
     }
   ],
   "presets": [
     {
-      "name": "Upsell 2 unidades"
+      "name": "Upsell kit"
     }
   ]
 }
