@@ -1,0 +1,37 @@
+{%- liquid
+  assign product = closest.product
+-%}
+
+{%- if product -%}
+  <div
+    class="jdgm-widget jdgm-preview-badge cb-jdgm-badge"
+    data-id="{{ product.id }}"
+    data-template="index"
+    {{ block.shopify_attributes }}
+  ></div>
+{%- endif -%}
+
+{% stylesheet %}
+  .cb-jdgm-badge {
+    margin: 6px 0 0;
+    min-height: 18px;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Judge.me estrelas",
+  "tag": null,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Preview de estrelas do Judge.me. O app Judge.me precisa estar instalado e ativo na loja para renderizar. Sem o app, o bloco fica invisível."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Judge.me estrelas"
+    }
+  ]
+}
+{% endschema %}

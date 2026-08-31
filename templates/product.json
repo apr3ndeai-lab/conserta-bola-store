@@ -288,6 +288,16 @@
               },
               "blocks": {}
             },
+            "jdgm_badge_cb": {
+              "type": "_judgeme-badge",
+              "settings": {},
+              "blocks": {}
+            },
+            "jdgm_widget_cb": {
+              "type": "_judgeme-widget",
+              "settings": {},
+              "blocks": {}
+            },
             "pdp_leve2_cb": {
               "type": "_pdp-leve2",
               "settings": {
@@ -327,12 +337,14 @@
           },
           "block_order": [
             "group_icgrde",
+            "jdgm_badge_cb",
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
             "trust_badges_cb",
             "pdp_leve2_cb",
-            "text_aEtTtq"
+            "text_aEtTtq",
+            "jdgm_widget_cb"
           ]
         }
       },

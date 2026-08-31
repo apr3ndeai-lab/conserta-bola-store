@@ -1,0 +1,37 @@
+{%- liquid
+  assign product = closest.product
+-%}
+
+{%- if product -%}
+  <div
+    class="jdgm-widget jdgm-review-widget cb-jdgm-widget"
+    data-id="{{ product.id }}"
+    data-product-title="{{ product.title | escape }}"
+    {{ block.shopify_attributes }}
+  ></div>
+{%- endif -%}
+
+{% stylesheet %}
+  .cb-jdgm-widget {
+    margin: 32px 0 0;
+    min-height: 40px;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Judge.me reviews",
+  "tag": null,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Widget completo de reviews do Judge.me. O app precisa estar instalado e ativo. Sem o app, o bloco fica invisível."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Judge.me reviews"
+    }
+  ]
+}
+{% endschema %}
