@@ -291,8 +291,10 @@
             "pdp_leve2_cb": {
               "type": "_pdp-leve2",
               "settings": {
-                "title": "Leve 2 e ganhe frete grátis",
-                "subtitle": "Perfeito para ter uma bola sempre pronta pra jogar."
+                "kit_handle": "kit-recuperacao-3-conserta-bola",
+                "kit_qty": 3,
+                "fallback_title": "Leve o kit e economize",
+                "fallback_subtitle": "Perfeito para ter uma bola sempre pronta pra jogar."
               },
               "blocks": {}
             },
