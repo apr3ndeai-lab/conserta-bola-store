@@ -48,6 +48,9 @@ $allowedFiles = @(
   "blocks/comparison-slider.liquid",
   "blocks/_product-trust-badges.liquid",
   "blocks/_product-details.liquid",
+  "blocks/_pdp-leve2.liquid",
+  "snippets/cart-drawer.liquid",
+  "snippets/shipping-progress-bar.liquid",
   "assets/pagina-avaliacao.js",
   "config/settings_data.json",
   "scripts/audit-home-v1.ps1"

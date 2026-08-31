@@ -1,0 +1,75 @@
+{% assign block_settings = block.settings %}
+
+<div class="cb-leve2" {{ block.shopify_attributes }}>
+  <span class="cb-leve2__badge" aria-hidden="true">2×</span>
+  <div class="cb-leve2__body">
+    <p class="cb-leve2__title">{{ block_settings.title }}</p>
+    <p class="cb-leve2__subtitle">{{ block_settings.subtitle }}</p>
+  </div>
+</div>
+
+{% stylesheet %}
+  .cb-leve2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    margin: 14px 0 0;
+    background: rgb(var(--color-foreground-rgb) / 0.05);
+    border: 1px solid rgb(var(--color-foreground-rgb) / 0.12);
+    border-radius: 10px;
+  }
+  .cb-leve2__badge {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: var(--color-foreground);
+    color: var(--color-background);
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1;
+  }
+  .cb-leve2__body { min-width: 0; }
+  .cb-leve2__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.25;
+  }
+  .cb-leve2__subtitle {
+    margin: 2px 0 0;
+    font-size: 0.8125rem;
+    line-height: 1.3;
+    opacity: 0.8;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Upsell 2 unidades",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Leve 2 e ganhe frete grátis"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtítulo",
+      "default": "Perfeito para ter uma bola sempre pronta pra jogar."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Upsell 2 unidades"
+    }
+  ]
+}
+{% endschema %}

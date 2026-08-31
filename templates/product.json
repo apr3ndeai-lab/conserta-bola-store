@@ -288,6 +288,14 @@
               },
               "blocks": {}
             },
+            "pdp_leve2_cb": {
+              "type": "_pdp-leve2",
+              "settings": {
+                "title": "Leve 2 e ganhe frete grátis",
+                "subtitle": "Perfeito para ter uma bola sempre pronta pra jogar."
+              },
+              "blocks": {}
+            },
             "text_aEtTtq": {
               "type": "text",
               "name": "t:names.product_description",
@@ -321,6 +329,7 @@
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
             "trust_badges_cb",
+            "pdp_leve2_cb",
             "text_aEtTtq"
           ]
         }
