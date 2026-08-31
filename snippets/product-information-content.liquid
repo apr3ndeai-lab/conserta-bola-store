@@ -157,6 +157,14 @@
       grid-column: 1 / -1;
     }
 
+    .product-information__media .product-media-container.constrain-height {
+      max-height: min(58svh, 500px);
+    }
+
+    .product-information__media .product-media-container img {
+      object-fit: contain;
+    }
+
     .product-details {
       grid-column: 2 / 3;
     }

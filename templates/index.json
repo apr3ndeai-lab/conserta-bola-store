@@ -69,7 +69,7 @@
           "name": "t:names.button",
           "settings": {
             "label": "Quero consertar minha bola",
-            "link": "/products/conserta-bola?utm_source=home&utm_content=hero",
+            "link": "/products/conserta-bola",
             "open_in_new_tab": false,
             "style_class": "button",
             "custom_button_background": "{{ settings.color_palette.foreground }}",
@@ -88,7 +88,7 @@
           "name": "t:names.button",
           "settings": {
             "label": "Como funciona",
-            "link": "#shopify-section-template--16531024511056__section_how_it_works",
+            "link": "#como-funciona",
             "open_in_new_tab": false,
             "style_class": "button-secondary",
             "custom_button_background": "{{ settings.color_palette.foreground }}",
@@ -648,6 +648,7 @@
       },
       "name": "Autoridade / Clínica da Bola",
       "settings": {
+        "anchor_id": "clinica-da-bola",
         "media_position": "left",
         "media_width": "medium",
         "media_height": "60svh",
@@ -668,7 +669,7 @@
             "description": "Bola enche, mas murcha depois de um tempo.",
             "opcao": "furo_pequeno",
             "label_primary": "Quero consertar minha bola",
-            "href": "/products/conserta-bola?utm_source=triagem&utm_content=furo_pequeno",
+            "href": "/products/conserta-bola",
             "cta_primary_kind": "buy",
             "label_secondary": "Falar com especialista",
             "href_secondary": "https://wa.me/5547992758506?text=Ol%C3%A1!%20Minha%20bola%20perde%20ar%20aos%20poucos%20e%20queria%20uma%20avalia%C3%A7%C3%A3o.",
@@ -701,12 +702,12 @@
             "title": "Vaza perto da válvula",
             "description": "Você sente o ar saindo perto da válvula.",
             "opcao": "valvula",
-            "label_primary": "Quero consertar minha bola",
-            "href": "/products/conserta-bola?utm_source=triagem&utm_content=valvula",
-            "cta_primary_kind": "buy",
-            "label_secondary": "Falar com especialista",
-            "href_secondary": "https://wa.me/5547992758506?text=Ol%C3%A1!%20Minha%20bola%20vaza%20perto%20da%20v%C3%A1lvula%20e%20queria%20uma%20avalia%C3%A7%C3%A3o.",
-            "aria_secondary": "Falar com especialista sobre bola que vaza perto da válvula",
+            "label_primary": "Enviar foto para avaliar",
+            "href": "https://wa.me/5547992758506?text=Ol%C3%A1!%20Minha%20bola%20vaza%20perto%20da%20v%C3%A1lvula%20e%20queria%20uma%20avalia%C3%A7%C3%A3o.",
+            "cta_primary_kind": "whatsapp",
+            "label_secondary": "",
+            "href_secondary": "",
+            "aria_secondary": "",
             "cta_secondary_kind": "whatsapp",
             "next_label": "Ver próximo passo",
             "is_fallback": false
@@ -860,7 +861,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<h3>1. Identifique o furo</h3>",
+                    "text": "<h3>1. Identifique o vazamento</h3>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -886,7 +887,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Localize o ponto de vazamento na bola furada.</p>",
+                    "text": "<p>O Conserta Bola é indicado para microvazamentos lentos. Em caso de rasgo, costura aberta ou dúvida, envie uma foto antes.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -984,7 +985,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Siga a orientação de aplicação do Conserta Bola.</p>",
+                    "text": "<p>Use a seringa e a agulha incluídas e siga a cartilha específica para o tipo da sua bola.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -1082,7 +1083,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Aguarde o tempo de cura e sua bola está pronta de novo.</p>",
+                    "text": "<p>Respeite o período de estabilização indicado na cartilha antes de voltar a jogar.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -1124,6 +1125,7 @@
       ],
       "name": "Como funciona",
       "settings": {
+        "anchor_id": "como-funciona",
         "content_direction": "column",
         "vertical_on_mobile": true,
         "horizontal_alignment": "flex-start",
@@ -1208,7 +1210,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Fórmula para reparo de bolas esportivas furadas — testada em mais de 5.000 bolas reais na bancada da Clínica da Bola. Frasco de 5 ml.</p>",
+                "text": "<p>Para microvazamentos lentos em bolas esportivas. Confira o que vem no kit e as indicações antes de aplicar.</p>",
                 "width": "fit-content",
                 "max_width": "narrow",
                 "alignment": "left",
@@ -1230,22 +1232,10 @@
               },
               "blocks": {}
             },
-            "button": {
-              "type": "button",
-              "name": "t:names.button",
+            "offer": {
+              "type": "home-product-offer",
               "settings": {
-                "label": "Comprar agora",
-                "link": "/products/conserta-bola",
-                "open_in_new_tab": false,
-                "style_class": "button",
-                "custom_button_background": "{{ settings.color_palette.foreground }}",
-                "custom_button_text": "{{ settings.color_palette.background }}",
-                "custom_button_border": "{{ settings.color_palette.background }}",
-                "link_text_color": "",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
+                "product": "conserta-bola"
               },
               "blocks": {}
             }
@@ -1253,7 +1243,7 @@
           "block_order": [
             "heading",
             "text",
-            "button"
+            "offer"
           ]
         }
       },
@@ -1521,7 +1511,7 @@
                 "faq_1_text": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Funciona em bolas esportivas com furos ou vazamentos pequenos — futebol de campo, society, futsal, vôlei, basquete, handebol, beach soccer e outras.</p><p>O ponto de aplicação varia conforme a câmara da bola: em <strong>futsal e society</strong>, cuja câmara tem preenchimento interno, o produto é aplicado direto no furo; em <strong>campo, vôlei, basquete, handebol e beach</strong>, cuja câmara é oca, a aplicação é pela válvula. A cartilha que acompanha o produto orienta passo a passo pro seu caso.</p><p>Rasgos profundos, cortes extensos ou dano no revestimento podem tornar o reparo inviável — nesses casos vale mandar foto no <a href=\"https://wa.me/5547992758506?text=Oi%2C%20tenho%20uma%20bola%20com%20furo%20ou%20vazamento%20e%20queria%20saber%20se%20o%20Conserta%20Bola%20resolve%20no%20meu%20caso.%20Posso%20mandar%20foto%3F\" target=\"_blank\" rel=\"noopener\">WhatsApp (47) 99275-8506</a> antes da compra pra avaliação gratuita.</p>",
+                    "text": "<p>Funciona em bolas esportivas com microfuros ou vazamentos lentos — futebol de campo, society, futsal, vôlei, basquete, handebol, beach soccer e outras.</p><p>A forma correta de aplicação depende do tipo de bola e está detalhada na cartilha que acompanha o kit.</p><p>Rasgos, costura aberta, dano na válvula ou vazamento rápido precisam de avaliação. Envie uma foto pelo <a href=\"https://wa.me/5547992758506?text=Oi%2C%20tenho%20uma%20bola%20com%20furo%20ou%20vazamento%20e%20queria%20saber%20se%20o%20Conserta%20Bola%20resolve%20no%20meu%20caso.%20Posso%20mandar%20foto%3F\" target=\"_blank\" rel=\"noopener\">WhatsApp (47) 99275-8506</a> antes da compra.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1599,7 +1589,7 @@
                 "faq_3_text": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Sim. O Conserta Bola é uma fórmula desenvolvida a partir de mais de 5.000 reparos reais na bancada da Clínica da Bola e foi pensada pra aplicação em casa, sem ferramenta especial. Basta seguir o passo a passo da cartilha que acompanha o frasco.</p>",
+                    "text": "<p>O kit vem com seringa, agulha e cartilha com o passo a passo. Use os itens somente conforme as orientações da cartilha e mantenha-os fora do alcance de crianças.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1638,7 +1628,7 @@
                 "faq_4_text": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Adicione ao carrinho e finalize a compra pelo site.</p><p><strong>Formas de pagamento:</strong> cartão de crédito (parcelamento disponível), PIX e boleto — via Mercado Pago.</p><p><strong>Frete:</strong> R$ 22,00 fixo para todo o Brasil (3 a 5 dias úteis) ou cotação por CEP via Frenet no checkout. Frete <strong>grátis</strong> em compras acima de R$ 299,00.</p><p>Dúvidas antes de comprar? Mande foto da sua bola no <a href=\"https://wa.me/5547992758506?text=Oi%2C%20tenho%20d%C3%BAvidas%20antes%20de%20comprar%20o%20Conserta%20Bola.%20Posso%20mandar%20foto%20da%20bola%20pra%20avalia%C3%A7%C3%A3o%3F\" target=\"_blank\" rel=\"noopener\">WhatsApp (47) 99275-8506</a> pra avaliação gratuita.</p>",
+                    "text": "<p>Adicione ao carrinho e finalize a compra pelo site.</p><p><strong>Formas de pagamento:</strong> cartão de crédito (parcelamento disponível), PIX e boleto — via Mercado Pago.</p><p><strong>Frete:</strong> informe o CEP no checkout. A loja oferece frete fixo de R$ 22,00 para todo o Brasil, com prazo informado de 3 a 5 dias úteis; quando houver cotação via Frenet, as opções disponíveis aparecem no checkout. O frete é grátis em compras acima de R$ 299,00.</p><p>Dúvidas antes de comprar? Mande foto da sua bola no <a href=\"https://wa.me/5547992758506?text=Oi%2C%20tenho%20d%C3%BAvidas%20antes%20de%20comprar%20o%20Conserta%20Bola.%20Posso%20mandar%20foto%20da%20bola%20pra%20avalia%C3%A7%C3%A3o%3F\" target=\"_blank\" rel=\"noopener\">WhatsApp (47) 99275-8506</a>.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1677,7 +1667,7 @@
                 "faq_5_text": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Se o produto não resolver o vazamento, você pode solicitar troca ou devolução conforme nossa <a href=\"/policies/refund-policy\">política de troca e devolução</a>. Sem inventar garantia — o processo real é o que está na página. Se estiver em dúvida antes de comprar, mande foto pelo <a href=\"https://wa.me/5547992758506?text=Ol%C3%A1%21%20Antes%20de%20comprar%2C%20queria%20uma%20avalia%C3%A7%C3%A3o%20da%20minha%20bola.\" target=\"_blank\" rel=\"noopener\">WhatsApp</a> para avaliação.</p>",
+                    "text": "<p>O resultado depende do tipo de vazamento e das condições da bola. Se estiver em dúvida, envie uma foto pelo <a href=\"https://wa.me/5547992758506?text=Ol%C3%A1%21%20Antes%20de%20comprar%2C%20queria%20uma%20avalia%C3%A7%C3%A3o%20da%20minha%20bola.\" target=\"_blank\" rel=\"noopener\">WhatsApp</a> antes da compra. Trocas e devoluções seguem nossa <a href=\"/policies/refund-policy\">política de troca e devolução</a>.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1716,7 +1706,7 @@
                 "faq_6_text": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>A durabilidade depende do tipo de câmara da bola, da qualidade da válvula e da intensidade do uso. Bolas com válvula em boas condições e uso recreativo tendem a manter o reparo por mais tempo. Válvulas já desgastadas podem reabrir o vazamento — nesses casos, uma nova aplicação costuma resolver.</p>",
+                    "text": "<p>A durabilidade varia conforme o tipo e a origem do vazamento, as condições da bola e a intensidade de uso. Se o vazamento reaparecer, fale com a Clínica da Bola antes de fazer uma nova aplicação.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1760,6 +1750,7 @@
       ],
       "name": "FAQ",
       "settings": {
+        "anchor_id": "perguntas-frequentes",
         "content_direction": "column",
         "vertical_on_mobile": true,
         "horizontal_alignment": "flex-start",

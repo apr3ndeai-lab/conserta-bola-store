@@ -1188,6 +1188,15 @@ summary:hover {
   height: 100%;
 }
 
+.layout-panel-flex > * {
+  min-width: 0;
+}
+
+.text-block {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
 .shopify-block:has(> [shopify-block-empty]) {
   display: none;
 }

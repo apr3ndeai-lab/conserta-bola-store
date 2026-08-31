@@ -18,8 +18,8 @@
             "titulo": "Furo pequeno ou vazamento lento",
             "opcao": "furo-pequeno",
             "sintoma": "A bola perde pressão depois de algumas horas ou de um dia pro outro, sem dano visível grande.",
-            "explicacao": "<p>[TODO-COPY-RAFAEL] Rascunho: Vazamentos pequenos costumam ser reparáveis com a fórmula do Conserta Bola aplicada sobre o ponto de vazamento, seguindo a orientação passo a passo enviada com o produto.</p>",
-            "proximo_passo": "<p>[TODO-COPY-RAFAEL] Rascunho: Quando o canal de avaliação individual estiver ativo, você poderá enviar uma foto e o histórico do vazamento pra receber orientação específica pro seu caso.</p>",
+            "explicacao": "<p>Microfuros e vazamentos lentos são os casos mais comuns para o Conserta Bola. A forma correta de aplicação depende do tipo de bola e está detalhada na cartilha que acompanha o kit.</p>",
+            "proximo_passo": "<p>Envie uma foto da bola e diga a modalidade pelo WhatsApp. A Clínica da Bola orienta se o produto é indicado antes da compra.</p>",
             "is_fallback": false
           }
         },
@@ -29,8 +29,8 @@
             "titulo": "Rasgo ou corte no revestimento",
             "opcao": "rasgo",
             "sintoma": "Dá pra ver o dano na superfície da bola — um corte, um rasgo ou uma parte solta do revestimento.",
-            "explicacao": "<p>[TODO-COPY-RAFAEL] Rascunho: Rasgos e cortes no revestimento são casos em que a viabilidade do reparo depende da profundidade e da extensão do dano. Alguns casos são recuperáveis com a fórmula; outros exigem avaliação individual antes de qualquer aplicação.</p>",
-            "proximo_passo": "<p>[TODO-COPY-RAFAEL] Rascunho: Quando o canal estiver ativo, envie uma foto próxima do rasgo pra a Clínica avaliar se seu caso é recuperável com o Conserta Bola.</p>",
+            "explicacao": "<p>Rasgos e cortes visíveis precisam de avaliação individual. A viabilidade do reparo depende da profundidade e da extensão do dano.</p>",
+            "proximo_passo": "<p>Envie uma foto próxima do rasgo pelo WhatsApp antes de aplicar ou comprar o produto.</p>",
             "is_fallback": false
           }
         },
@@ -40,8 +40,8 @@
             "titulo": "Bola esvazia rápido perto da válvula",
             "opcao": "valvula",
             "sintoma": "Depois de encher, o ar escapa em pouco tempo, e o vazamento parece vir da região onde entra a agulha.",
-            "explicacao": "<p>[TODO-COPY-RAFAEL — RESPEITAR brand-rules.md:49-51: sem sugestão de mecanismo pela válvula] Rascunho: Vazamentos na região da válvula precisam de avaliação individual antes de qualquer aplicação. Nem todo caso é recuperável com a fórmula do Conserta Bola — depende da origem exata do vazamento e da integridade da região.</p>",
-            "proximo_passo": "<p>[TODO-COPY-RAFAEL] Rascunho: Quando o canal estiver ativo, envie uma foto próxima da válvula e conte há quanto tempo o vazamento começou. A Clínica avalia se seu caso é tratável com o Conserta Bola ou se precisa de outro tipo de intervenção.</p>",
+            "explicacao": "<p>Vazamentos na região da válvula precisam de avaliação individual antes de qualquer aplicação. A indicação depende da origem exata do vazamento e das condições da bola.</p>",
+            "proximo_passo": "<p>Envie uma foto próxima da válvula pelo WhatsApp e conte há quanto tempo o vazamento começou.</p>",
             "is_fallback": false
           }
         },
@@ -51,8 +51,8 @@
             "titulo": "Não sei identificar o problema",
             "opcao": "nao-sei",
             "sintoma": "Sem problema — muita gente chega aqui sem saber nomear o que aconteceu. O reparo começa por reconhecer o sintoma; a Clínica da Bola faz esse trabalho de identificação antes de recomendar qualquer aplicação.",
-            "explicacao": "<p>[TODO-COPY-RAFAEL] Rascunho: Se você percebeu que a bola perdeu desempenho mas não sabe onde ou por quê, o próximo passo é uma avaliação visual — é isso que a Clínica faz antes de indicar reparo.</p>",
-            "proximo_passo": "<p>[TODO-COPY-RAFAEL] Rascunho: Quando o canal estiver ativo, envie uma foto da bola inteira e uma segunda foto do ponto que te chamou atenção. A Clínica avalia e responde com o próximo passo.</p>",
+            "explicacao": "<p>Se a bola perdeu pressão e você não sabe a causa, uma avaliação visual ajuda a evitar a aplicação no problema errado.</p>",
+            "proximo_passo": "<p>Envie pelo WhatsApp uma foto da bola inteira e outra do ponto que chamou sua atenção.</p>",
             "is_fallback": true
           }
         }
@@ -65,10 +65,12 @@
       ],
       "settings": {
         "header_titulo": "Avaliação da sua bola",
-        "header_lede": "[TODO-COPY-RAFAEL] Rascunho: Aqui está o que costuma acontecer com cada tipo de caso e o que a Clínica da Bola faz nesses casos. Os canais de envio de foto e conversa direta estão sendo preparados — assim que estiverem ativos, você poderá enviar sua bola pra avaliação individual.",
+        "header_lede": "Compare o sintoma da sua bola com os casos abaixo. Se ainda houver dúvida, envie uma foto pelo WhatsApp antes da compra.",
         "lista_titulo": "Casos que a Clínica da Bola avalia",
-        "aside_titulo": "Enquanto o canal de envio de foto não está ativo",
-        "aside_texto": "[TODO-COPY-RAFAEL] Rascunho: Você pode conhecer o produto e o método de trabalho da Clínica da Bola nas seções abaixo. Assim que o canal de avaliação individual estiver disponível, você poderá enviar sua bola."
+        "aside_titulo": "Fale direto com quem repara",
+        "aside_texto": "Envie uma foto e conte o que aconteceu. A Clínica da Bola responde com o próximo passo para o seu caso.",
+        "aside_cta_label": "Enviar foto pelo WhatsApp",
+        "aside_cta_href": "https://wa.me/5547992758506?text=Oi%2C%20quero%20avaliar%20minha%20bola.%20Posso%20mandar%20foto%3F"
       }
     }
   },

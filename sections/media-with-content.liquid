@@ -22,6 +22,7 @@
   class="section-background{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
 ></div>
 <div
+  {% if section.settings.anchor_id != blank %}id="{{ section.settings.anchor_id | handleize }}"{% endif %}
   class="section section--{{ section.settings.section_width }} disable-section-top-offset media-with-content{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %} spacing-style {{ media_class_modifier }}"
   data-testid="media-with-content"
   style="
@@ -204,13 +205,6 @@
     min-height: 500px;
   }
 
-  /* Selo secundário "by Clínica da Bola" no bloco de autoridade da home:
-     texto menor e mais discreto que o parágrafo principal, sem competir com a marca. */
-  #shopify-section-section_authority .text-block--text {
-    font-size: 0.85em;
-    opacity: 0.75;
-    margin-top: 0.75em;
-  }
 {% endstylesheet %}
 
 {% schema %}
@@ -220,6 +214,12 @@
     "groups": ["header"]
   },
   "settings": [
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Âncora da seção",
+      "info": "Use letras, números e hífens. Exemplo: clinica-da-bola"
+    },
     {
       "type": "select",
       "id": "media_position",

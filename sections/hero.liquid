@@ -647,6 +647,23 @@
   }
 
   @media screen and (max-width: 749px) {
+    .hero__content-wrapper {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .hero__content-wrapper > .text-block {
+      width: 100%;
+      min-width: 0;
+      align-self: stretch;
+    }
+
+    .hero__content-wrapper > .text-block > * {
+      width: 100%;
+      max-inline-size: 100%;
+    }
+
     .hero__media-wrapper--desktop {
       display: none;
     }

@@ -56,7 +56,7 @@
             "text_LWt8Pz": {
               "type": "text",
               "settings": {
-                "text": "<h2>Participe da nossa lista de clientes</h2>",
+                "text": "<h2>Receba ofertas e novidades</h2>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -81,7 +81,7 @@
             "text_f9CFLH": {
               "type": "text",
               "settings": {
-                "text": "<p>ganhe descontos especiais e tenha acesso a novos produtos de forma antecipada.</p>",
+                "text": "<p>Cadastre seu e-mail para receber descontos e conhecer novos produtos.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -131,7 +131,7 @@
             "custom_button_border": "{{ settings.color_palette.background }}",
             "link_text_color": "",
             "display_type": "arrow",
-            "label": "Sign up",
+            "label": "Cadastrar e-mail",
             "integrated_button": true,
             "button_type_preset": "paragraph",
             "padding-block-start": 0,

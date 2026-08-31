@@ -1,0 +1,81 @@
+{% liquid
+  assign offer_product = block.settings.product
+%}
+
+{% if offer_product != blank %}
+  <div class="home-product-offer" {{ block.shopify_attributes }}>
+    <p class="home-product-offer__price">{{ offer_product.price | money }}</p>
+    <p class="home-product-offer__label">O kit inclui:</p>
+    <ul class="home-product-offer__list" role="list">
+      <li>1 frasco de 5 ml</li>
+      <li>Seringa e agulha para aplicação</li>
+      <li>Cartilha com orientação passo a passo</li>
+    </ul>
+    <a class="button home-product-offer__button" href="{{ offer_product.url }}">
+      Ver o kit e comprar
+    </a>
+  </div>
+{% endif %}
+
+{% stylesheet %}
+  .home-product-offer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .home-product-offer__price {
+    margin: 0;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 750;
+    line-height: 1;
+  }
+
+  .home-product-offer__label {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .home-product-offer__list {
+    margin: -4px 0 2px;
+    padding-inline-start: 1.25rem;
+  }
+
+  .home-product-offer__list li + li {
+    margin-block-start: 4px;
+  }
+
+  .home-product-offer__button {
+    min-height: 48px;
+    background: #e8b84b;
+    border-color: #e8b84b;
+    color: #0d1526;
+    font-weight: 700;
+  }
+
+  .home-product-offer__button:hover {
+    background: #f1c766;
+    border-color: #f1c766;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Oferta do produto",
+  "tag": null,
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Produto"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Oferta do produto"
+    }
+  ]
+}
+{% endschema %}

@@ -16,7 +16,7 @@
           "type": "disclosures",
           "name": "t:names.disclosures",
           "settings": {
-            "heading": "Disclosures",
+            "heading": "Informações",
             "heading_preset": "h5",
             "open_by_default": false,
             "icon": "caret",
@@ -45,7 +45,7 @@
             "thumbnail_position": "right",
             "thumbnail_width": 44,
             "thumbnail_radius": 0,
-            "aspect_ratio": "adapt",
+            "aspect_ratio": "1/1.25",
             "constrain_to_viewport": true,
             "media_fit": "contain",
             "media_radius": 0,
@@ -282,7 +282,7 @@
                 "show_shipping": true,
                 "shipping_label": "Envio em até 24h úteis",
                 "show_guarantee": true,
-                "guarantee_label": "Satisfação garantida",
+                "guarantee_label": "Troca e devolução conforme a política",
                 "show_payment": true,
                 "payment_label": "Pix, cartão e boleto"
               },
@@ -312,7 +312,7 @@
               "type": "text",
               "name": "t:names.product_description",
               "settings": {
-                "text": "{{ closest.product.description }}",
+                "text": "<p>Indicado para microfuros e vazamentos lentos em bolas esportivas. A forma correta de aplicação depende do tipo de bola; siga a cartilha que acompanha o kit.</p><p><strong>O kit inclui:</strong> 1 frasco de 5 ml, seringa, agulha e cartilha com orientação passo a passo.</p><p>Em caso de rasgo, costura aberta, dano na válvula ou dúvida sobre a indicação, <a href=\"https://wa.me/5547992758506?text=Oi%2C%20tenho%20d%C3%BAvida%20se%20o%20Conserta%20Bola%20serve%20para%20a%20minha%20bola.%20Posso%20enviar%20uma%20foto%3F\" target=\"_blank\" rel=\"noopener\">envie uma foto pelo WhatsApp</a> antes da compra.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",

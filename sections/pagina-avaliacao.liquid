@@ -34,11 +34,19 @@
   <aside class="avaliacao__enquanto-espera" aria-labelledby="enquanto-espera-titulo">
     <h2 id="enquanto-espera-titulo">{{ section.settings.aside_titulo }}</h2>
     <p>{{ section.settings.aside_texto }}</p>
+    {% if section.settings.aside_cta_href != blank and section.settings.aside_cta_label != blank %}
+      <a
+        class="button avaliacao__whatsapp"
+        href="{{ section.settings.aside_cta_href }}"
+        target="_blank"
+        rel="noopener"
+      >{{ section.settings.aside_cta_label }}</a>
+    {% endif %}
     <nav aria-label="Continuar navegando">
       <ul>
-        <li><a href="/#section_how_it_works">Ver como o Conserta Bola funciona</a></li>
-        <li><a href="/#section_authority">Conhecer a Clínica da Bola</a></li>
-        <li><a href="/#section_faq">Ver perguntas frequentes</a></li>
+        <li><a href="/#como-funciona">Ver como o Conserta Bola funciona</a></li>
+        <li><a href="/#clinica-da-bola">Conhecer a Clínica da Bola</a></li>
+        <li><a href="/#perguntas-frequentes">Ver perguntas frequentes</a></li>
         <li><a href="{{ routes.root_url }}">Voltar para a página inicial</a></li>
       </ul>
     </nav>
@@ -100,6 +108,11 @@
     padding-block-start: 24px;
     border-block-start: 1px solid rgba(0, 0, 0, 0.12);
   }
+
+  .avaliacao__whatsapp {
+    display: inline-flex;
+    margin-block: 8px 24px;
+  }
 {% endstylesheet %}
 
 {% schema %}
@@ -146,6 +159,17 @@
       "id": "aside_texto",
       "label": "Texto do bloco lateral",
       "default": "Envie uma foto da bola e conte o que aconteceu. A Clínica da Bola responde com o próximo passo pro seu caso — se é reparável com o Conserta Bola, se precisa de outro tipo de intervenção, ou se é caso perdido. Sem enrolação."
+    },
+    {
+      "type": "text",
+      "id": "aside_cta_label",
+      "label": "Texto do botão",
+      "default": "Enviar foto pelo WhatsApp"
+    },
+    {
+      "type": "url",
+      "id": "aside_cta_href",
+      "label": "Link do botão"
     }
   ],
   "blocks": [
@@ -178,7 +202,7 @@
         {
           "type": "richtext",
           "id": "proximo_passo",
-          "label": "Próximo passo (passivo, sem canal ativo)"
+          "label": "Próximo passo"
         },
         {
           "type": "checkbox",
@@ -200,7 +224,7 @@
             "titulo": "Furo pequeno ou vazamento lento",
             "opcao": "furo-pequeno",
             "sintoma": "A bola perde pressão depois de algumas horas ou de um dia pro outro, sem dano visível grande.",
-            "explicacao": "<p>Vazamentos pequenos são o caso mais comum e o mais reparável. O ponto onde aplicar a fórmula depende do tipo de bola: <strong>futsal e society</strong>, cuja câmara tem preenchimento interno, o Conserta Bola é aplicado direto no furo; <strong>campo, vôlei, basquete, handebol e beach</strong>, cuja câmara é oca, a aplicação é pela válvula. A cartilha que acompanha o produto orienta passo a passo pro seu caso.</p>",
+            "explicacao": "<p>Microfuros e vazamentos lentos são os casos mais comuns para o Conserta Bola. A forma correta de aplicação depende do tipo de bola e está detalhada na cartilha que acompanha o kit.</p>",
             "proximo_passo": "<p>Mande uma foto da bola no WhatsApp da Clínica da Bola e diga qual modalidade. Se for reparável, você recebe orientação específica pro seu caso antes da compra.</p>"
           }
         },
@@ -210,7 +234,7 @@
             "titulo": "Rasgo ou corte no revestimento",
             "opcao": "rasgo",
             "sintoma": "Dá pra ver o dano na superfície da bola — um corte, um rasgo ou uma parte solta do revestimento.",
-            "explicacao": "<p>Rasgos e cortes visíveis são casos em que a viabilidade depende da profundidade e extensão do dano. Um risco superficial no revestimento costuma ser recuperável; um corte que atinge a câmara interna já exige avaliação individual antes de qualquer aplicação — em alguns casos o reparo é possível, em outros a bola já saiu do jogo.</p>",
+            "explicacao": "<p>Rasgos e cortes visíveis precisam de avaliação individual. A viabilidade do reparo depende da profundidade e da extensão do dano.</p>",
             "proximo_passo": "<p>Envie uma foto próxima do rasgo pelo WhatsApp. A Clínica avalia se o seu caso entra na faixa em que o Conserta Bola resolve.</p>"
           }
         },
@@ -220,7 +244,7 @@
             "titulo": "Vazamento perto da válvula",
             "opcao": "valvula",
             "sintoma": "Depois de encher, o ar escapa em pouco tempo, e o vazamento parece vir da região onde entra a agulha.",
-            "explicacao": "<p>Vazamentos na região da válvula têm origem variável: pode ser a própria válvula desgastada (a agulha da bomba abriu um caminho ao longo do tempo), pode ser um furo perto da base, pode ser a câmara comprometida. Casos de válvula desgastada podem ser reparados, mas às vezes exigem reaplicação com o tempo, porque a agulha de calibragem pode reabrir o vazamento. Cada caso precisa ser visto antes de qualquer aplicação.</p>",
+            "explicacao": "<p>Vazamentos na região da válvula precisam de avaliação individual antes de qualquer aplicação. A indicação depende da origem exata do vazamento e das condições da bola.</p>",
             "proximo_passo": "<p>Mande foto próxima da válvula pelo WhatsApp e conte há quanto tempo o vazamento começou. A Clínica avalia se o seu caso é tratável com o Conserta Bola.</p>"
           }
         },
