@@ -985,7 +985,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Use a seringa e a agulha incluídas e siga a cartilha específica para o tipo da sua bola.</p>",
+                    "text": "<p>Use a seringa e a agulha incluídas e acesse pelo QR code da embalagem o passo a passo específico para o tipo da sua bola.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -1083,7 +1083,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Respeite o período de estabilização indicado na cartilha antes de voltar a jogar.</p>",
+                    "text": "<p>Respeite o período de estabilização indicado no passo a passo acessado pelo QR code da embalagem antes de voltar a jogar.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -1511,7 +1511,7 @@
                 "faq_1_text": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Funciona em bolas esportivas com microfuros ou vazamentos lentos — futebol de campo, society, futsal, vôlei, basquete, handebol, beach soccer e outras.</p><p>A forma correta de aplicação depende do tipo de bola e está detalhada na cartilha que acompanha o kit.</p><p>Rasgos, costura aberta, dano na válvula ou vazamento rápido precisam de avaliação. Envie uma foto pelo <a href=\"https://wa.me/5547992758506?text=Oi%2C%20tenho%20uma%20bola%20com%20furo%20ou%20vazamento%20e%20queria%20saber%20se%20o%20Conserta%20Bola%20resolve%20no%20meu%20caso.%20Posso%20mandar%20foto%3F\" target=\"_blank\" rel=\"noopener\">WhatsApp (47) 99275-8506</a> antes da compra.</p>",
+                    "text": "<p>Funciona em bolas esportivas com microfuros ou vazamentos lentos — futebol de campo, society, futsal, vôlei, basquete, handebol, beach soccer e outras.</p><p>A forma correta de aplicação depende do tipo de bola e está detalhada no passo a passo acessado pelo QR code impresso na embalagem.</p><p>Rasgos, costura aberta, dano na válvula ou vazamento rápido precisam de avaliação. Envie uma foto pelo <a href=\"https://wa.me/5547992758506?text=Oi%2C%20tenho%20uma%20bola%20com%20furo%20ou%20vazamento%20e%20queria%20saber%20se%20o%20Conserta%20Bola%20resolve%20no%20meu%20caso.%20Posso%20mandar%20foto%3F\" target=\"_blank\" rel=\"noopener\">WhatsApp (47) 99275-8506</a> antes da compra.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1550,7 +1550,7 @@
                 "faq_2_text": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>A aplicação em si leva poucos minutos, seguindo a cartilha enviada com o produto. Depois da aplicação, a bola precisa de um período de estabilização antes de voltar ao jogo — o tempo exato varia por modalidade e tipo de dano e está descrito na cartilha.</p>",
+                    "text": "<p>A aplicação em si leva poucos minutos, seguindo as instruções acessadas pelo QR code impresso na embalagem. Depois da aplicação, a bola precisa de um período de estabilização antes de voltar ao jogo — o tempo exato varia por modalidade e tipo de dano e está descrito no passo a passo digital.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1589,7 +1589,7 @@
                 "faq_3_text": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>O kit vem com seringa, agulha e cartilha com o passo a passo. Use os itens somente conforme as orientações da cartilha e mantenha-os fora do alcance de crianças.</p>",
+                    "text": "<p>O kit vem com seringa e agulha. O QR code impresso na embalagem dá acesso ao passo a passo de aplicação. Use os itens somente conforme as orientações e mantenha-os fora do alcance de crianças.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
