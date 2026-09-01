@@ -42,7 +42,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p><strong>Testado em mais de 5.000 bolas reais.</strong> Fórmula própria que recupera bolas esportivas furadas ou com vazamento e coloca você de volta em campo.</p>",
+            "text": "<p><strong>Criado na bancada e testado em mais de 5.000 bolas reais.</strong> Uma fórmula própria, desenvolvida a partir da prática diária de quem vive do conserto de bolas esportivas.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -369,7 +369,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Feito por quem vive de reparo de bolas há anos</p>",
+                "text": "<p>Criado por quem conserta bolas todos os dias</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -591,7 +591,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Por trás do Conserta Bola: +5.000 bolas recuperadas na bancada</h2>",
+                "text": "<h2>Não nasceu de uma hipótese. Nasceu na bancada.</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -617,7 +617,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>O <strong>Conserta Bola</strong> nasceu dentro da <strong>Clínica da Bola</strong>, oficina de reparo de bolas esportivas. A fórmula foi desenvolvida e ajustada à mão, reparo após reparo, por quem vive disso há anos — e hoje é a mesma fórmula que você aplica em casa.</p><p>by Clínica da Bola — +5.000 bolas recuperadas na bancada</p>",
+                "text": "<p>O <strong>Conserta Bola</strong> foi criado dentro da <strong>Clínica da Bola</strong>, a partir da prática diária de diagnosticar e recuperar bolas esportivas. A fórmula foi desenvolvida e aperfeiçoada reparo após reparo, diante dos problemas que realmente chegam à bancada.</p><p>Você leva para casa o conhecimento de quem já trabalhou em mais de 5.000 bolas reais — com orientação para aplicar corretamente e ajuda para entender se o produto serve para o seu caso.</p><p><strong>Clínica da Bola — experiência prática transformada em solução.</strong></p>",
                 "width": "fit-content",
                 "max_width": "narrow",
                 "alignment": "left",
@@ -1628,7 +1628,7 @@
                 "faq_4_text": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Adicione ao carrinho e finalize a compra pelo site.</p><p><strong>Formas de pagamento:</strong> cartão de crédito (parcelamento disponível), PIX e boleto — via Mercado Pago.</p><p><strong>Frete:</strong> informe o CEP no checkout. A loja oferece frete fixo de R$ 22,00 para todo o Brasil, com prazo informado de 3 a 5 dias úteis; quando houver cotação via Frenet, as opções disponíveis aparecem no checkout. O frete é grátis em compras acima de R$ 299,00.</p><p>Dúvidas antes de comprar? Mande foto da sua bola no <a href=\"https://wa.me/5547992758506?text=Oi%2C%20tenho%20d%C3%BAvidas%20antes%20de%20comprar%20o%20Conserta%20Bola.%20Posso%20mandar%20foto%20da%20bola%20pra%20avalia%C3%A7%C3%A3o%3F\" target=\"_blank\" rel=\"noopener\">WhatsApp (47) 99275-8506</a>.</p>",
+                    "text": "<p>Adicione ao carrinho e finalize a compra pelo site.</p><p><strong>Formas de pagamento:</strong> cartão de crédito (parcelamento disponível), PIX e boleto — via Mercado Pago.</p><p><strong>Frete:</strong> informe o CEP no checkout para consultar as modalidades, os valores e os prazos disponíveis pela Frenet. Quando o pedido atender às condições de uma oferta de frete grátis, o benefício aparecerá automaticamente no checkout.</p><p>Dúvidas antes de comprar? Mande foto da sua bola no <a href=\"https://wa.me/5547992758506?text=Oi%2C%20tenho%20d%C3%BAvidas%20antes%20de%20comprar%20o%20Conserta%20Bola.%20Posso%20mandar%20foto%20da%20bola%20pra%20avalia%C3%A7%C3%A3o%3F\" target=\"_blank\" rel=\"noopener\">WhatsApp (47) 99275-8506</a>.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
