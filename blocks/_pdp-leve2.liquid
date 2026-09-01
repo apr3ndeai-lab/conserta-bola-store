@@ -6,7 +6,7 @@
   if kit == blank or kit.available == false
     assign hide = true
   endif
-  if current != blank and current.handle == block_settings.kit_handle
+  if current != blank and current.price >= kit.price
     assign hide = true
   endif
 

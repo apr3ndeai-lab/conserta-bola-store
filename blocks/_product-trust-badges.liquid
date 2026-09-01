@@ -1,10 +1,19 @@
-{% assign block_settings = block.settings %}
+{% liquid
+  assign block_settings = block.settings
+  assign current_product = closest.product
+  assign shipping_label = block_settings.shipping_label
+  if current_product.handle == 'kit-escolinha-10-conserta-bola'
+    assign shipping_label = 'Frete grátis nas modalidades de até R$ 60'
+  elsif current_product.handle == 'kit-recuperacao-3-conserta-bola'
+    assign shipping_label = 'Frete grátis nas modalidades de até R$ 20'
+  endif
+%}
 
 <ul class="cb-trust-badges" {{ block.shopify_attributes }}>
   {% if block_settings.show_shipping %}
     <li class="cb-trust-badges__item">
       <span class="cb-trust-badges__icon" aria-hidden="true">🚚</span>
-      <span class="cb-trust-badges__label">{{ block_settings.shipping_label }}</span>
+      <span class="cb-trust-badges__label">{{ shipping_label }}</span>
     </li>
   {% endif %}
   {% if block_settings.show_guarantee %}
