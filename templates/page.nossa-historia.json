@@ -1,0 +1,60 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "pagina-nossa-historia",
+      "name": "Nossa história",
+      "settings": {
+        "eyebrow": "POR TRÁS DO CONSERTA BOLA",
+        "heading": "Eu não comecei querendo criar um produto. Eu queria devolver bolas ao jogo.",
+        "lede": "<p>Eu sou Marcos Antonio de Maia, fundador da Clínica da Bola, em Itajaí/SC. A história do Conserta Bola começou muito antes dessa marca: começou na bancada e passou por uma primeira sociedade.</p>",
+        "hero_cta": "Conheça essa história",
+        "hero_image": "shopify://shop_images/clinica-da-bola-5000-bolas-recuperadas.png",
+        "hero_image_alt": "Bastidores da Clínica da Bola e do desenvolvimento do Conserta Bola",
+        "image_caption": "Clínica da Bola — experiência real de reparo em Itajaí/SC.",
+        "founder_heading": "Eu sou Marcos. Meu trabalho começa entendendo por que uma bola perdeu o ar.",
+        "founder_text": "<p>Na Clínica da Bola, cada reparo começa pelo diagnóstico. É preciso observar o material, o tipo de vazamento e o que aconteceu com aquela bola antes de decidir o próximo passo.</p><p>Antes do Conserta Bola, eu participei da criação do VedaBola PRO. Ao lado do meu então sócio, criamos o primeiro produto com a base da fórmula que usamos hoje. Essa etapa faz parte da história e do conhecimento que acumulei na prática.</p>"
+      },
+      "blocks": {
+        "marco_1": {
+          "type": "marco",
+          "settings": {
+            "heading": "A Clínica da Bola veio primeiro",
+            "text": "<p>Na bancada, bolas de modalidades e materiais diferentes chegavam perdendo ar. O trabalho diário mostrou quais problemas se repetiam e o que precisava ser resolvido.</p>"
+          }
+        },
+        "marco_2": {
+          "type": "marco",
+          "settings": {
+            "heading": "O primeiro produto foi o VedaBola PRO",
+            "text": "<p>Em uma sociedade anterior, eu e meu então sócio criamos o VedaBola PRO: o primeiro produto com a base da fórmula atual. Foi uma construção compartilhada e uma etapa importante dessa trajetória.</p>"
+          }
+        },
+        "marco_3": {
+          "type": "marco",
+          "settings": {
+            "heading": "Em 2025, começou um novo capítulo",
+            "text": "<p>Eu pedi minha saída da sociedade. A Clínica da Bola, nome de minha autoria, permaneceu comigo. A marca VedaBola PRO ficou para que meu antigo sócio pudesse continuar seu caminho, se desejasse.</p>"
+          }
+        },
+        "marco_4": {
+          "type": "marco",
+          "settings": {
+            "heading": "Nasceu o Conserta Bola",
+            "text": "<p>A partir dessa experiência, eu criei uma nova marca: o Conserta Bola. Um produto ligado à Clínica da Bola e ao conhecimento acumulado em milhares de reparos reais.</p>"
+          }
+        }
+      },
+      "block_order": ["marco_1", "marco_2", "marco_3", "marco_4"]
+    }
+  },
+  "order": ["main"]
+}

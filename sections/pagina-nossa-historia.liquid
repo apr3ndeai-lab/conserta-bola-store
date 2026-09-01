@@ -1,0 +1,545 @@
+<article class="cb-story">
+  <header class="cb-story__hero page-width">
+    <div class="cb-story__hero-copy">
+      <p class="cb-story__eyebrow">{{ section.settings.eyebrow }}</p>
+      <h1>{{ section.settings.heading }}</h1>
+      <div class="cb-story__lede rte">{{ section.settings.lede }}</div>
+      <a class="button cb-story__primary" href="#como-nasceu">{{ section.settings.hero_cta }}</a>
+    </div>
+
+    <figure class="cb-story__hero-media">
+      {% if section.settings.hero_image != blank %}
+        {{
+          section.settings.hero_image
+          | image_url: width: 1400
+          | image_tag:
+            widths: '480, 720, 960, 1200, 1400',
+            sizes: '(min-width: 900px) 48vw, 100vw',
+            loading: 'eager',
+            fetchpriority: 'high',
+            alt: section.settings.hero_image_alt
+        }}
+      {% else %}
+        <div class="cb-story__image-placeholder" aria-hidden="true">
+          <span>Clínica da Bola</span>
+        </div>
+      {% endif %}
+      <figcaption>{{ section.settings.image_caption }}</figcaption>
+    </figure>
+  </header>
+
+  <section class="cb-story__proof" aria-label="Experiência da Clínica da Bola">
+    <div class="page-width cb-story__proof-grid">
+      <div>
+        <strong>+5.000</strong>
+        <span>bolas trabalhadas na bancada</span>
+      </div>
+      <div>
+        <strong>Itajaí/SC</strong>
+        <span>onde nasceu a Clínica da Bola</span>
+      </div>
+      <div>
+        <strong>Prática diária</strong>
+        <span>transformada em produto</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cb-story__founder page-width" aria-labelledby="fundador-titulo">
+    <div class="cb-story__founder-label">
+      <p class="cb-story__eyebrow">QUEM ESTÁ POR TRÁS</p>
+      <h2 id="fundador-titulo">{{ section.settings.founder_heading }}</h2>
+    </div>
+    <div class="cb-story__founder-copy rte">
+      {{ section.settings.founder_text }}
+    </div>
+  </section>
+
+  <section id="como-nasceu" class="cb-story__timeline" aria-labelledby="historia-titulo">
+    <div class="page-width">
+      <div class="cb-story__section-heading">
+        <p class="cb-story__eyebrow">DA BANCADA PARA A SUA CASA</p>
+        <h2 id="historia-titulo">Como chegamos ao Conserta Bola</h2>
+        <p>Essa história não começou com uma marca pronta. Ela foi construída na bancada, em sociedade e, depois, em um novo começo.</p>
+      </div>
+
+      <ol class="cb-story__steps" role="list">
+        {% for block in section.blocks %}
+          {% if block.type == 'marco' %}
+            <li class="cb-story__step" {{ block.shopify_attributes }}>
+              <span class="cb-story__step-number" aria-hidden="true">{{ forloop.index | prepend: '0' }}</span>
+              <h3>{{ block.settings.heading }}</h3>
+              <div class="rte">{{ block.settings.text }}</div>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
+
+  <section class="cb-story__manifesto page-width" aria-labelledby="manifesto-titulo">
+    <div class="cb-story__manifesto-mark" aria-hidden="true">“</div>
+    <div>
+      <p class="cb-story__eyebrow">O QUE TORNA O PRODUTO DIFERENTE</p>
+      <h2 id="manifesto-titulo">A formulação importa. A vivência na bancada também.</h2>
+      <div class="rte">
+        <p>Uma fórmula pode começar no estudo. Mas é diante de bolas reais, materiais diferentes e sintomas diferentes que ela precisa provar seu valor.</p>
+        <p>O Conserta Bola reúne essas duas coisas: uma fórmula própria e o conhecimento prático acumulado pela Clínica da Bola. Por isso a gente também explica os limites do produto e orienta quando o caso precisa de avaliação.</p>
+      </div>
+    </div>
+  </section>
+
+  <aside class="cb-story__cta" aria-labelledby="cta-historia-titulo">
+    <div class="page-width cb-story__cta-inner">
+      <div>
+        <p class="cb-story__eyebrow">A HISTÓRIA CONTINUA EM CADA BOLA RECUPERADA</p>
+        <h2 id="cta-historia-titulo">Antes de desistir da sua bola, veja se ela tem conserto.</h2>
+      </div>
+      <div class="cb-story__cta-actions">
+        <a class="button cb-story__primary" href="/products/conserta-bola">Conhecer o Conserta Bola</a>
+        <a class="button button-secondary cb-story__secondary" href="/pages/avaliacao">Avaliar o problema da minha bola</a>
+      </div>
+    </div>
+  </aside>
+</article>
+
+{% stylesheet %}
+  .cb-story {
+    --story-navy: #0d1526;
+    --story-blue: #02213a;
+    --story-card: #063153;
+    --story-gold: #e8b84b;
+    --story-cream: #f7f3eb;
+    color: var(--story-navy);
+    background: var(--story-cream);
+  }
+
+  .cb-story .page-width {
+    width: min(100% - 40px, 1240px);
+    margin-inline: auto;
+  }
+
+  .cb-story__hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
+    align-items: center;
+    gap: clamp(40px, 7vw, 96px);
+    padding-block: clamp(56px, 8vw, 112px);
+  }
+
+  .cb-story__eyebrow {
+    margin: 0 0 14px;
+    color: #9a6d13;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    line-height: 1.25;
+  }
+
+  .cb-story__hero h1 {
+    max-width: 780px;
+    margin: 0;
+    font-size: clamp(2.5rem, 5.5vw, 5.5rem);
+    font-weight: 800;
+    letter-spacing: -0.055em;
+    line-height: 0.98;
+  }
+
+  .cb-story__lede {
+    max-width: 650px;
+    margin-block: 28px 32px;
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    line-height: 1.65;
+  }
+
+  .cb-story__primary {
+    min-height: 50px;
+    background: var(--story-gold);
+    border-color: var(--story-gold);
+    color: var(--story-navy);
+    font-weight: 750;
+  }
+
+  .cb-story__hero-media {
+    margin: 0;
+  }
+
+  .cb-story__hero-media img,
+  .cb-story__image-placeholder {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 24px 24px 0 var(--story-gold);
+  }
+
+  .cb-story__image-placeholder {
+    display: grid;
+    place-items: center;
+    background: var(--story-blue);
+    color: #fff;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 800;
+  }
+
+  .cb-story__hero-media figcaption {
+    margin: 36px 0 0 24px;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    opacity: 0.72;
+  }
+
+  .cb-story__proof {
+    padding-block: 32px;
+    color: #fff;
+    background: var(--story-blue);
+  }
+
+  .cb-story__proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cb-story__proof-grid > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px clamp(20px, 4vw, 56px);
+    border-inline-start: 1px solid rgb(255 255 255 / 0.2);
+  }
+
+  .cb-story__proof-grid > div:first-child {
+    padding-inline-start: 0;
+    border-inline-start: 0;
+  }
+
+  .cb-story__proof strong {
+    color: var(--story-gold);
+    font-size: clamp(1.35rem, 2.8vw, 2.25rem);
+    line-height: 1;
+  }
+
+  .cb-story__proof span {
+    font-size: 0.9rem;
+    opacity: 0.82;
+  }
+
+  .cb-story__founder {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.28fr);
+    gap: clamp(40px, 8vw, 120px);
+    padding-block: clamp(72px, 10vw, 144px);
+  }
+
+  .cb-story__founder h2,
+  .cb-story__section-heading h2,
+  .cb-story__manifesto h2,
+  .cb-story__cta h2 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 4.25rem);
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    line-height: 1.02;
+  }
+
+  .cb-story__founder-copy {
+    font-size: clamp(1.05rem, 1.6vw, 1.28rem);
+    line-height: 1.72;
+  }
+
+  .cb-story__founder-copy p:first-child {
+    margin-block-start: 0;
+  }
+
+  .cb-story__timeline {
+    padding-block: clamp(72px, 9vw, 128px);
+    color: #fff;
+    background: var(--story-navy);
+  }
+
+  .cb-story__section-heading {
+    max-width: 780px;
+    margin-block-end: clamp(48px, 7vw, 88px);
+  }
+
+  .cb-story__section-heading > p:last-child {
+    max-width: 560px;
+    margin-block-start: 24px;
+    color: rgb(255 255 255 / 0.72);
+    font-size: 1.05rem;
+  }
+
+  .cb-story__steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .cb-story__step {
+    min-height: 330px;
+    padding: 28px;
+    background: #151f32;
+    border-block-start: 4px solid var(--story-gold);
+  }
+
+  .cb-story__step-number {
+    display: block;
+    margin-block-end: 46px;
+    color: var(--story-gold);
+    font-size: 0.84rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+  }
+
+  .cb-story__step h3 {
+    margin: 0 0 18px;
+    font-size: 1.35rem;
+    line-height: 1.15;
+  }
+
+  .cb-story__step .rte {
+    color: rgb(255 255 255 / 0.72);
+    font-size: 0.94rem;
+    line-height: 1.62;
+  }
+
+  .cb-story__manifesto {
+    display: grid;
+    grid-template-columns: 0.28fr 1.72fr;
+    gap: clamp(32px, 6vw, 84px);
+    padding-block: clamp(72px, 10vw, 144px);
+  }
+
+  .cb-story__manifesto-mark {
+    color: var(--story-gold);
+    font-size: clamp(7rem, 18vw, 15rem);
+    font-weight: 800;
+    line-height: 0.7;
+  }
+
+  .cb-story__manifesto .rte {
+    max-width: 760px;
+    margin-block-start: 28px;
+    font-size: 1.08rem;
+    line-height: 1.72;
+  }
+
+  .cb-story__cta {
+    padding-block: clamp(64px, 9vw, 112px);
+    color: #fff;
+    background: var(--story-blue);
+  }
+
+  .cb-story__cta-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+    align-items: end;
+    gap: 48px;
+  }
+
+  .cb-story__cta-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .cb-story__cta-actions .button {
+    justify-content: center;
+    min-height: 52px;
+  }
+
+  .cb-story__secondary {
+    border-color: rgb(255 255 255 / 0.52);
+    color: #fff;
+  }
+
+  @media (max-width: 899px) {
+    .cb-story__hero,
+    .cb-story__founder,
+    .cb-story__cta-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .cb-story__hero-media {
+      max-width: 680px;
+    }
+
+    .cb-story__steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 599px) {
+    .cb-story .page-width {
+      width: min(100% - 32px, 1240px);
+    }
+
+    .cb-story__hero {
+      padding-block-start: 44px;
+    }
+
+    .cb-story__hero-media img,
+    .cb-story__image-placeholder {
+      box-shadow: 12px 12px 0 var(--story-gold);
+    }
+
+    .cb-story__hero-media figcaption {
+      margin-inline-start: 12px;
+    }
+
+    .cb-story__proof-grid,
+    .cb-story__steps {
+      grid-template-columns: 1fr;
+    }
+
+    .cb-story__proof-grid > div,
+    .cb-story__proof-grid > div:first-child {
+      padding: 18px 0;
+      border-inline-start: 0;
+      border-block-start: 1px solid rgb(255 255 255 / 0.2);
+    }
+
+    .cb-story__proof-grid > div:first-child {
+      border-block-start: 0;
+    }
+
+    .cb-story__step {
+      min-height: auto;
+    }
+
+    .cb-story__step-number {
+      margin-block-end: 28px;
+    }
+
+    .cb-story__manifesto {
+      grid-template-columns: 1fr;
+    }
+
+    .cb-story__manifesto-mark {
+      height: 60px;
+      font-size: 8rem;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Nossa história",
+  "tag": "section",
+  "class": "section-nossa-historia",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Linha de apoio",
+      "default": "POR TRÁS DO CONSERTA BOLA"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Título principal",
+      "default": "Eu não comecei querendo criar um produto. Eu queria devolver bolas ao jogo."
+    },
+    {
+      "type": "richtext",
+      "id": "lede",
+      "label": "Introdução",
+      "default": "<p>Eu sou Marcos Antonio de Maia, fundador da Clínica da Bola, em Itajaí/SC. A história do Conserta Bola começou muito antes dessa marca: começou na bancada e passou por uma primeira sociedade.</p>"
+    },
+    {
+      "type": "text",
+      "id": "hero_cta",
+      "label": "Texto do primeiro botão",
+      "default": "Conheça essa história"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Imagem principal"
+    },
+    {
+      "type": "text",
+      "id": "hero_image_alt",
+      "label": "Descrição acessível da imagem",
+      "default": "Bastidores da Clínica da Bola e do desenvolvimento do Conserta Bola"
+    },
+    {
+      "type": "text",
+      "id": "image_caption",
+      "label": "Legenda da imagem",
+      "default": "Clínica da Bola — experiência real de reparo em Itajaí/SC."
+    },
+    {
+      "type": "text",
+      "id": "founder_heading",
+      "label": "Título sobre o fundador",
+      "default": "Eu sou Marcos. Meu trabalho começa entendendo por que uma bola perdeu o ar."
+    },
+    {
+      "type": "richtext",
+      "id": "founder_text",
+      "label": "Texto sobre o fundador",
+      "default": "<p>Na Clínica da Bola, cada reparo começa pelo diagnóstico. É preciso observar o material, o tipo de vazamento e o que aconteceu com aquela bola antes de decidir o próximo passo.</p><p>Antes do Conserta Bola, eu participei da criação do VedaBola PRO. Ao lado do meu então sócio, criamos o primeiro produto com a base da fórmula que usamos hoje. Essa etapa faz parte da história e do conhecimento que acumulei na prática.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "marco",
+      "name": "Marco da história",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Título"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Texto"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Nossa história",
+      "blocks": [
+        {
+          "type": "marco",
+          "settings": {
+            "heading": "A Clínica da Bola veio primeiro",
+            "text": "<p>Na bancada, bolas de modalidades e materiais diferentes chegavam perdendo ar. O trabalho diário mostrou quais problemas se repetiam e o que precisava ser resolvido.</p>"
+          }
+        },
+        {
+          "type": "marco",
+          "settings": {
+            "heading": "O primeiro produto foi o VedaBola PRO",
+            "text": "<p>Em uma sociedade anterior, eu e meu então sócio criamos o VedaBola PRO: o primeiro produto com a base da fórmula atual. Foi uma construção compartilhada e uma etapa importante dessa trajetória.</p>"
+          }
+        },
+        {
+          "type": "marco",
+          "settings": {
+            "heading": "Em 2025, começou um novo capítulo",
+            "text": "<p>Eu pedi minha saída da sociedade. A Clínica da Bola, nome de minha autoria, permaneceu comigo. A marca VedaBola PRO ficou para que meu antigo sócio pudesse continuar seu caminho, se desejasse.</p>"
+          }
+        },
+        {
+          "type": "marco",
+          "settings": {
+            "heading": "Nasceu o Conserta Bola",
+            "text": "<p>A partir dessa experiência, eu criei uma nova marca: o Conserta Bola. Um produto ligado à Clínica da Bola e ao conhecimento acumulado em milhares de reparos reais.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
