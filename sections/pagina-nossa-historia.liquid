@@ -103,8 +103,18 @@
       <p class="cb-story__eyebrow">O QUE TORNA O PRODUTO DIFERENTE</p>
       <h2 id="manifesto-titulo">A formulação importa. A experiência de quem repara bolas também.</h2>
       <div class="rte">
-        <p>Uma fórmula pode começar no estudo. Mas é diante de bolas reais, materiais diferentes e sintomas diferentes que ela precisa provar seu valor.</p>
+        <p>Uma fórmula pode ser criada com base em estudos dos componentes para chegar ao produto final. Mas é diante de bolas reais, materiais e sintomas diferentes que ela precisa provar a sua eficiência.</p>
         <p>O Conserta Bola reúne essas duas coisas: uma fórmula própria e o conhecimento prático acumulado pela Clínica da Bola. Por isso a gente também explica os limites do produto e orienta quando o caso precisa de avaliação.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="nossa-missao" class="cb-story__mission" aria-labelledby="missao-titulo">
+    <div class="page-width cb-story__mission-inner">
+      <p class="cb-story__eyebrow">NOSSA MISSÃO</p>
+      <div>
+        <h2 id="missao-titulo">Tratar a causa raiz, não apenas o sintoma.</h2>
+        <p>Estamos aqui para trazer uma solução prática e efetiva.</p>
       </div>
     </div>
   </section>
@@ -281,6 +291,7 @@
   .cb-story__founder h2,
   .cb-story__section-heading h2,
   .cb-story__manifesto h2,
+  .cb-story__mission h2,
   .cb-story__cta h2 {
     margin: 0;
     font-size: clamp(2rem, 4vw, 4.25rem);
@@ -374,6 +385,33 @@
     line-height: 1.72;
   }
 
+  .cb-story__mission {
+    scroll-margin-top: 110px;
+    padding-block: clamp(64px, 8vw, 104px);
+    background: var(--story-gold);
+  }
+
+  .cb-story__mission-inner {
+    display: grid;
+    grid-template-columns: minmax(180px, 0.55fr) minmax(0, 1.45fr);
+    gap: clamp(32px, 7vw, 96px);
+  }
+
+  .cb-story__mission .cb-story__eyebrow {
+    color: #604300;
+  }
+
+  .cb-story__mission h2 {
+    max-width: 850px;
+  }
+
+  .cb-story__mission h2 + p {
+    max-width: 680px;
+    margin: 24px 0 0;
+    font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+    line-height: 1.65;
+  }
+
   .cb-story__cta {
     padding-block: clamp(64px, 9vw, 112px);
     color: #fff;
@@ -408,6 +446,7 @@
     .cb-story__hero,
     .cb-story__founder,
     .cb-story__founder--with-image,
+    .cb-story__mission-inner,
     .cb-story__cta-inner {
       grid-template-columns: 1fr;
     }

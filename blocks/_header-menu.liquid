@@ -70,6 +70,15 @@
                     Nossa história
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="/pages/nossa-historia#nossa-missao"
+                    id="MenuItem-nossa-missao"
+                    class="menu-list__item"
+                  >
+                    Nossa missão
+                  </a>
+                </li>
               {% endif %}
             {% endfor %}
           </ul>
@@ -197,6 +206,21 @@
               ref="menuitem"
             >
               <span class="menu-list__link-title">Nossa história</span>
+            </a>
+          </li>
+          <li
+            class="menu-list__list-item"
+            on:blur="/deactivate"
+            on:pointerenter="/activate"
+            on:pointerleave="/deactivate"
+          >
+            <a
+              href="/pages/nossa-historia#nossa-missao"
+              data-skip-node-update="true"
+              class="menu-list__link"
+              ref="menuitem"
+            >
+              <span class="menu-list__link-title">Nossa missão</span>
             </a>
           </li>
         {% endif %}

@@ -273,6 +273,19 @@
                     <span class="menu-drawer__menu-item-text wrap-text">Nossa história</span>
                   </a>
                 </li>
+                {% assign animation_index = animation_index | plus: 1 %}
+                <li
+                  style="--menu-drawer-animation-index: {{ animation_index }};"
+                  class="menu-drawer__list-item--flat{% if block_settings.drawer_dividers %} menu-drawer__list-item--divider{% endif %}"
+                >
+                  <a
+                    id="HeaderDrawer-nossa-missao"
+                    href="/pages/nossa-historia#nossa-missao"
+                    class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element"
+                  >
+                    <span class="menu-drawer__menu-item-text wrap-text">Nossa missão</span>
+                  </a>
+                </li>
               {% endif %}
             {%- endfor -%}
           {% else %}
@@ -618,6 +631,19 @@
                     {% endif %}
                   >
                     <span class="menu-drawer__menu-item-text wrap-text">Nossa história</span>
+                  </a>
+                </li>
+                {% assign animation_index = animation_index | plus: 1 %}
+                <li
+                  class="menu-drawer__list-item"
+                  style="--menu-drawer-animation-index: {{ animation_index }};"
+                >
+                  <a
+                    id="HeaderDrawer-nossa-missao"
+                    href="/pages/nossa-historia#nossa-missao"
+                    class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element"
+                  >
+                    <span class="menu-drawer__menu-item-text wrap-text">Nossa missão</span>
                   </a>
                 </li>
               {% endif %}
