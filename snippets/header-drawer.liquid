@@ -280,8 +280,11 @@
                 >
                   <a
                     id="HeaderDrawer-nossa-missao"
-                    href="/pages/nossa-historia#nossa-missao"
-                    class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element"
+                    href="/pages/missao"
+                    class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element{% if request.path == '/pages/missao' %} menu-drawer__menu-item--active{% endif %}"
+                    {% if request.path == '/pages/missao' %}
+                      aria-current="page"
+                    {% endif %}
                   >
                     <span class="menu-drawer__menu-item-text wrap-text">Missão</span>
                   </a>
@@ -640,8 +643,11 @@
                 >
                   <a
                     id="HeaderDrawer-nossa-missao"
-                    href="/pages/nossa-historia#nossa-missao"
-                    class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element"
+                    href="/pages/missao"
+                    class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element{% if request.path == '/pages/missao' %} menu-drawer__menu-item--active{% endif %}"
+                    {% if request.path == '/pages/missao' %}
+                      aria-current="page"
+                    {% endif %}
                   >
                     <span class="menu-drawer__menu-item-text wrap-text">Missão</span>
                   </a>

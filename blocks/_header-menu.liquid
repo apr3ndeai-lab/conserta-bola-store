@@ -72,9 +72,12 @@
                 </li>
                 <li>
                   <a
-                    href="/pages/nossa-historia#nossa-missao"
+                    href="/pages/missao"
                     id="MenuItem-nossa-missao"
                     class="menu-list__item"
+                    {% if request.path == '/pages/missao' %}
+                      aria-current="page"
+                    {% endif %}
                   >
                     Missão
                   </a>
@@ -215,9 +218,12 @@
             on:pointerleave="/deactivate"
           >
             <a
-              href="/pages/nossa-historia#nossa-missao"
+              href="/pages/missao"
               data-skip-node-update="true"
-              class="menu-list__link"
+              class="menu-list__link{% if request.path == '/pages/missao' %} menu-list__link--active{% endif %}"
+              {% if request.path == '/pages/missao' %}
+                aria-current="page"
+              {% endif %}
               ref="menuitem"
             >
               <span class="menu-list__link-title">Missão</span>
