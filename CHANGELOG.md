@@ -1,5 +1,12 @@
 # Registro de alterações
 
+## 2026-09-02 — Reformulação da narrativa do fundador
+
+- Removidas da página História e da apresentação resumida na página inicial as referências a sócio, investimento e sociedade anterior.
+- A narrativa passou a se concentrar na prática da Clínica da Bola, na criação e no aperfeiçoamento da formulação e no início do Conserta Bola em 2025.
+- Alteração publicada no tema ativo e validada nas páginas públicas.
+- Criado o plano do pacote de 18 criativos mestres com GPT Image 2 em `docs/plano-criativos-gpt-image-2.md`.
+
 ## 2026-09-02 — Política de troca, devolução e reembolso
 
 - Ambiente: loja Shopify em produção (`rmqmkm-kj.myshopify.com`).
@@ -19,4 +26,3 @@
 - Permissões aprovadas: `read_legal_policies` e `write_legal_policies` no app Conserta Bola Agent.
 - Validação: página pública respondeu normalmente, as novas seções foram encontradas e o conteúdo genérico anterior foi removido, incluindo o marcador de endereço pendente e a regra destinada à União Europeia.
 - Arquivos do tema: nenhuma alteração necessária; a política é armazenada pela Shopify fora do código do tema.
-
