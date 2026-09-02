@@ -8,6 +8,8 @@
 - Concedida ao app a permissão opcional `write_content`; a página Shopify foi criada/atualizada, publicada e associada ao template `page.missao`.
 - Publicação validada no tema ativo: `/pages/missao` respondeu com status 200, o menu contém o novo destino e a página História não exibe mais o bloco duplicado.
 - Gerada pelo fluxo integrado de imagens a primeira direção visual, sem preços ou textos promocionais incorporados: packshot premium, hero desktop e hero mobile.
+- Ampliado o pacote para 13 criativos mestres prontos, cobrindo produto, kits, QR code, triagem, aplicação, retorno ao jogo e reaproveitamento. As cinco posições de prova documental permanecem reservadas para fotografias reais.
+- Registrados arquivos, fontes, prompts e invariantes em `docs/log-geracao-criativos-v1.md`; nenhuma das novas imagens foi vinculada ao tema ativo nesta etapa.
 
 ## 2026-09-02 — Reformulação da narrativa do fundador
 
