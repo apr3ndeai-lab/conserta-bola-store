@@ -1,0 +1,437 @@
+<article class="cb-mission">
+  <header class="cb-mission__hero page-width">
+    <div class="cb-mission__hero-copy">
+      <p class="cb-mission__eyebrow">MISSÃO</p>
+      <h1>Consertar uma bola é manter uma história em jogo.</h1>
+      <div class="cb-mission__lede">
+        <p>Tratar a causa raiz, não apenas o sintoma. Estamos aqui para oferecer uma solução prática e efetiva para que uma bola com vazamento não seja descartada antes de ter a chance de voltar ao jogo.</p>
+      </div>
+      <a class="button cb-mission__primary" href="#compromisso">Conheça nosso compromisso</a>
+    </div>
+
+    <div class="cb-mission__hero-visual" aria-label="Uma bola recuperada pode voltar ao jogo">
+      {% if section.settings.before_image != blank %}
+        <figure>
+          {{
+            section.settings.before_image
+            | image_url: width: 900
+            | image_tag:
+              widths: '360, 540, 720, 900',
+              sizes: '(min-width: 900px) 24vw, 46vw',
+              loading: 'eager',
+              fetchpriority: 'high',
+              alt: 'Bola esportiva antes do reparo'
+          }}
+          <figcaption>Antes</figcaption>
+        </figure>
+      {% endif %}
+      {% if section.settings.after_image != blank %}
+        <figure>
+          {{
+            section.settings.after_image
+            | image_url: width: 900
+            | image_tag:
+              widths: '360, 540, 720, 900',
+              sizes: '(min-width: 900px) 24vw, 46vw',
+              loading: 'eager',
+              fetchpriority: 'high',
+              alt: 'Bola esportiva depois do reparo'
+          }}
+          <figcaption>De volta ao jogo</figcaption>
+        </figure>
+      {% endif %}
+    </div>
+  </header>
+
+  <section class="cb-mission__statement">
+    <div class="page-width cb-mission__statement-inner">
+      <p class="cb-mission__eyebrow">UMA BOLA NUNCA É SÓ UMA BOLA</p>
+      <div>
+        <h2>Ela carrega partidas, encontros, aprendizado e vontade de continuar.</h2>
+        <p>Quando uma bola perde o ar, o problema pode parecer pequeno. Mas descartá-la imediatamente encerra algo que ainda poderia continuar. Para nós, reparar é reconhecer o valor do que já existe antes de decidir substituir.</p>
+        <p>Por isso o Conserta Bola nasceu da prática. Não apenas para colocar ar novamente, mas para entender por que ele está escapando e agir sobre a origem do problema sempre que o reparo for possível.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="compromisso" class="cb-mission__pillars page-width" aria-labelledby="compromisso-titulo">
+    <div class="cb-mission__section-heading">
+      <p class="cb-mission__eyebrow">NOSSO COMPROMISSO</p>
+      <h2 id="compromisso-titulo">Fazer o reparo ter sentido do começo ao fim.</h2>
+    </div>
+
+    <div class="cb-mission__pillar-grid">
+      <article>
+        <span>01</span>
+        <h3>Resolver a causa</h3>
+        <p>Uma bola cheia pode voltar a esvaziar. O objetivo é identificar o vazamento e tratar a causa, não apenas esconder o sintoma por alguns minutos.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h3>Prolongar a vida útil</h3>
+        <p>Cada bola recuperada permanece em uso por mais tempo. Isso preserva o investimento de quem comprou e evita uma substituição antes da hora.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h3>Orientar com honestidade</h3>
+        <p>Nem todo dano tem a mesma solução. Explicamos como aplicar, quais são os limites do produto e quando o caso precisa de avaliação individual.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="cb-mission__vision" aria-labelledby="visao-titulo">
+    <div class="page-width cb-mission__vision-grid">
+      <div class="cb-mission__vision-label">
+        <p class="cb-mission__eyebrow">VISÃO</p>
+        <h2 id="visao-titulo">Um futuro em que consertar venha antes de descartar.</h2>
+      </div>
+      <div class="cb-mission__vision-copy">
+        <p>Queremos trazer, acima de tudo, responsabilidade com o meio ambiente. Reaproveitar uma bola prolonga o uso de materiais que já foram produzidos e pode evitar a compra antecipada de uma nova.</p>
+        <p>Quando essa escolha se repete, ela ajuda a reduzir o descarte e a demanda por matéria-prima, fabricação, embalagem e transporte — atividades associadas à emissão de gases de efeito estufa. Não se trata de prometer impacto sem medir. Trata-se de fazer uma escolha melhor sempre que ainda existe possibilidade de reparo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cb-mission__society page-width" aria-labelledby="sociedade-titulo">
+    <div class="cb-mission__society-mark" aria-hidden="true">↗</div>
+    <div>
+      <p class="cb-mission__eyebrow">CONHECIMENTO QUE CIRCULA</p>
+      <h2 id="sociedade-titulo">Ensinar, aprender e contribuir com responsabilidade.</h2>
+      <p>A experiência só ganha valor quando pode ser compartilhada. Queremos ensinar o uso correto, aprender com cada novo caso e tornar o conhecimento sobre reparo mais acessível.</p>
+      <p>Assim, pessoas, famílias, atletas, escolas e projetos podem cuidar melhor do que já têm. Uma bola que volta ao jogo também pode significar mais tempo de esporte, convivência e oportunidade.</p>
+    </div>
+  </section>
+
+  <aside class="cb-mission__cta" aria-labelledby="missao-cta-titulo">
+    <div class="page-width cb-mission__cta-inner">
+      <div>
+        <p class="cb-mission__eyebrow">ANTES DE SUBSTITUIR, ENTENDA O PROBLEMA</p>
+        <h2 id="missao-cta-titulo">Se ainda pode voltar ao jogo, vale a pena tentar.</h2>
+      </div>
+      <div class="cb-mission__cta-actions">
+        <a class="button cb-mission__primary" href="/products/conserta-bola">Conhecer o Conserta Bola</a>
+        <a class="button button-secondary cb-mission__secondary" href="/pages/avaliacao">Avaliar o problema da minha bola</a>
+      </div>
+    </div>
+  </aside>
+</article>
+
+{% stylesheet %}
+  .cb-mission {
+    --mission-navy: #0d1526;
+    --mission-blue: #02213a;
+    --mission-card: #142239;
+    --mission-gold: #edbb45;
+    --mission-cream: #f7f3eb;
+    color: var(--mission-navy);
+    background: var(--mission-cream);
+  }
+
+  .cb-mission .page-width {
+    width: min(100% - 40px, 1240px);
+    margin-inline: auto;
+  }
+
+  .cb-mission__hero {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(440px, 1.05fr);
+    align-items: center;
+    gap: clamp(44px, 7vw, 96px);
+    padding-block: clamp(64px, 8vw, 112px);
+  }
+
+  .cb-mission__eyebrow {
+    margin: 0 0 15px;
+    color: #9a6d13;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    line-height: 1.25;
+  }
+
+  .cb-mission h1,
+  .cb-mission h2 {
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 1;
+  }
+
+  .cb-mission h1 {
+    max-width: 720px;
+    font-size: clamp(2.65rem, 5.5vw, 5.6rem);
+  }
+
+  .cb-mission h2 {
+    font-size: clamp(2.15rem, 4.3vw, 4.5rem);
+  }
+
+  .cb-mission__lede {
+    max-width: 650px;
+    margin-block: 28px 32px;
+    font-size: clamp(1.08rem, 1.6vw, 1.3rem);
+    line-height: 1.65;
+  }
+
+  .cb-mission__primary {
+    min-height: 52px;
+    background: var(--mission-gold);
+    border-color: var(--mission-gold);
+    color: var(--mission-navy);
+    font-weight: 750;
+  }
+
+  .cb-mission__hero-visual {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .cb-mission__hero-visual figure {
+    margin: 0;
+  }
+
+  .cb-mission__hero-visual figure:nth-child(2) {
+    margin-block-start: 52px;
+  }
+
+  .cb-mission__hero-visual img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  .cb-mission__hero-visual figcaption {
+    margin-block-start: 12px;
+    font-size: 0.82rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .cb-mission__statement {
+    padding-block: clamp(72px, 10vw, 144px);
+    color: #fff;
+    background: var(--mission-blue);
+  }
+
+  .cb-mission__statement-inner,
+  .cb-mission__vision-grid,
+  .cb-mission__society {
+    display: grid;
+    grid-template-columns: minmax(200px, 0.55fr) minmax(0, 1.45fr);
+    gap: clamp(40px, 8vw, 120px);
+  }
+
+  .cb-mission__statement h2 {
+    max-width: 920px;
+  }
+
+  .cb-mission__statement h2 + p,
+  .cb-mission__statement p + p,
+  .cb-mission__vision-copy,
+  .cb-mission__society > div:last-child > p {
+    max-width: 760px;
+    font-size: 1.08rem;
+    line-height: 1.72;
+  }
+
+  .cb-mission__statement h2 + p {
+    margin-block-start: 32px;
+  }
+
+  .cb-mission__statement-inner > div > p {
+    color: rgb(255 255 255 / 0.78);
+  }
+
+  .cb-mission__pillars {
+    scroll-margin-top: 72px;
+    padding-block: clamp(72px, 10vw, 136px);
+  }
+
+  .cb-mission__section-heading {
+    max-width: 820px;
+    margin-block-end: clamp(44px, 7vw, 80px);
+  }
+
+  .cb-mission__pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .cb-mission__pillar-grid article {
+    min-height: 330px;
+    padding: 32px;
+    color: #fff;
+    background: var(--mission-card);
+    border-block-start: 4px solid var(--mission-gold);
+  }
+
+  .cb-mission__pillar-grid span {
+    display: block;
+    margin-block-end: 52px;
+    color: var(--mission-gold);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+  }
+
+  .cb-mission__pillar-grid h3 {
+    margin: 0 0 18px;
+    font-size: 1.45rem;
+    line-height: 1.15;
+  }
+
+  .cb-mission__pillar-grid p {
+    margin: 0;
+    color: rgb(255 255 255 / 0.74);
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  .cb-mission__vision {
+    padding-block: clamp(72px, 10vw, 144px);
+    background: var(--mission-gold);
+  }
+
+  .cb-mission__vision .cb-mission__eyebrow {
+    color: #604300;
+  }
+
+  .cb-mission__vision-copy p {
+    margin-block-start: 0;
+  }
+
+  .cb-mission__vision-copy p + p {
+    margin-block-start: 24px;
+  }
+
+  .cb-mission__society {
+    padding-block: clamp(72px, 10vw, 144px);
+  }
+
+  .cb-mission__society-mark {
+    color: var(--mission-gold);
+    font-size: clamp(6rem, 14vw, 12rem);
+    font-weight: 800;
+    line-height: 0.8;
+  }
+
+  .cb-mission__society h2 {
+    max-width: 900px;
+  }
+
+  .cb-mission__society h2 + p {
+    margin-block-start: 30px;
+  }
+
+  .cb-mission__cta {
+    padding-block: clamp(64px, 9vw, 112px);
+    color: #fff;
+    background: var(--mission-blue);
+  }
+
+  .cb-mission__cta-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+    align-items: end;
+    gap: 48px;
+  }
+
+  .cb-mission__cta-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cb-mission__cta-actions .button {
+    justify-content: center;
+    min-height: 52px;
+  }
+
+  .cb-mission__secondary {
+    border-color: rgb(255 255 255 / 0.52);
+    color: #fff;
+  }
+
+  @media (max-width: 899px) {
+    .cb-mission__hero,
+    .cb-mission__statement-inner,
+    .cb-mission__vision-grid,
+    .cb-mission__society,
+    .cb-mission__cta-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .cb-mission__hero-visual {
+      max-width: 680px;
+    }
+
+    .cb-mission__pillar-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cb-mission__pillar-grid article {
+      min-height: auto;
+    }
+
+    .cb-mission__pillar-grid span {
+      margin-block-end: 32px;
+    }
+  }
+
+  @media (max-width: 599px) {
+    .cb-mission .page-width {
+      width: min(100% - 32px, 1240px);
+    }
+
+    .cb-mission__hero {
+      grid-template-columns: 1fr;
+      padding-block-start: 44px;
+    }
+
+    .cb-mission__hero-visual {
+      gap: 10px;
+    }
+
+    .cb-mission__hero-visual figure:nth-child(2) {
+      margin-block-start: 28px;
+    }
+
+    .cb-mission__pillar-grid article {
+      padding: 26px;
+    }
+
+    .cb-mission__society-mark {
+      height: 70px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Página de missão",
+  "tag": "section",
+  "class": "section-pagina-missao",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "before_image",
+      "label": "Imagem antes do reparo"
+    },
+    {
+      "type": "image_picker",
+      "id": "after_image",
+      "label": "Imagem depois do reparo"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Página de missão"
+    }
+  ]
+}
+{% endschema %}
