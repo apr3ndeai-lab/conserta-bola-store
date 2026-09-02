@@ -1,5 +1,12 @@
 # Registro de alterações
 
+## 2026-09-02 — Google Tag Manager
+
+- Instalado o contêiner `GTM-NZD23HPS` no layout principal da loja.
+- Adicionado o carregador JavaScript no início de `<head>` e o fallback `noscript` imediatamente após a abertura de `<body>`.
+- Confirmada a ausência de uma instalação anterior do mesmo contêiner antes da publicação, evitando rastreamento duplicado.
+- Publicação validada na página inicial, na página do produto e na página Missão; todas responderam com status 200 e exibiram os dois blocos esperados do GTM.
+
 ## 2026-09-02 — Restauração da página Missão e prova visual
 
 - Corrigidos os links de Missão nos menus desktop e mobile para `/pages/missao`.
