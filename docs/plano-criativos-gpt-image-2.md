@@ -49,6 +49,14 @@ Antes da geração final, reunir um pacote de referências fotografado com celul
 
 Essas fotos não precisam estar prontas para publicação. Elas funcionarão como referências de identidade, geometria, rótulo, quantidade e contexto.
 
+### Triagem das fontes recebidas
+
+A biblioteca recebida foi auditada em 2 de setembro de 2026. Há boas referências do frasco, embalagem, identidade visual e quatro fotografias profissionais de Marcos jogando futebol. O material, porém, ainda não contém registros atuais e publicáveis de bancada, aplicação, diagnóstico ou antes/depois com o Conserta Bola.
+
+As referências da marca anterior foram isoladas e não serão usadas. A relação de arquivos aprovados, restritos e ausentes está em [inventario-fontes-criativos.md](inventario-fontes-criativos.md).
+
+Antes do lote final também é obrigatório resolver a divergência entre `CONTÉM 4 ml`, presente no rótulo recebido, e a menção anterior a frasco de 5 ml.
+
 ## Pacote V1 — 18 criativos mestres
 
 | ID | Página/uso | Criativo | Formato principal | Função |
@@ -166,4 +174,3 @@ Após aprovação dessas três peças, a mesma linguagem será aplicada ao resta
 - leitura correta nos cortes desktop e mobile;
 - coerência de luz, cor e acabamento entre todas as páginas;
 - arquivos finais salvos no projeto e vinculados corretamente na Shopify.
-

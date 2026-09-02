@@ -6,6 +6,7 @@
 - A narrativa passou a se concentrar na prática da Clínica da Bola, na criação e no aperfeiçoamento da formulação e no início do Conserta Bola em 2025.
 - Alteração publicada no tema ativo e validada nas páginas públicas.
 - Criado o plano do pacote de 18 criativos mestres com GPT Image 2 em `docs/plano-criativos-gpt-image-2.md`.
+- Auditadas 281 mídias das pastas de referência; registradas as fontes aprovadas, os materiais da marca anterior que não podem ser usados, as lacunas de fotografia e a divergência entre 4 ml e 5 ml em `docs/inventario-fontes-criativos.md`.
 
 ## 2026-09-02 — Política de troca, devolução e reembolso
 
