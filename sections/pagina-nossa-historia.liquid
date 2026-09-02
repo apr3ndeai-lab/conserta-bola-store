@@ -32,7 +32,7 @@
     <div class="page-width cb-story__proof-grid">
       <div>
         <strong>+5.000</strong>
-        <span>bolas trabalhadas na bancada</span>
+        <span>bolas reparadas na Clínica da Bola</span>
       </div>
       <div>
         <strong>Itajaí/SC</strong>
@@ -45,11 +45,31 @@
     </div>
   </section>
 
-  <section class="cb-story__founder page-width" aria-labelledby="fundador-titulo">
+  <section class="cb-story__founder page-width{% if section.settings.founder_image != blank or request.design_mode %} cb-story__founder--with-image{% endif %}" aria-labelledby="fundador-titulo">
     <div class="cb-story__founder-label">
       <p class="cb-story__eyebrow">QUEM ESTÁ POR TRÁS</p>
       <h2 id="fundador-titulo">{{ section.settings.founder_heading }}</h2>
     </div>
+    {% if section.settings.founder_image != blank or request.design_mode %}
+      <figure class="cb-story__founder-media">
+        {% if section.settings.founder_image != blank %}
+          {{
+            section.settings.founder_image
+            | image_url: width: 900
+            | image_tag:
+              widths: '360, 540, 720, 900',
+              sizes: '(min-width: 900px) 27vw, 100vw',
+              loading: 'lazy',
+              alt: section.settings.founder_image_alt
+          }}
+        {% else %}
+          {{ 'image' | placeholder_svg_tag: 'cb-story__founder-placeholder' }}
+        {% endif %}
+        {% if section.settings.founder_image_caption != blank %}
+          <figcaption>{{ section.settings.founder_image_caption }}</figcaption>
+        {% endif %}
+      </figure>
+    {% endif %}
     <div class="cb-story__founder-copy rte">
       {{ section.settings.founder_text }}
     </div>
@@ -58,9 +78,9 @@
   <section id="como-nasceu" class="cb-story__timeline" aria-labelledby="historia-titulo">
     <div class="page-width">
       <div class="cb-story__section-heading">
-        <p class="cb-story__eyebrow">DA BANCADA PARA A SUA CASA</p>
+        <p class="cb-story__eyebrow">DA EXPERIÊNCIA PARA A SUA CASA</p>
         <h2 id="historia-titulo">Como chegamos ao Conserta Bola</h2>
-        <p>Essa história não começou com uma marca pronta. Ela foi construída na bancada, em sociedade e, depois, em um novo começo.</p>
+        <p>Essa história começou no trabalho diário com bolas esportivas, ganhou sua primeira formulação e, em 2025, entrou em uma nova fase.</p>
       </div>
 
       <ol class="cb-story__steps" role="list">
@@ -81,7 +101,7 @@
     <div class="cb-story__manifesto-mark" aria-hidden="true">“</div>
     <div>
       <p class="cb-story__eyebrow">O QUE TORNA O PRODUTO DIFERENTE</p>
-      <h2 id="manifesto-titulo">A formulação importa. A vivência na bancada também.</h2>
+      <h2 id="manifesto-titulo">A formulação importa. A experiência de quem repara bolas também.</h2>
       <div class="rte">
         <p>Uma fórmula pode começar no estudo. Mas é diante de bolas reais, materiais diferentes e sintomas diferentes que ela precisa provar seu valor.</p>
         <p>O Conserta Bola reúne essas duas coisas: uma fórmula própria e o conhecimento prático acumulado pela Clínica da Bola. Por isso a gente também explica os limites do produto e orienta quando o caso precisa de avaliação.</p>
@@ -232,6 +252,32 @@
     padding-block: clamp(72px, 10vw, 144px);
   }
 
+  .cb-story__founder--with-image {
+    grid-template-columns: minmax(210px, 0.65fr) minmax(220px, 0.72fr) minmax(0, 1fr);
+    gap: clamp(32px, 5vw, 72px);
+  }
+
+  .cb-story__founder-media {
+    margin: 0;
+  }
+
+  .cb-story__founder-media img,
+  .cb-story__founder-placeholder {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    background: #e9e3d8;
+    border-radius: 4px;
+  }
+
+  .cb-story__founder-media figcaption {
+    margin-block-start: 12px;
+    color: rgb(13 21 38 / 0.68);
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
   .cb-story__founder h2,
   .cb-story__section-heading h2,
   .cb-story__manifesto h2,
@@ -361,6 +407,7 @@
   @media (max-width: 899px) {
     .cb-story__hero,
     .cb-story__founder,
+    .cb-story__founder--with-image,
     .cb-story__cta-inner {
       grid-template-columns: 1fr;
     }
@@ -449,7 +496,7 @@
       "type": "richtext",
       "id": "lede",
       "label": "Introdução",
-      "default": "<p>Eu sou Marcos Antonio de Maia, fundador da Clínica da Bola, em Itajaí/SC. A história do Conserta Bola começou muito antes dessa marca: começou na bancada e passou por uma primeira sociedade.</p>"
+      "default": "<p>Eu sou Marcos Antonio de Maia, fundador da Clínica da Bola, em Itajaí/SC. A história do Conserta Bola começou muito antes dessa marca: nasceu do trabalho diário com bolas esportivas e da busca por uma solução que realmente funcionasse.</p>"
     },
     {
       "type": "text",
@@ -484,7 +531,24 @@
       "type": "richtext",
       "id": "founder_text",
       "label": "Texto sobre o fundador",
-      "default": "<p>Na Clínica da Bola, cada reparo começa pelo diagnóstico. É preciso observar o material, o tipo de vazamento e o que aconteceu com aquela bola antes de decidir o próximo passo.</p><p>Antes do Conserta Bola, eu participei da criação do VedaBola PRO. Ao lado do meu então sócio, criamos o primeiro produto com a base da fórmula que usamos hoje. Essa etapa faz parte da história e do conhecimento que acumulei na prática.</p>"
+      "default": "<p>Na Clínica da Bola, cada reparo começa pelo diagnóstico. É preciso observar o material, o tipo de vazamento e o que aconteceu com aquela bola antes de decidir o próximo passo.</p><p>Foi dessa experiência que eu criei, sozinho, a formulação original que deu origem ao produto atual. Na primeira fase do projeto, tive um sócio que entrou com o investimento e deu nome ao produto. Em 2025, encerrei essa sociedade e iniciei um novo capítulo com o Conserta Bola.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "founder_image",
+      "label": "Foto do Marcos"
+    },
+    {
+      "type": "text",
+      "id": "founder_image_alt",
+      "label": "Descrição acessível da foto",
+      "default": "Marcos Antonio de Maia, fundador da Clínica da Bola e criador do Conserta Bola"
+    },
+    {
+      "type": "text",
+      "id": "founder_image_caption",
+      "label": "Legenda da foto",
+      "default": "Marcos Antonio de Maia — fundador da Clínica da Bola e criador do Conserta Bola."
     }
   ],
   "blocks": [
@@ -514,21 +578,21 @@
           "type": "marco",
           "settings": {
             "heading": "A Clínica da Bola veio primeiro",
-            "text": "<p>Na bancada, bolas de modalidades e materiais diferentes chegavam perdendo ar. O trabalho diário mostrou quais problemas se repetiam e o que precisava ser resolvido.</p>"
+            "text": "<p>Bolas de modalidades e materiais diferentes chegavam perdendo ar. O trabalho diário mostrou quais problemas se repetiam e o que precisava ser resolvido.</p>"
           }
         },
         {
           "type": "marco",
           "settings": {
-            "heading": "O primeiro produto foi o VedaBola PRO",
-            "text": "<p>Em uma sociedade anterior, eu e meu então sócio criamos o VedaBola PRO: o primeiro produto com a base da fórmula atual. Foi uma construção compartilhada e uma etapa importante dessa trajetória.</p>"
+            "heading": "Eu criei a primeira formulação",
+            "text": "<p>A partir dos problemas que encontrava todos os dias, desenvolvi sozinho a formulação original. Na primeira fase do projeto, um sócio entrou com o investimento e deu nome ao produto.</p>"
           }
         },
         {
           "type": "marco",
           "settings": {
             "heading": "Em 2025, começou um novo capítulo",
-            "text": "<p>Eu pedi minha saída da sociedade. A Clínica da Bola, nome de minha autoria, permaneceu comigo. A marca VedaBola PRO ficou para que meu antigo sócio pudesse continuar seu caminho, se desejasse.</p>"
+            "text": "<p>Eu pedi minha saída da sociedade e mantive comigo a Clínica da Bola, nome de minha autoria. A partir daí, decidi construir uma nova marca para seguir o trabalho com identidade própria.</p>"
           }
         },
         {

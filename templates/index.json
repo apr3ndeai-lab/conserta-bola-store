@@ -42,7 +42,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p><strong>Criado na bancada e testado em mais de 5.000 bolas reais.</strong> Uma fórmula própria, desenvolvida a partir da prática diária de quem vive do conserto de bolas esportivas.</p>",
+            "text": "<p><strong>Criado a partir de reparos reais e testado em mais de 5.000 bolas.</strong> Uma fórmula própria, desenvolvida por quem vive diariamente do conserto de bolas esportivas.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -591,7 +591,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Não nasceu de uma hipótese. Nasceu na bancada.</h2>",
+                "text": "<h2>Não nasceu de uma hipótese. Nasceu da experiência.</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -617,7 +617,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>O <strong>Conserta Bola</strong> é a nova etapa de uma história construída na bancada da <strong>Clínica da Bola</strong>. Antes da marca atual, Marcos Antonio de Maia participou da criação do primeiro produto com a base da fórmula em uma sociedade anterior. Em 2025, começou um novo capítulo com o Conserta Bola.</p><p>Você leva para casa o conhecimento acumulado em mais de 5.000 bolas reais — com orientação para aplicar corretamente e ajuda para entender se o produto serve para o seu caso.</p><p><strong>Clínica da Bola — experiência prática transformada em solução.</strong></p>",
+                "text": "<p>O <strong>Conserta Bola</strong> é a nova etapa de uma história construída na <strong>Clínica da Bola</strong>. Marcos Antonio de Maia criou sozinho a formulação original a partir dos problemas encontrados no reparo diário. Na primeira fase do projeto, teve um sócio responsável pelo investimento e pelo nome do produto. Em 2025, Marcos iniciou um novo capítulo com o Conserta Bola.</p><p>Você leva para casa o conhecimento acumulado em mais de 5.000 bolas reais — com orientação para aplicar corretamente e ajuda para entender se o produto serve para o seu caso.</p><p><strong>Clínica da Bola — experiência prática transformada em solução.</strong></p>",
                 "width": "fit-content",
                 "max_width": "narrow",
                 "alignment": "left",

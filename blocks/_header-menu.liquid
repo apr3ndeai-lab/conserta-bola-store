@@ -57,6 +57,20 @@
                   {{- link.title -}}
                 </a>
               </li>
+              {% if forloop.first %}
+                <li>
+                  <a
+                    href="/pages/nossa-historia"
+                    id="MenuItem-nossa-historia"
+                    class="menu-list__item"
+                    {% if request.path == '/pages/nossa-historia' %}
+                      aria-current="page"
+                    {% endif %}
+                  >
+                    Nossa história
+                  </a>
+                </li>
+              {% endif %}
             {% endfor %}
           </ul>
         </div>
@@ -166,6 +180,26 @@
             </div>
           {%- endif -%}
         </li>
+        {% if forloop.first %}
+          <li
+            class="menu-list__list-item"
+            on:blur="/deactivate"
+            on:pointerenter="/activate"
+            on:pointerleave="/deactivate"
+          >
+            <a
+              href="/pages/nossa-historia"
+              data-skip-node-update="true"
+              class="menu-list__link{% if request.path == '/pages/nossa-historia' %} menu-list__link--active{% endif %}"
+              {% if request.path == '/pages/nossa-historia' %}
+                aria-current="page"
+              {% endif %}
+              ref="menuitem"
+            >
+              <span class="menu-list__link-title">Nossa história</span>
+            </a>
+          </li>
+        {% endif %}
       {% endfor %}
       <li
         class="menu-list__list-item"
