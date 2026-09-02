@@ -7,6 +7,7 @@
 - Alteração publicada no tema ativo e validada nas páginas públicas.
 - Criado o plano do pacote de 18 criativos mestres com GPT Image 2 em `docs/plano-criativos-gpt-image-2.md`.
 - Auditadas 281 mídias das pastas de referência; registradas as fontes aprovadas, os materiais da marca anterior que não podem ser usados, as lacunas de fotografia e a divergência entre 4 ml e 5 ml em `docs/inventario-fontes-criativos.md`.
+- Confirmado que o produto entregue contém 5 ml. O site já estava correto; a etiqueta física ainda comunica 4 ml e foi gerada uma prévia separada com a indicação de 5 ml, sem sobrescrever a arte original.
 
 ## 2026-09-02 — Política de troca, devolução e reembolso
 

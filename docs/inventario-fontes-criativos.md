@@ -55,9 +55,15 @@ O arquivo tem apenas 320×320 e fundo já tratado. Deve ser usado somente como r
 
 O descarte significa apenas “não usar no site ou no treinamento dos criativos”. Nenhum arquivo original foi apagado.
 
-## Divergência que precisa ser resolvida
+## Volume confirmado e correção do rótulo
 
-O rótulo recebido informa `CONTÉM 4 ml`, enquanto textos anteriores do produto mencionavam frasco de 5 ml. Nenhum criativo final, descrição de kit ou imagem de conteúdo deve ser produzido até confirmar qual é o volume líquido efetivamente vendido.
+O volume líquido efetivamente entregue é **5 ml**. O site, a descrição do produto e o SKU já comunicam 5 ml corretamente.
+
+A arte recebida do rótulo ainda informa `CONTÉM 4 ml` e precisa ser corrigida para `CONTÉM 5 ml` antes da próxima impressão. A etiqueta original foi preservada e uma prévia visual corrigida foi criada em:
+
+- `C:\Users\maiam\Downloads\pasta master\rotulo-conserta-bola-5ml-preview.png`
+
+Como o material recebido é apenas um PNG de 1164×449, essa prévia não substitui o arquivo-fonte da gráfica. A alteração final deve ser feita no original editável, preservando fonte, sangria, resolução e perfil de cor de impressão.
 
 ## Lacunas do material atual
 
@@ -85,7 +91,7 @@ Ainda faltam registros reais e atuais para:
 | H07–H09 — aplicação | referências antigas incompatíveis | bloqueado até nova sequência real |
 | H10 — bola voltando ao uso | fotos reais de Marcos no campo | pode receber prova de direção |
 | P01 — frasco unitário | referência limpa do frasco | pode receber prova de direção |
-| P02 — conteúdo unitário | embalagem e frasco separados | bloqueado até confirmar conteúdo e volume |
+| P02 — conteúdo unitário | embalagem e frasco separados | volume confirmado; falta fotografar o conteúdo real |
 | P03/P04 — kits 3 e 10 | composições de referência | pode receber prova de direção, com validação de quantidade |
 | P05 — QR code | arte da embalagem | pode receber prova de direção; ideal fotografar a embalagem real |
 | S01 — retrato | rosto em baixa resolução | bloqueado para final; possível rascunho de enquadramento |
@@ -101,4 +107,3 @@ Enquanto as novas fotos são produzidas, o primeiro lote seguro é:
 3. P04 — kit com 10 unidades;
 4. H10 — retorno ao jogo, usando as fotos reais de campo como referência;
 5. três rascunhos de direção para hero, retrato e produto, sem publicar como prova documental.
-

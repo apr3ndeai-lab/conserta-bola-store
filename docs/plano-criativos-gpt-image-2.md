@@ -55,7 +55,7 @@ A biblioteca recebida foi auditada em 2 de setembro de 2026. Há boas referênci
 
 As referências da marca anterior foram isoladas e não serão usadas. A relação de arquivos aprovados, restritos e ausentes está em [inventario-fontes-criativos.md](inventario-fontes-criativos.md).
 
-Antes do lote final também é obrigatório resolver a divergência entre `CONTÉM 4 ml`, presente no rótulo recebido, e a menção anterior a frasco de 5 ml.
+O volume real foi confirmado em **5 ml**. A arte recebida ainda informa `CONTÉM 4 ml`; portanto, os novos criativos usarão 5 ml e a etiqueta deverá ser corrigida antes da próxima impressão.
 
 ## Pacote V1 — 18 criativos mestres
 
