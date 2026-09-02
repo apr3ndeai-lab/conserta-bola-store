@@ -5,7 +5,8 @@
 - Corrigidos os links de Missão nos menus desktop e mobile para `/pages/missao`.
 - Removido da página História o bloco resumido de Missão que havia substituído indevidamente a página individual.
 - Adicionado `scripts/ensure-mission-page.ps1` para criar ou atualizar a página na Shopify com o template `page.missao`.
-- Adicionada ao app a permissão `write_online_store_pages`; a concessão na instalação da loja ainda precisa ser concluída antes da publicação da rota.
+- Concedida ao app a permissão opcional `write_content`; a página Shopify foi criada/atualizada, publicada e associada ao template `page.missao`.
+- Publicação validada no tema ativo: `/pages/missao` respondeu com status 200, o menu contém o novo destino e a página História não exibe mais o bloco duplicado.
 - Gerada pelo fluxo integrado de imagens a primeira direção visual, sem preços ou textos promocionais incorporados: packshot premium, hero desktop e hero mobile.
 
 ## 2026-09-02 — Reformulação da narrativa do fundador
