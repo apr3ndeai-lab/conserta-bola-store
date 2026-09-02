@@ -617,7 +617,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>O <strong>Conserta Bola</strong> foi criado dentro da <strong>Clínica da Bola</strong>, a partir da prática diária de diagnosticar e recuperar bolas esportivas. A fórmula foi desenvolvida e aperfeiçoada reparo após reparo, diante dos problemas que realmente chegam à bancada.</p><p>Você leva para casa o conhecimento de quem já trabalhou em mais de 5.000 bolas reais — com orientação para aplicar corretamente e ajuda para entender se o produto serve para o seu caso.</p><p><strong>Clínica da Bola — experiência prática transformada em solução.</strong></p>",
+                "text": "<p>O <strong>Conserta Bola</strong> é a nova etapa de uma história construída na bancada da <strong>Clínica da Bola</strong>. Antes da marca atual, Marcos Antonio de Maia participou da criação do primeiro produto com a base da fórmula em uma sociedade anterior. Em 2025, começou um novo capítulo com o Conserta Bola.</p><p>Você leva para casa o conhecimento acumulado em mais de 5.000 bolas reais — com orientação para aplicar corretamente e ajuda para entender se o produto serve para o seu caso.</p><p><strong>Clínica da Bola — experiência prática transformada em solução.</strong></p>",
                 "width": "fit-content",
                 "max_width": "narrow",
                 "alignment": "left",
@@ -638,11 +638,31 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "story_button": {
+              "type": "button",
+              "name": "t:names.button",
+              "settings": {
+                "label": "Conheça nossa história",
+                "link": "/pages/nossa-historia",
+                "open_in_new_tab": false,
+                "style_class": "button",
+                "custom_button_background": "{{ settings.color_palette.foreground }}",
+                "custom_button_text": "{{ settings.color_palette.background }}",
+                "custom_button_border": "{{ settings.color_palette.foreground }}",
+                "link_text_color": "",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
             }
           },
           "block_order": [
             "heading",
-            "text"
+            "text",
+            "story_button"
           ]
         }
       },
