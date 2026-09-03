@@ -1,5 +1,11 @@
 # Registro de alterações
 
+## 2026-09-03 — Ordem do menu principal
+
+- Reordenada a inserção dos links institucionais para manter `Catálogo` imediatamente ao lado de `Início`.
+- Nova sequência: `Início`, `Catálogo`, `História`, `Missão` e `Contato`.
+- Aplicada a mesma ordem no menu desktop, na barra de navegação móvel e no menu lateral do celular.
+
 ## 2026-09-03 — Continuidade visual da sequência de aplicação
 
 - Identificada a presença de bolas diferentes nos três cards que ensinam a usar o produto.

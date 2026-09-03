@@ -256,7 +256,7 @@
                   </a>
                 {% endif %}
               </li>
-              {% if forloop.first %}
+              {% if forloop.index == 2 %}
                 {% assign animation_index = animation_index | plus: 1 %}
                 <li
                   style="--menu-drawer-animation-index: {{ animation_index }};"
@@ -619,7 +619,7 @@
                   </a>
                 {%- endif -%}
               </li>
-              {% if forloop.first %}
+              {% if forloop.index == 2 %}
                 {% assign animation_index = animation_index | plus: 1 %}
                 <li
                   class="menu-drawer__list-item"

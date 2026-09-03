@@ -57,7 +57,7 @@
                   {{- link.title -}}
                 </a>
               </li>
-              {% if forloop.first %}
+              {% if forloop.index == 2 %}
                 <li>
                   <a
                     href="/pages/nossa-historia"
@@ -192,7 +192,7 @@
             </div>
           {%- endif -%}
         </li>
-        {% if forloop.first %}
+        {% if forloop.index == 2 %}
           <li
             class="menu-list__list-item"
             on:blur="/deactivate"
