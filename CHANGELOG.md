@@ -1,5 +1,14 @@
 # Registro de alterações
 
+## 2026-09-02 — Prévia dos criativos no tema
+
+- Criado o tema não publicado `Conserta Bola - Previa Criativos 2026-09-02` (ID `130771583056`) para avaliação visual sem alterar o tema ativo.
+- Aplicados na página inicial o hero desktop/mobile, diagnóstico, sequência de preparação/aplicação/distribuição, retorno ao jogo, packshot e reaproveitamento.
+- Aplicados nas páginas de produto os conteúdos visuais corretos para os kits unitário, 3 unidades e 10 unidades; a página unitária também exibe o QR code de orientação digital.
+- Mantidas sem substituição as posições de antes/depois e fundador, que dependem de fotografias reais.
+- Validada a presença de todos os arquivos na prévia e o status 200 da página inicial e das três páginas de produto.
+- Nenhuma alteração desta etapa foi enviada ao tema ativo.
+
 ## 2026-09-02 — Google Tag Manager
 
 - Instalado o contêiner `GTM-NZD23HPS` no layout principal da loja.

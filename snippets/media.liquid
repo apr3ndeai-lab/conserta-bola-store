@@ -42,7 +42,16 @@
 >
   {%- if show_image -%}
     {% capture image_tag %}
-      {% if block_settings.image != blank %}
+      {% if block_settings.asset_filename != blank %}
+        <img
+          src="{{ block_settings.asset_filename | asset_url }}"
+          width="{{ block_settings.asset_width | default: 1600 }}"
+          height="{{ block_settings.asset_height | default: 900 }}"
+          alt="{{ block_settings.asset_alt | escape }}"
+          class="media-block__media border-style"
+          loading="lazy"
+        >
+      {% elsif block_settings.image != blank %}
         {% render 'image',
           image: block_settings.image,
           class: 'media-block__media border-style',

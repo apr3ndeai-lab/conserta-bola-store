@@ -113,10 +113,13 @@
       "settings": {
         "media_type_1": "image",
         "image_1": "shopify://shop_images/banner-hero-conserta-bola.png",
+        "image_1_asset": "conserta-bola-hero-desktop-v1.png",
+        "image_1_asset_alt": "Bola esportiva usada ao lado do frasco Conserta Bola em uma bancada escura",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
-        "custom_mobile_media": false,
+        "custom_mobile_media": true,
         "media_type_1_mobile": "image",
+        "image_1_mobile_asset": "conserta-bola-hero-mobile-v1.png",
         "media_type_2_mobile": "image",
         "link": "",
         "open_in_new_tab": false,
@@ -570,6 +573,10 @@
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/clinica-da-bola-5000-bolas-recuperadas.png",
+            "asset_filename": "conserta-bola-retorno-ao-jogo-v1.png",
+            "asset_alt": "Marcos Antonio de Maia conduzindo a bola durante uma partida de futebol",
+            "asset_width": 1672,
+            "asset_height": 941,
             "link": "",
             "video_loop": true,
             "video_autoplay": false,
@@ -764,6 +771,8 @@
         "cta_lede": "Prefere falar direto com a gente?",
         "cta_label": "Quero avaliar minha bola",
         "cta_href": "https://wa.me/5547992758506?text=Oi%2C%20quero%20avaliar%20minha%20bola.%20Posso%20mandar%20foto%3F",
+        "image_asset_filename": "conserta-bola-diagnostico-v1.png",
+        "image_asset_alt": "Mãos examinando cuidadosamente a válvula e as costuras de uma bola esportiva usada",
         "bg_color": "",
         "card_bg_color": ""
       }
@@ -877,11 +886,38 @@
                 "padding-inline-end": 12
               },
               "blocks": {
+                "image_1": {
+                  "type": "image",
+                  "name": "Preparação do kit",
+                  "settings": {
+                    "asset_filename": "conserta-bola-aplicacao-preparo-v2.png",
+                    "asset_alt": "Frasco Conserta Bola em escala real ao lado da seringa e da agulha",
+                    "asset_width": 1254,
+                    "asset_height": 1254,
+                    "link": "",
+                    "image_ratio": "square",
+                    "width": "fill",
+                    "custom_width": 100,
+                    "width_mobile": "fill",
+                    "custom_width_mobile": 100,
+                    "height": "fit",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_color": "",
+                    "border_radius": 8,
+                    "padding-block-start": 0,
+                    "padding-block-end": 8,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
                 "num_1": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<h3>1. Identifique o vazamento</h3>",
+                    "text": "<h3>1. Prepare o kit</h3>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -907,7 +943,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>O Conserta Bola é indicado para microvazamentos lentos. Em caso de rasgo, costura aberta ou dúvida, envie uma foto antes.</p>",
+                    "text": "<p>Depois de confirmar que o caso é um microvazamento lento, separe o frasco, a seringa e a agulha e abra pelo QR code a orientação específica para sua bola.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -931,6 +967,7 @@
                 }
               },
               "block_order": [
+                "image_1",
                 "num_1",
                 "desc_1"
               ]
@@ -975,6 +1012,33 @@
                 "padding-inline-end": 12
               },
               "blocks": {
+                "image_2": {
+                  "type": "image",
+                  "name": "Aplicação pela válvula",
+                  "settings": {
+                    "asset_filename": "conserta-bola-aplicacao-valvula-v1.png",
+                    "asset_alt": "Aplicação cuidadosa pela válvula de uma bola esportiva",
+                    "asset_width": 1254,
+                    "asset_height": 1254,
+                    "link": "",
+                    "image_ratio": "square",
+                    "width": "fill",
+                    "custom_width": 100,
+                    "width_mobile": "fill",
+                    "custom_width_mobile": 100,
+                    "height": "fit",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_color": "",
+                    "border_radius": 8,
+                    "padding-block-start": 0,
+                    "padding-block-end": 8,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
                 "num_2": {
                   "type": "text",
                   "name": "t:names.text",
@@ -1029,6 +1093,7 @@
                 }
               },
               "block_order": [
+                "image_2",
                 "num_2",
                 "desc_2"
               ]
@@ -1073,11 +1138,38 @@
                 "padding-inline-end": 12
               },
               "blocks": {
+                "image_3": {
+                  "type": "image",
+                  "name": "Distribuição e estabilização",
+                  "settings": {
+                    "asset_filename": "conserta-bola-aplicacao-distribuir-v1.png",
+                    "asset_alt": "Mãos girando cuidadosamente uma bola após a aplicação",
+                    "asset_width": 1254,
+                    "asset_height": 1254,
+                    "link": "",
+                    "image_ratio": "square",
+                    "width": "fill",
+                    "custom_width": 100,
+                    "width_mobile": "fill",
+                    "custom_width_mobile": 100,
+                    "height": "fit",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_color": "",
+                    "border_radius": 8,
+                    "padding-block-start": 0,
+                    "padding-block-end": 8,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
                 "num_3": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<h3>3. Volte para o jogo</h3>",
+                    "text": "<h3>3. Distribua e aguarde</h3>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -1103,7 +1195,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Respeite o período de estabilização indicado no passo a passo acessado pelo QR code da embalagem antes de voltar a jogar.</p>",
+                    "text": "<p>Distribua a fórmula conforme o passo a passo e respeite o período de estabilização indicado no QR code antes de voltar a jogar.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -1127,6 +1219,7 @@
                 }
               },
               "block_order": [
+                "image_3",
                 "num_3",
                 "desc_3"
               ]
@@ -1183,6 +1276,10 @@
           "settings": {
             "media_type": "image",
             "image": "shopify://shop_images/frasco-conserta-bola-reparo-bolas-furadas.png",
+            "asset_filename": "conserta-bola-packshot-premium-v1.png",
+            "asset_alt": "Frasco unitário Conserta Bola em fotografia de produto",
+            "asset_width": 1086,
+            "asset_height": 1448,
             "link": "",
             "video_loop": true,
             "video_autoplay": false,
@@ -1802,6 +1899,33 @@
     "section_final_cta": {
       "type": "section",
       "blocks": {
+        "image_final": {
+          "type": "image",
+          "name": "Bolas preservadas",
+          "settings": {
+            "asset_filename": "conserta-bola-reaproveitamento-v1.png",
+            "asset_alt": "Bolas esportivas usadas e cuidadas, organizadas para continuar em uso",
+            "asset_width": 1672,
+            "asset_height": 941,
+            "link": "",
+            "image_ratio": "landscape",
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 8,
+            "padding-block-start": 0,
+            "padding-block-end": 12,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
         "heading": {
           "type": "text",
           "name": "t:names.heading",
@@ -1849,6 +1973,7 @@
         }
       },
       "block_order": [
+        "image_final",
         "heading",
         "button_final"
       ],

@@ -11,6 +11,18 @@
     {% endif %}
   </div>
 
+  {% if section.settings.image_asset_filename != blank %}
+    <figure class="triagem__media">
+      <img
+        src="{{ section.settings.image_asset_filename | asset_url }}"
+        width="1672"
+        height="941"
+        alt="{{ section.settings.image_asset_alt | escape }}"
+        loading="lazy"
+      >
+    </figure>
+  {% endif %}
+
   <ul class="triagem__list" role="list">
     {% for block in section.blocks %}
       {% if block.type == 'card' %}
@@ -88,6 +100,21 @@
     max-width: 640px;
     margin-inline: auto;
     margin-block-end: 32px;
+  }
+
+  .triagem__media {
+    margin: 0 auto 32px;
+    max-width: 960px;
+    overflow: hidden;
+    border-radius: var(--triagem-radius);
+  }
+
+  .triagem__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
   }
 
   .triagem__list {
@@ -239,6 +266,16 @@
       "id": "cta_href",
       "label": "Link do botão CTA",
       "default": "https://wa.me/5547992758506?text=Oi%2C%20quero%20avaliar%20minha%20bola.%20Posso%20mandar%20foto%3F"
+    },
+    {
+      "type": "text",
+      "id": "image_asset_filename",
+      "label": "Arquivo de imagem do tema (opcional)"
+    },
+    {
+      "type": "text",
+      "id": "image_asset_alt",
+      "label": "Texto alternativo da imagem"
     },
     {
       "type": "header",

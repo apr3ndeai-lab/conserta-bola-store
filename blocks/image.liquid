@@ -10,7 +10,11 @@
     when 'portrait'
       assign ratio = '4 / 5'
     when 'adapt'
-      assign ratio = block_settings.image.aspect_ratio
+      if block_settings.asset_filename != blank and block_settings.asset_height != blank
+        assign ratio = block_settings.asset_width | times: 1.0 | divided_by: block_settings.asset_height
+      else
+        assign ratio = block_settings.image.aspect_ratio
+      endif
   endcase
 
   if ratio == 0 or ratio == null
@@ -41,7 +45,17 @@
 %}
 
 {% capture image %}
-  {%- if block_settings.image -%}
+  {%- if block_settings.asset_filename != blank -%}
+    <img
+      src="{{ block_settings.asset_filename | asset_url }}"
+      width="{{ block_settings.asset_width | default: 1600 }}"
+      height="{{ block_settings.asset_height | default: 900 }}"
+      alt="{{ block_settings.asset_alt | escape }}"
+      class="image-block__image border-style"
+      style="{{ image_border_style }}"
+      loading="lazy"
+    >
+  {%- elsif block_settings.image -%}
     {{
       block_settings.image
       | image_url: width: 3840
@@ -121,6 +135,28 @@
       "type": "image_picker",
       "id": "image",
       "label": "t:settings.image"
+    },
+    {
+      "type": "text",
+      "id": "asset_filename",
+      "label": "Arquivo de imagem do tema (opcional)"
+    },
+    {
+      "type": "text",
+      "id": "asset_alt",
+      "label": "Texto alternativo do arquivo do tema"
+    },
+    {
+      "type": "number",
+      "id": "asset_width",
+      "label": "Largura original do arquivo",
+      "default": 1600
+    },
+    {
+      "type": "number",
+      "id": "asset_height",
+      "label": "Altura original do arquivo",
+      "default": 900
     },
     {
       "type": "url",

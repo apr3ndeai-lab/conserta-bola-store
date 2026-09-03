@@ -36,6 +36,32 @@
       "visible_if": "{{ block.settings.media_type == 'image' }}"
     },
     {
+      "type": "text",
+      "id": "asset_filename",
+      "label": "Arquivo de imagem do tema (opcional)",
+      "visible_if": "{{ block.settings.media_type == 'image' }}"
+    },
+    {
+      "type": "text",
+      "id": "asset_alt",
+      "label": "Texto alternativo do arquivo do tema",
+      "visible_if": "{{ block.settings.media_type == 'image' }}"
+    },
+    {
+      "type": "number",
+      "id": "asset_width",
+      "label": "Largura original do arquivo",
+      "default": 1600,
+      "visible_if": "{{ block.settings.media_type == 'image' }}"
+    },
+    {
+      "type": "number",
+      "id": "asset_height",
+      "label": "Altura original do arquivo",
+      "default": 900,
+      "visible_if": "{{ block.settings.media_type == 'image' }}"
+    },
+    {
       "type": "url",
       "id": "link",
       "label": "t:settings.link",

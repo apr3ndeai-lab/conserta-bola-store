@@ -15,9 +15,11 @@
   # For each media slot, check if the media is not blank and the media type matches the slot
   # Need to check both (1) media picker is not blank AND (2) section.setting.media_type because user can toggle between different media types to display, but choosing "Image" doesn't clear a saved "Video" in the theme editor.
   # The alternate setting (section.settings.image_1 when "Video" is selected) is only visually hidden in theme editor.
-  if section.settings.image_1 != blank and section.settings.media_type_1 == 'image'
-    assign media_1 = 'image'
-    assign media_count = media_count | plus: 1
+  if section.settings.image_1 != blank or section.settings.image_1_asset != blank
+    if section.settings.media_type_1 == 'image'
+      assign media_1 = 'image'
+      assign media_count = media_count | plus: 1
+    endif
   endif
   if section.settings.video_1 != blank and section.settings.media_type_1 == 'video'
     assign media_1 = 'video'
@@ -35,9 +37,11 @@
   if section.settings.custom_mobile_media
     # Mobile media checks
     # For each media slot, check if the media is not blank and the media type matches the slot
-    if section.settings.image_1_mobile != blank and section.settings.media_type_1_mobile == 'image'
-      assign media_1_mobile = 'image'
-      assign media_count_mobile = media_count_mobile | plus: 1
+    if section.settings.image_1_mobile != blank or section.settings.image_1_mobile_asset != blank
+      if section.settings.media_type_1_mobile == 'image'
+        assign media_1_mobile = 'image'
+        assign media_count_mobile = media_count_mobile | plus: 1
+      endif
     endif
     if section.settings.video_1_mobile != blank and section.settings.media_type_1_mobile == 'video'
       assign media_1_mobile = 'video'
@@ -115,7 +119,29 @@
 %}
 
 {% capture media_slot_1 %}
-  {%- if media_1 == 'image' and media_1_mobile == 'image' -%}
+  {%- if media_1 == 'image' and section.settings.image_1_asset != blank -%}
+    <picture
+      data-testid="hero-picture-1"
+      class="hero__media"
+    >
+      {%- if section.settings.image_1_mobile_asset != blank -%}
+        <source
+          media="(max-width: 749px)"
+          srcset="{{ section.settings.image_1_mobile_asset | asset_url }}"
+        >
+      {%- endif -%}
+      <img
+        src="{{ section.settings.image_1_asset | asset_url }}"
+        width="1672"
+        height="941"
+        alt="{{ section.settings.image_1_asset_alt | escape }}"
+        class="hero__media"
+        sizes="{{ sizes }}"
+        fetchpriority="{{ fetch_priority }}"
+        data-testid="hero-desktop-image-1"
+      >
+    </picture>
+  {%- elsif media_1 == 'image' and media_1_mobile == 'image' -%}
     {%- comment -%} Both desktop and mobile are images. Assume similar images, and this is art direction: use picture element. {%- endcomment -%}
     <picture
       data-testid="hero-picture-1"
@@ -834,6 +860,16 @@
       "visible_if": "{{ section.settings.media_type_1 == 'image' }}"
     },
     {
+      "type": "text",
+      "id": "image_1_asset",
+      "label": "Arquivo de imagem do tema (opcional)"
+    },
+    {
+      "type": "text",
+      "id": "image_1_asset_alt",
+      "label": "Texto alternativo do arquivo do tema"
+    },
+    {
       "type": "video",
       "id": "video_1",
       "label": "t:settings.video",
@@ -913,6 +949,12 @@
       "type": "image_picker",
       "id": "image_1_mobile",
       "label": "t:settings.image",
+      "visible_if": "{{ section.settings.custom_mobile_media and section.settings.media_type_1_mobile == 'image' }}"
+    },
+    {
+      "type": "text",
+      "id": "image_1_mobile_asset",
+      "label": "Arquivo mobile do tema (opcional)",
       "visible_if": "{{ section.settings.custom_mobile_media and section.settings.media_type_1_mobile == 'image' }}"
     },
     {

@@ -1,0 +1,144 @@
+{% liquid
+  assign primary_asset = blank
+  assign primary_alt = blank
+  assign secondary_asset = blank
+  assign secondary_alt = blank
+
+  case product.handle
+    when 'conserta-bola'
+      assign primary_asset = 'conserta-bola-kit-unitario-flatlay-v1.png'
+      assign primary_alt = 'Conteúdo do kit unitário: um frasco Conserta Bola, uma seringa e uma agulha'
+      assign secondary_asset = 'conserta-bola-qrcode-orientacao-v1.png'
+      assign secondary_alt = 'QR code da embalagem para acessar a orientação digital de aplicação'
+    when 'kit-recuperacao-3-conserta-bola'
+      assign primary_asset = 'conserta-bola-kit-3-unidades-v1.png'
+      assign primary_alt = 'Kit Recuperação com três frascos Conserta Bola e três conjuntos de aplicadores'
+    when 'kit-escolinha-10-conserta-bola'
+      assign primary_asset = 'conserta-bola-kit-10-unidades-v1.png'
+      assign primary_alt = 'Kit Escolinha com dez frascos Conserta Bola e dois conjuntos de aplicadores'
+  endcase
+%}
+
+{% if section.settings.enabled and primary_asset != blank %}
+  <section class="cb-product-creatives section section--page-width" aria-labelledby="cb-product-creatives-{{ section.id }}">
+    <header class="cb-product-creatives__header">
+      <h2 id="cb-product-creatives-{{ section.id }}">{{ section.settings.heading }}</h2>
+      {% if section.settings.lede != blank %}
+        <p>{{ section.settings.lede }}</p>
+      {% endif %}
+    </header>
+
+    <div class="cb-product-creatives__grid{% if secondary_asset == blank %} cb-product-creatives__grid--single{% endif %}">
+      <figure>
+        <img
+          src="{{ primary_asset | asset_url }}"
+          width="1086"
+          height="1448"
+          alt="{{ primary_alt | escape }}"
+          loading="lazy"
+        >
+      </figure>
+
+      {% if secondary_asset != blank %}
+        <figure>
+          <img
+            src="{{ secondary_asset | asset_url }}"
+            width="1086"
+            height="1448"
+            alt="{{ secondary_alt | escape }}"
+            loading="lazy"
+          >
+        </figure>
+      {% endif %}
+    </div>
+  </section>
+{% endif %}
+
+{% stylesheet %}
+  .cb-product-creatives {
+    padding-block: 48px;
+  }
+
+  .cb-product-creatives__header {
+    max-width: 720px;
+    margin: 0 auto 28px;
+    text-align: center;
+  }
+
+  .cb-product-creatives__header h2,
+  .cb-product-creatives__header p {
+    margin-block: 0;
+  }
+
+  .cb-product-creatives__header p {
+    margin-block-start: 12px;
+  }
+
+  .cb-product-creatives__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 960px;
+    margin-inline: auto;
+  }
+
+  .cb-product-creatives__grid--single {
+    grid-template-columns: minmax(0, 560px);
+    justify-content: center;
+  }
+
+  .cb-product-creatives figure {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #071526;
+  }
+
+  .cb-product-creatives img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  @media screen and (max-width: 749px) {
+    .cb-product-creatives {
+      padding-block: 32px;
+    }
+
+    .cb-product-creatives__grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Criativos do produto",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enabled",
+      "label": "Exibir seção",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Veja exatamente o que você recebe"
+    },
+    {
+      "type": "textarea",
+      "id": "lede",
+      "label": "Texto de apoio",
+      "default": "Sem cartilha física: a orientação passo a passo é acessada pelo QR code da embalagem."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Criativos do produto"
+    }
+  ]
+}
+{% endschema %}

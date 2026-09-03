@@ -363,6 +363,15 @@
         "padding-block-end": 0
       }
     },
+    "conserta_product_creatives": {
+      "type": "conserta-product-creatives",
+      "name": "Conteúdo visual do kit",
+      "settings": {
+        "enabled": true,
+        "heading": "Veja exatamente o que você recebe",
+        "lede": "Sem cartilha física: a orientação passo a passo é acessada pelo QR code da embalagem."
+      }
+    },
     "product_recommendations_qggXJq": {
       "type": "product-recommendations",
       "blocks": {
@@ -508,6 +517,7 @@
   },
   "order": [
     "main",
+    "conserta_product_creatives",
     "product_recommendations_qggXJq"
   ]
 }
