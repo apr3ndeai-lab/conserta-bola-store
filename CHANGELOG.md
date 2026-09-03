@@ -1,5 +1,12 @@
 # Registro de alterações
 
+## 2026-09-03 — Publicação da versão com novos criativos
+
+- Publicado como tema ativo `Conserta Bola - Previa Criativos 2026-09-02` (ID `130771583056`).
+- Confirmado o carregamento público da página inicial com status HTTP 200.
+- Validados no tema ativo os três cards coerentes da sequência de aplicação, a ordem `Início`, `Catálogo`, `História`, `Missão` e `Contato`, e o contêiner `GTM-NZD23HPS`.
+- O tema ativo anterior `Conserta Bola CRO f442c9d` (ID `130748874832`) foi preservado na biblioteca como tema não publicado.
+
 ## 2026-09-03 — Ordem do menu principal
 
 - Reordenada a inserção dos links institucionais para manter `Catálogo` imediatamente ao lado de `Início`.
