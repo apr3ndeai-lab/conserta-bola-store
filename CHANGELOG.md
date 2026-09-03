@@ -1,5 +1,13 @@
 # Registro de alterações
 
+## 2026-09-03 — Continuidade visual da sequência de aplicação
+
+- Identificada a presença de bolas diferentes nos três cards que ensinam a usar o produto.
+- Mantido `conserta-bola-aplicacao-valvula-v1.png` como âncora visual da bola.
+- Gerados `conserta-bola-aplicacao-preparo-v3.png` e `conserta-bola-aplicacao-distribuir-v2.png` com os mesmos gomos, grafismos, válvula e marcas de desgaste da âncora.
+- Preservada no card de preparo a escala real do frasco de 5 ml, com aproximadamente 4 a 5 cm de altura.
+- Atualizadas somente as referências do tema de prévia; o tema ativo permaneceu inalterado.
+
 ## 2026-09-02 — Prévia dos criativos no tema
 
 - Criado o tema não publicado `Conserta Bola - Previa Criativos 2026-09-02` (ID `130771583056`) para avaliação visual sem alterar o tema ativo.

@@ -9,9 +9,9 @@ Produção realizada em 2 de setembro de 2026 pelo gerador de imagens integrado,
 | H01 | `conserta-bola-hero-desktop-v1.png` | Hero horizontal em azul-marinho, bola usada e frasco à direita, espaço para texto HTML à esquerda | frasco real e foto esportiva |
 | H02 | `conserta-bola-hero-mobile-v1.png` | Reenquadramento vertical do hero, área limpa na parte superior | H01 e frasco real |
 | H06 | `conserta-bola-diagnostico-v1.png` | Mãos examinando bola usada em bancada, sem dramatizar defeito ou prometer resultado | geração documental controlada |
-| H07 | `conserta-bola-aplicacao-preparo-v2.png` | Preparação do frasco, seringa e agulha, sem informar dosagem não validada; escala corrigida com referência real na mão | frasco real e fotografia de escala na palma |
-| H08 | `conserta-bola-aplicacao-valvula-v1.png` | Aplicação técnica pela válvula, sem sugerir reparo de válvula danificada | geração documental controlada |
-| H09 | `conserta-bola-aplicacao-distribuir-v1.png` | Rotação cuidadosa da bola antes do período de estabilização, sem tempo gravado na arte | geração documental controlada |
+| H07 | `conserta-bola-aplicacao-preparo-v3.png` | Preparação do frasco, seringa e agulha, sem informar dosagem não validada; escala real do frasco e bola coerente com os passos seguintes | frasco real, fotografia de escala na palma e H08 como âncora da bola |
+| H08 | `conserta-bola-aplicacao-valvula-v1.png` | Aplicação técnica pela válvula, sem sugerir reparo de válvula danificada; card definido como âncora visual da bola | geração documental controlada |
+| H09 | `conserta-bola-aplicacao-distribuir-v2.png` | Rotação cuidadosa da mesma bola de H08 antes do período de estabilização, sem tempo gravado na arte | H08 como âncora da bola |
 | H10 | `conserta-bola-retorno-ao-jogo-v1.png` | Tratamento editorial da foto real de Marcos em campo, sem associá-la a um resultado fabricado | `IMG-20240617-WA0047.jpg` |
 | P01 | `conserta-bola-packshot-premium-v1.png` | Frasco unitário em estúdio escuro, sem preço ou oferta incorporada | frasco real |
 | P02 | `conserta-bola-kit-unitario-flatlay-v1.png` | Exatamente um frasco, uma seringa e uma agulha; nenhuma cartilha | frasco real |
@@ -33,6 +33,8 @@ Produção realizada em 2 de setembro de 2026 pelo gerador de imagens integrado,
 O QR code criado pelo modelo não foi aceito como final. A composição publicada no arquivo P05 recebeu o bloco do QR code da embalagem original para preservar o padrão real, sem depender de uma aproximação gerada.
 
 A primeira versão de H07 foi rejeitada porque superdimensionava o frasco. A versão `v2` usa a fotografia real na palma da mão como referência obrigatória: frasco de aproximadamente 4 a 5 cm de altura, segurado entre os dedos sem aumentar o produto para favorecer a leitura do rótulo.
+
+Em 3 de setembro de 2026, a sequência H07–H09 passou por uma inspeção de continuidade. H08 foi mantido como âncora; H07 e H09 foram regenerados para mostrar a mesma bola branca e azul-marinho, com os mesmos gomos pentagonais, grafismos circulares, válvula e marcas de desgaste. H07 preserva a escala real do frasco já corrigida em `v2`.
 
 ## Criativos reservados para fotografias reais
 

@@ -890,7 +890,7 @@
                   "type": "image",
                   "name": "Preparação do kit",
                   "settings": {
-                    "asset_filename": "conserta-bola-aplicacao-preparo-v2.png",
+                    "asset_filename": "conserta-bola-aplicacao-preparo-v3.png",
                     "asset_alt": "Frasco Conserta Bola em escala real ao lado da seringa e da agulha",
                     "asset_width": 1254,
                     "asset_height": 1254,
@@ -1142,7 +1142,7 @@
                   "type": "image",
                   "name": "Distribuição e estabilização",
                   "settings": {
-                    "asset_filename": "conserta-bola-aplicacao-distribuir-v1.png",
+                    "asset_filename": "conserta-bola-aplicacao-distribuir-v2.png",
                     "asset_alt": "Mãos girando cuidadosamente uma bola após a aplicação",
                     "asset_width": 1254,
                     "asset_height": 1254,
