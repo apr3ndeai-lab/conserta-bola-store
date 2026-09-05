@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Criativos Mercado Livre V1</title>
+  <style>
+    :root {
+      --navy: #071426;
+      --navy-2: #0d2039;
+      --yellow: #f6bd2a;
+      --white: #ffffff;
+      --muted: #cad5e2;
+      --blue: #1677d2;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { width: 1200px; height: 1200px; margin: 0; overflow: hidden; }
+    body { font-family: "Segoe UI", Arial, sans-serif; background: var(--navy); color: var(--white); }
+
+    .card { position: relative; width: 1200px; height: 1200px; display: none; overflow: hidden; background: var(--navy); }
+    .card.active { display: block; }
+    .photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .photo.contain { object-fit: contain; background: #fff; }
+    .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,20,38,.03) 30%, rgba(7,20,38,.2) 54%, rgba(7,20,38,.96) 100%); }
+    .shade.top { background: linear-gradient(180deg, rgba(7,20,38,.98) 0%, rgba(7,20,38,.82) 30%, rgba(7,20,38,.08) 64%, rgba(7,20,38,.18) 100%); }
+    .shade.left { background: linear-gradient(90deg, rgba(7,20,38,.98) 0%, rgba(7,20,38,.86) 42%, rgba(7,20,38,.2) 76%, rgba(7,20,38,.03) 100%); }
+    .grain { position: absolute; inset: 0; opacity: .09; background-image: radial-gradient(rgba(255,255,255,.55) .6px, transparent .7px); background-size: 6px 6px; pointer-events: none; }
+
+    .brand { position: absolute; z-index: 3; top: 56px; left: 64px; display: flex; align-items: center; gap: 14px; font-weight: 900; letter-spacing: -.04em; font-size: 34px; line-height: .88; }
+    .brand-mark { width: 18px; height: 40px; border-radius: 14px 14px 20px 20px; background: var(--yellow); transform: rotate(12deg); box-shadow: inset 0 -10px 0 var(--blue); }
+    .brand span:first-of-type { color: var(--yellow); }
+
+    .copy { position: absolute; z-index: 3; left: 64px; right: 64px; bottom: 68px; }
+    .copy.top-copy { top: 152px; bottom: auto; max-width: 1010px; }
+    .copy.left-copy { top: 300px; bottom: auto; right: auto; width: 570px; }
+    .eyebrow { display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; border: 2px solid rgba(246,189,42,.72); border-radius: 999px; color: var(--yellow); font-weight: 850; font-size: 25px; letter-spacing: .08em; text-transform: uppercase; }
+    h1 { margin: 20px 0 14px; max-width: 1030px; font-size: 72px; line-height: .98; letter-spacing: -.045em; text-transform: uppercase; }
+    p { margin: 0; max-width: 1020px; color: var(--muted); font-size: 34px; line-height: 1.25; font-weight: 520; }
+    p strong { color: #fff; }
+    .rule { width: 110px; height: 8px; border-radius: 999px; background: var(--yellow); margin-bottom: 24px; }
+    .number { position: absolute; z-index: 3; right: 56px; top: 42px; color: rgba(246,189,42,.96); font-weight: 950; font-size: 130px; line-height: 1; letter-spacing: -.08em; }
+    .micro { margin-top: 20px; font-size: 25px; color: #aebdcd; }
+
+    .split { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; }
+    .split-copy { position: relative; padding: 210px 62px 70px; background: linear-gradient(145deg, #071426, #0c2544); }
+    .split-copy h1 { font-size: 64px; }
+    .split-photo { position: relative; overflow: hidden; }
+    .split-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 51% center; }
+    .checks { display: grid; gap: 19px; margin-top: 36px; }
+    .check { display: flex; gap: 15px; align-items: flex-start; font-size: 28px; line-height: 1.2; color: #e9f0f7; }
+    .check::before { content: "✓"; display: grid; place-items: center; width: 34px; height: 34px; flex: 0 0 34px; border-radius: 50%; background: var(--yellow); color: var(--navy); font-size: 23px; font-weight: 950; }
+    .check.no::before { content: "×"; background: #fff; color: #ba2e2e; }
+    .notice { margin-top: 38px; padding: 24px 26px; border-radius: 18px; border-left: 8px solid var(--yellow); background: rgba(255,255,255,.08); color: #fff; font-size: 26px; line-height: 1.27; }
+
+    .authority-photo { object-position: 54% center; }
+    .authority-band { position: absolute; z-index: 3; left: 0; right: 0; bottom: 0; min-height: 430px; padding: 62px 64px 52px; background: linear-gradient(180deg, rgba(7,20,38,0), rgba(7,20,38,.96) 24%, #071426 100%); }
+    .authority-band h1 { max-width: 1070px; font-size: 66px; }
+    .facts { display: flex; gap: 18px; margin-top: 30px; }
+    .fact { padding: 15px 20px; border-radius: 12px; background: rgba(255,255,255,.1); color: #fff; font-size: 25px; font-weight: 750; }
+
+    .scale .photo { object-position: center center; }
+    .scale .copy { left: 64px; right: auto; top: 72px; bottom: auto; width: 480px; }
+    .scale h1 { font-size: 66px; }
+    .scale .shade { background: linear-gradient(90deg, rgba(7,20,38,.92) 0%, rgba(7,20,38,.69) 35%, rgba(7,20,38,0) 62%), linear-gradient(180deg, rgba(7,20,38,.3), transparent 60%); }
+  </style>
+</head>
+<body>
+  <section class="card" data-card="capa-kit-1">
+    <img class="photo contain" src="../assets/ml-criativos-v1/sources/capa-kit-1-gerada.png" alt="">
+  </section>
+
+  <section class="card" data-card="capa-kit-5">
+    <img class="photo contain" src="../assets/ml-criativos-v1/sources/capa-kit-5-gerada.png" alt="">
+  </section>
+
+  <section class="card scale" data-card="escala-real">
+    <img class="photo" src="../assets/ml-criativos-v1/sources/escala-real-gerada.png" alt="">
+    <div class="shade"></div><div class="grain"></div>
+    <div class="copy">
+      <div class="eyebrow">Tamanho real</div>
+      <h1>5 ml em escala real</h1>
+      <p>Um frasco compacto, feito para uma aplicação precisa.</p>
+    </div>
+  </section>
+
+  <section class="card" data-card="diagnostico">
+    <img class="photo" src="../assets/ml-criativos-v1/sources/diagnostico.png" alt="">
+    <div class="shade left"></div><div class="grain"></div>
+    <div class="brand"><i class="brand-mark"></i><div><span>CONSERTA</span><br>BOLA</div></div>
+    <div class="copy left-copy">
+      <div class="eyebrow">Antes de aplicar</div>
+      <h1>Identifique o vazamento</h1>
+      <p>Indicado para <strong>microvazamentos e porosidade</strong> em bolas esportivas.</p>
+    </div>
+  </section>
+
+  <section class="card" data-card="passo-1">
+    <img class="photo" src="../assets/ml-criativos-v1/sources/aplicacao-1-preparar.png" alt="">
+    <div class="shade top"></div><div class="grain"></div><div class="number">01</div>
+    <div class="brand"><i class="brand-mark"></i><div><span>CONSERTA</span><br>BOLA</div></div>
+    <div class="copy top-copy">
+      <div class="eyebrow">Passo 1</div>
+      <h1>Prepare o kit</h1>
+      <p>Separe o frasco, a seringa e a agulha. Abra pelo QR code a orientação da sua bola.</p>
+    </div>
+  </section>
+
+  <section class="card" data-card="passo-2">
+    <img class="photo" src="../assets/ml-criativos-v1/sources/aplicacao-2-valvula.png" alt="">
+    <div class="shade top"></div><div class="grain"></div><div class="number">02</div>
+    <div class="brand"><i class="brand-mark"></i><div><span>CONSERTA</span><br>BOLA</div></div>
+    <div class="copy top-copy">
+      <div class="eyebrow">Passo 2</div>
+      <h1>Aplique a fórmula</h1>
+      <p>Use a seringa e a agulha pela válvula, seguindo o tutorial indicado na embalagem.</p>
+    </div>
+  </section>
+
+  <section class="card" data-card="passo-3">
+    <img class="photo" src="../assets/ml-criativos-v1/sources/aplicacao-3-distribuir.png" alt="">
+    <div class="shade top"></div><div class="grain"></div><div class="number">03</div>
+    <div class="brand"><i class="brand-mark"></i><div><span>CONSERTA</span><br>BOLA</div></div>
+    <div class="copy top-copy">
+      <div class="eyebrow">Passo 3</div>
+      <h1>Distribua e aguarde</h1>
+      <p>Movimente conforme o passo a passo e respeite o período de estabilização indicado no QR code.</p>
+    </div>
+  </section>
+
+  <section class="card" data-card="limites">
+    <div class="split">
+      <div class="split-copy">
+        <div class="eyebrow">Uso responsável</div>
+        <h1>Saiba quando aplicar</h1>
+        <div class="checks">
+          <div class="check">Microvazamentos e perda lenta de pressão</div>
+          <div class="check">Porosidade do material da bola</div>
+          <div class="check no">Não repara rasgos, costura aberta ou dano estrutural</div>
+        </div>
+        <div class="notice"><strong>Atenção à válvula:</strong> quando a vedação for nessa região, uma nova calibragem rompe a película e exige nova aplicação.</div>
+      </div>
+      <div class="split-photo"><img src="../assets/ml-criativos-v1/sources/aplicacao-2-valvula.png" alt=""></div>
+    </div>
+    <div class="brand"><i class="brand-mark"></i><div><span>CONSERTA</span><br>BOLA</div></div>
+  </section>
+
+  <section class="card" data-card="autoridade">
+    <img class="photo authority-photo" src="../assets/ml-criativos-v1/sources/autoridade.png" alt="">
+    <div class="shade"></div><div class="grain"></div>
+    <div class="brand"><i class="brand-mark"></i><div><span>CONSERTA</span><br>BOLA</div></div>
+    <div class="authority-band">
+      <div class="rule"></div>
+      <h1>Criado por quem vive o reparo de bolas</h1>
+      <p>Uma formulação aperfeiçoada diante de materiais, sintomas e casos reais.</p>
+      <div class="facts"><span class="fact">Trabalho iniciado em 2019</span><span class="fact">Experiência em mais de 5.000 bolas</span></div>
+    </div>
+  </section>
+
+  <script>
+    const key = new URLSearchParams(location.search).get('card') || 'capa-kit-1';
+    const card = document.querySelector(`[data-card="${key}"]`) || document.querySelector('.card');
+    card.classList.add('active');
+  </script>
+</body>
+</html>
